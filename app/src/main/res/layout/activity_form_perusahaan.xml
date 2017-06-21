@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="ID" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/txt_id"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<requestFocus/>-->
+        <!--</EditText>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:text="Username"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_username_perusahaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Username Anda"
+            android:textSize="14sp">
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Password"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_pwd_perusahaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Password Anda"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Confirmasi Password"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_konfirmasi_perusahaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Konfirmasi Password Anda"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="* Username &amp; Password maksimal 12 Karakter (huruf atau angka)"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Nama Perusahaan"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_nama_perusahaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Nama Perusahaan Anda"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Jenis Perusahaan"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnJenis"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_kabupaten" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Sektor Industri"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnSektor"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_kabupaten" />
+
+        <!--<EditText-->
+        <!--android:id="@+id/txt_sektor"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Bidang Usaha"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnBidang"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_kabupaten" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Alamat Perusahaan"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_alamat_perusahaan"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Alamat Perusahaan Anda"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Provinsi"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnProvinsi"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_provinsi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Kabupaten/Kota"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnKabupaten"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_kabupaten" />
+
+        <!--<EditText-->
+        <!--android:id="@+id/txt_bidang"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_telp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="5dp"
+                android:text="Telepon"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txt_telp_perusahaan"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_telp"
+                android:background="@drawable/custom_edit_text"
+                android:ems="5"
+                android:hint="Isi Telepon Perusahaan Anda"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_fax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="140dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="5dp"
+                android:text="Fax"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txt_fax_perusahaan"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_fax"
+                android:background="@drawable/custom_edit_text"
+                android:ems="5"
+                android:hint="Isi Fax Perusahaan Anda"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="5dp"
+                android:text="Email"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txt_email_perusahaan"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_email"
+                android:background="@drawable/custom_edit_text"
+                android:ems="5"
+                android:hint="Isi Email Perusahaan Anda"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="140dp"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="5dp"
+                android:text="Website"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txt_web_perusahaan"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_web"
+                android:background="@drawable/custom_edit_text"
+                android:ems="5"
+                android:hint="Isi Website Perusahaan Anda"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Profil Perusahaan"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_profil_perusahaan"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Profil Perusahaan Anda"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Logo Perusahaan"
+            android:textSize="12sp" />
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Path" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": " />
+
+            <TextView
+                android:id="@+id/textViewPathLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </TableRow>
+
+        <Button
+            android:id="@+id/buttonPilihLogoPerusahaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Browse File Logo Perusahaan" />
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/txt_logo"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/custom_edit_text"-->
+            <!--android:ems="5"-->
+            <!--android:hint="Logo Perusahaan"-->
+            <!--android:textSize="14sp" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Penangggung Jawab"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_pj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Penanggung Jawab Anda"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Jabatan"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_jabatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Jabatan Anda"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Telepon/Hp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_telp_hp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi No Telp atau Hp Perusahaan Anda"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Keterangan Lain"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_ket_lain"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Keterangan Lain"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="btnPerusahaan_Click"
+            android:text="Kirim"
+            android:textAllCaps="true" />
+
+    </LinearLayout>
+</ScrollView>

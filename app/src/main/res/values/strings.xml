@@ -1,0 +1,105 @@
+<resources>
+    <string name="app_name">Akses BLKI</string>
+    <string name="pelatihan">Form Pelatihan</string>
+
+    <!--<string name="country_prompt">Choose a country</string>-->
+    <string name="country_name">Choose a country</string>
+    <string-array name="countries">
+        <item>India</item>
+        <item>London</item>
+        <item>USA</item>
+        <item>Burma</item>
+        <item>China</item>
+        <item>Malaysia</item>
+        <item>singapore</item>
+        <item>Italy</item>
+        <item>Russia</item>
+    </string-array>
+
+    <string name="nama_provinsi">Pilih Provinsi</string>
+    <string-array name="provinsi">
+        <item>Aceh</item>
+        <item>Bali</item>
+        <item>Bangka Belitung</item>
+        <item>Banten</item>
+        <item>Bengkulu</item>
+        <item>DI Yogyakarta</item>
+        <item>DKI Jakarta</item>
+        <item>Gorontalo</item>
+        <item>Jambi</item>
+        <item>Jawa Barat</item>
+    </string-array>
+
+    <string name="nama_agama">Pilih Agama</string>
+    <string-array name="agama">
+        <item>Islam</item>
+        <item>Budha</item>
+        <item>Hindu</item>
+        <item>Kristen</item>
+        <item>Katolik</item>
+    </string-array>
+
+
+    <string name="nama_kabupaten">Pilih Kabupaten</string>
+    <string-array name="kabupaten">
+        <item>Kab. Bontang</item>
+        <item>Kab. Samarinda</item>
+        <item>Kab. Balikpapan</item>
+        <item>Kab. Kutai Timur</item>
+        <item>Kab. Penajam</item>
+    </string-array>
+
+    <string name="nama_pendidikan">Pilih Pendidikan</string>
+    <string-array name="pendidikan">
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SLTA</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>S1</item>
+        <item>S2</item>
+    </string-array>
+
+    <string name="nama_jurusan">Pilih Jurusan</string>
+    <string-array name="jurusan">
+        <item>Teknik Informatika</item>
+        <item>Ilmu Komputer</item>
+        <item>Teknik Mesin</item>
+        <item>Teknik Sipil</item>
+        <item>Teknik Pertambangan</item>
+        <item>Teknik Kimia</item>
+    </string-array>
+
+    <string name="nama_kejuruan">Pilih Kejuruan</string>
+    <string-array name="kejuruan">
+        <item>Agrobisnis</item>
+        <item>Bangunan</item>
+        <item>Bisnis dan Manajemen</item>
+        <item>Processing</item>
+        <item>Teknik Las</item>
+        <item>Teknik Listrik</item>
+        <item>Teknik Otomotif</item>
+    </string-array>
+
+    <string name="nama_sub_kejuruan">Pilih Sub Kejuruan</string>
+    <string-array name="sub_kejuruan">
+        <item>Agrobisnis Produksi Peternakan</item>
+        <item>Furniture</item>
+        <item>Pengolahan Hasil Perikanan</item>
+        <item>Telekomunikasi</item>
+        <item>Las Industri</item>
+        <item>Instalasi Penerangan</item>
+    </string-array>
+
+    <string name="nama_program">Pilih Program</string>
+    <string-array name="program">
+        <item>Sekretaris</item>
+        <item>Listrik Industri</item>
+        <item>Pelatihan Berbasis Kompetensi</item>
+        <item>Teknisi Handphone</item>
+        <item>Mekanik Alat Berat</item>
+        <item>Swadana</item>
+    </string-array>
+</resources>
