@@ -28,6 +28,29 @@
         <item>Gorontalo</item>
         <item>Jambi</item>
         <item>Jawa Barat</item>
+        <item>Jawa Tengah</item>
+        <item>Jawa Timur</item>
+        <item>Kalimantan Barat</item>
+        <item>Kalimantan Selatan</item>
+        <item>Kalimantan Tengah</item>
+        <item>Kalimantan Timur</item>
+        <item>Kepulauan Riau</item>
+        <item>Lampung</item>
+        <item>Maluku </item>
+        <item>Maluku Utara</item>
+        <item>Nusa Tenggara Timur</item>
+        <item>Nusa Tenggara Barat</item>
+        <item>Papua</item>
+        <item>Papua Barat</item>
+        <item>Riau</item>
+        <item>Sulawesi Barat</item>
+        <item>Sulawesi Selatan</item>
+        <item>Sulawesi Tengah</item>
+        <item>Sulawesi Tenggara</item>
+        <item>Sulawesi Utara</item>
+        <item>Sumatera Barat</item>
+        <item>Sumatera Selatan</item>
+        <item>Sumatera Utara</item>
     </string-array>
 
     <string name="nama_agama">Pilih Agama</string>
@@ -102,4 +125,579 @@
         <item>Mekanik Alat Berat</item>
         <item>Swadana</item>
     </string-array>
+
+    <string-array name="prov_aceh">
+        <item>Kab. Aceh Barat</item>
+        <item>Kab. Aceh Barat Daya</item>
+        <item>Kab. Aceh Besar</item>
+        <item>Kab. Aceh Jaya</item>
+        <item>Kab. Aceh Selatan</item>
+        <item>Kab. Aceh Singkil</item>
+        <item>Kab. Aceh Tengah</item>
+        <item>Kab. Aceh Tenggara</item>
+        <item>Kab. Aceh Timur</item>
+        <item>Kab. Aceh Utara</item>
+        <item>Kab. Bener Meriah</item>
+        <item>Kab. Bireuen</item>
+        <item>Kab. Gawo Luwes</item>
+        <item>Kab. Nagan Raya</item>
+        <item>Kab. Pidi</item>
+        <item>Kab. Pidie Jaya</item>
+        <item>Kab. Simeulue</item>
+        <item>Kab. Singkil</item>
+        <item>Kota Aceh Tamiang</item>
+        <item>Kota Banda Aceh</item>
+        <item>Kota Langsa</item>
+        <item>Kota Lhok Sukon</item>
+        <item>Kota Lhokseumawe</item>
+        <item>Kota Sabang</item>
+        <item>Kota Sabussalam</item>
+    </string-array>
+
+    <string-array name="prov_bali">
+        <item>Kab. Badung</item>
+        <item>Kab. Bangli</item>
+        <item>Kab. Bulelang</item>
+        <item>Kab. Gianyar</item>
+        <item>Kab. Jembrana</item>
+        <item>Kab. Karang Asem</item>
+        <item>Kab. Klungkung</item>
+        <item>Kab. Tabanan</item>
+        <item>Kota Denpasar</item>
+    </string-array>
+
+    <string-array name="prov_bangka_belitung">
+        <item>Kab. Bangka</item>
+        <item>Kab. Bangka Barat</item>
+        <item>Kab. Bangka Selatan</item>
+        <item>Kab. Bangka Tengah</item>
+        <item>Kab. Belitung</item>
+        <item>Kab. Belitung Timur</item>
+        <item>Kota Pangkal Pinang</item>
+    </string-array>
+
+    <string-array name="prov_banten">
+        <item>Kab. Lebak</item>
+        <item>Kab. Pandeglang</item>
+        <item>Kab. Serang</item>
+        <item>Kab. Tangerang</item>
+        <item>Kota Cirebon</item>
+        <item>Kota Serang</item>
+        <item>Kota Tangerang</item>
+        <item>Tangerang Selatan</item>
+    </string-array>
+
+    <string-array name="prov_bengkulu">
+        <item>Kab. Bengkulu Selatan</item>
+        <item>Kab. Bengkulu Utara</item>
+        <item>Kab. Kapahiang</item>
+        <item>Kab. Kaur</item>
+        <item>Kab. Lebong</item>
+        <item>Kab. Mukomuko</item>
+        <item>Kab. Rejang Lebong</item>
+        <item>Kab. Seluma</item>
+        <item>Kota Bengkulu</item>
+    </string-array>
+
+    <string-array name="prov_yogyakarta">
+        <item>Kab. Bantul</item>
+        <item>Kab. Gunung Kidul</item>
+        <item>Kab. Kulon Progo</item>
+        <item>Kab. Sleman</item>
+        <item>Kota Yogyakarta</item>
+    </string-array>
+
+    <string-array name="prov_jakarta">
+        <item>Jakarta Barat</item>
+        <item>Jakarta Pusat</item>
+        <item>Jakarta Selatan</item>
+        <item>Jakarta Timur</item>
+        <item>Jakarta Utara</item>
+        <item>Kepulauan Seribu</item>
+    </string-array>
+
+    <string-array name="prov_gorontalo">
+        <item>Kab. Boglemo</item>
+        <item>Kab. Bone Bolango</item>
+        <item>Kab. Gorontalo</item>
+        <item>Kab. Pahuwato</item>
+        <item>Kota Gorontalo</item>
+    </string-array>
+
+    <string-array name="prov_jambi">
+        <item>Kab. Batanghari</item>
+        <item>Kab. Bungo</item>
+        <item>Kab. Kerinci</item>
+        <item>Kab. Marangin</item>
+        <item>Kab. Muara Jambi</item>
+        <item>Kab. Sarolangun</item>
+        <item>Kab. Tanjung Jabung Barat</item>
+        <item>Kab. Tanjung Jabung Timur</item>
+        <item>Kab. Tebi</item>
+        <item>Kota Jambi</item>
+    </string-array>
+
+    <string-array name="prov_jawa_barat">
+        <item>Kab. Bandung</item>
+        <item>Kab. Bekasi</item>
+        <item>Kab. Bogor</item>
+        <item>Kab. Ciamis</item>
+        <item>Kab. Cianjur</item>
+        <item>Kab. Cirebon</item>
+        <item>Kab. Garut</item>
+        <item>Kab. Indramayu</item>
+        <item>Kab. Karawang</item>
+        <item>Kab. Kuningan</item>
+        <item>Kab. Majalengka</item>
+        <item>Kab. Purwakarta</item>
+        <item>Kab. Subang</item>
+        <item>Kab. Sukabumi</item>
+        <item>Kab. Sumedang</item>
+        <item>Kab. Tasik Malaya</item>
+        <item>Kota Bandung</item>
+        <item>Kota Banjar</item>
+        <item>Kota Bekasi</item>
+        <item>Kota Bogor</item>
+        <item>Kota Cemahi</item>
+        <item>Kota Cirebon</item>
+        <item>Kota Depok</item>
+        <item>Kota Sukabumi</item>
+    </string-array>
+
+    <string-array name="prov_jawa_tengah">
+        <item>Kab. Banjarnegara</item>
+        <item>Kab. Banyumas</item>
+        <item>Kab. Batang</item>
+        <item>Kab. Blora</item>
+        <item>Kab. Boyolali</item>
+        <item>Kab. Brebes</item>
+        <item>Kab. Cilacap</item>
+        <item>Kab. Demak</item>
+        <item>Kab. Grobogan</item>
+        <item>Kab. Jepara</item>
+        <item>Kab. Karanganyar</item>
+        <item>Kab. Kabumen</item>
+        <item>Kab. Kendal</item>
+        <item>Kab. Klaten</item>
+        <item>Kab. Kudung</item>
+        <item>Kab. Magelang</item>
+        <item>Kab. Pati</item>
+        <item>Kab. Pekalongan</item>
+        <item>Kab. Pemalang</item>
+        <item>Kab.  Purbalingga</item>
+        <item>Kab. Purworejo</item>
+        <item>Kab. Rembang</item>
+        <item>Kab. Semarang</item>
+        <item>Kab. Sragen</item>
+        <item>Kab. Sukoharjo</item>
+        <item>Kab. Tegal</item>
+        <item>Kab. Temanggung</item>
+        <item>Kab. Wonogiri</item>
+        <item>Kab. Wonosobo</item>
+        <item>Kota Ambarawa</item>
+        <item>Kota Magelang</item>
+        <item>Kota Pekalongan</item>
+        <item>Kota Salatiga</item>
+        <item>Kota Semarang</item>
+        <item>Kota Surakarta</item>
+        <item>Kota Tegal</item>
+    </string-array>
+
+
+    <string-array name="prov_jawa_timur">
+        <item>Kab. Bangkalan</item>
+        <item>Kab. Banyuwangi</item>
+        <item> Kab. Blitar</item>
+        <item>Kab. Bojonegoro</item>
+        <item>Kab. Bondowoso</item>
+        <item> Kab. Gresik</item>
+        <item>Kab. Jember</item>
+        <item>Kab. Jombang</item>
+        <item>Kab. Kediri</item>
+        <item>Kab. Lamongan</item>
+        <item> Kab. Lumajang</item>
+        <item>Kab. Madiun</item>
+        <item>Kab. Magetan</item>
+        <item>Kab. Malang</item>
+        <item>Kab. Mojokerto</item>
+        <item>Kab. Ngajuk</item>
+        <item>Kab. Ngawi</item>
+        <item>Kab. Pacitan</item>
+        <item>Kab. Pamekasan</item>
+        <item>Kab. Pasuruan</item>
+        <item>Kab. Ponorogo</item>
+        <item>Kab. Probalinggo</item>
+        <item>Kab. Sampang</item>
+        <item>Kab. Sidoarjo</item>
+        <item>Kab. Situbondo</item>
+        <item>Kab. Sumenep</item>
+        <item>Kab. Trenggalek</item>
+        <item>Kab. Tuban</item>
+        <item>Kab. Tulungangung</item>
+        <item>Kota Batu</item>
+        <item>Kota Blitar</item>
+        <item>Kota Kediri</item>
+        <item>Kota Madiun</item>
+        <item>Kota Malang</item>
+        <item>Kota Mojokerto</item>
+        <item>Kota Pasuruan</item>
+        <item>Kota Probolinggo</item>
+        <item>Kota Surabaya</item>
+    </string-array>
+
+    <string-array name="prov_kalimantan_barat">
+        <item>Kab. Bengkayang</item>
+        <item>Kab. Kapuas Hulu</item>
+        <item>Kab. Kayong Utara</item>
+        <item>Kab. Ketapang</item>
+        <item>Kab. Kubu Raya</item>
+        <item>Kab. Landak</item>
+        <item>Kab. Melawi</item>
+        <item>Kab. Pontianak</item>
+        <item>Kab. Sambas</item>
+        <item>Kab. Sanggau</item>
+        <item>Kab. Sekadau</item>
+        <item>Kab. Sintang</item>
+        <item>Kota Pontinak </item>
+        <item>Kota Singkawang</item>
+    </string-array>
+
+    <string-array name="prov_kalimantan_selatan">
+        <item>Kab. Balangan</item>
+        <item>Kab. Banjar</item>
+        <item>Kab. Barito Kuala</item>
+        <item>Kab. Hulu Sungai Selatan</item>
+        <item>Kab. Hulu Sungai Tengah</item>
+        <item>Kab. Hulu Sungai Utara</item>
+        <item>Kab. Kotabaru</item>
+        <item>Kab. Tabalong</item>
+        <item>Kab. Tanah Bumbu</item>
+        <item>Kab. Tanah Laut</item>
+        <item>Kab. Tapin</item>
+        <item>Kota Banjar Baru</item>
+        <item>Kota Banjarmasin</item>
+    </string-array>
+
+    <string-array name="prov_kalimantan_tengah">
+        <item>Kab. Barito Selatan</item>
+        <item>Kab. Barito Timur</item>
+        <item>Kab. Barito Utara</item>
+        <item>Kab. Gunung Mas</item>
+        <item>Kab. Kapuas</item>
+        <item>Kab. Katingan</item>
+        <item>Kab. Kotawaringin Barat</item>
+        <item>Kab. Kotawaringin Timur</item>
+        <item>Kab. Lamandau</item>
+        <item>Kab. Murung Raya</item>
+        <item>Kab. Pulau Pisau</item>
+        <item>Kab. Seruyan</item>
+        <item>Kab. Sukamara</item>
+        <item>Kota Palangkaraya</item>
+    </string-array>
+
+    <string-array name="prov_kalimantan_timur">
+        <item>Kab. Berau</item>
+        <item>Kab. Bulungan</item>
+        <item>Kab. Kutai</item>
+        <item>Kab. Kutai Barat</item>
+        <item>Kab. Kutai Timur</item>
+        <item>Kab. Malianau</item>
+        <item>Kab. Nunukan</item>
+        <item>Kab. Pasir</item>
+        <item> Kab. Penajam</item>
+        <item>Kota Balikpapan</item>
+        <item>Kota Bontang</item>
+        <item>Kota Samarinda</item>
+        <item>Kota Tarakan</item>
+    </string-array>
+
+    <string-array name="prov_kepulauan_riau">
+        <item>Kab. Karimun</item>
+        <item>Kab, Kepulauan Riau</item>
+        <item>Kab. Lingga</item>
+        <item>Kab. Natuna</item>
+        <item>Kota Batam</item>
+        <item>Kota Tanjung Pinang</item>
+    </string-array>
+
+    <string-array name="prov_lampung">
+        <item>Kab. Lampung Barat</item>
+        <item>Kab. Lampung Selatan</item>
+        <item>Kab. Lampung Tengah</item>
+        <item>Kab. Lampung Timur</item>
+        <item>Kab. Lampung Selatan</item>
+        <item>Kab. Tanggamus</item>
+        <item>Kab. Tulang Bawang</item>
+        <item>Kab. Way Kanan</item>
+        <item>Kota Bandar Lampung</item>
+        <item>Kota Metro</item>
+        <item>Pesawarahan</item>
+        <item>Pringsewu</item>
+    </string-array>
+
+    <string-array name="prov_maluku">
+        <item>Kab. Buru</item>
+        <item>Kab. Kepulauan Aru</item>
+        <item>Kab. Maluku Tengah</item>
+        <item>Kab. Maluku Tenggara</item>
+        <item>Kab. Maluku Tenggara Barat</item>
+        <item>Kab. Seram Barat</item>
+        <item>Kab. Seram Timur</item>
+        <item>Kab. Telok Ambon</item>
+        <item>Kota Ambon</item>
+    </string-array>
+
+    <string-array name="prov_maluku_utara">
+        <item>Kab. Halmahera Barat</item>
+        <item>Kab. Halmehera Selatan</item>
+        <item>Kab. Halmahera Tengah</item>
+        <item>Kab. Halmahera Timur</item>
+        <item>Kab. Halmahera Utara</item>
+        <item>Kab. Kepulauan Sula</item>
+        <item>Kab. Pulau Morotai</item>
+        <item>Kab. Pulau Taliabu</item>
+        <item>Kota Ternate</item>
+        <item>Kota Tidore</item>
+    </string-array>
+
+    <string-array name="prov_ntb">
+        <item>Kab. Bima</item>
+        <item>Kab. Dompu</item>
+        <item>Kab. Lombok Barat</item>
+        <item>Kab. Lombok Tengah</item>
+        <item>Kab. Lombok Timur</item>
+        <item>Kab. Lombok Utara</item>
+        <item>Kab. Sumbawa</item>
+        <item>Kab. Sumbawa Barat</item>
+        <item>Kota Bima</item>
+        <item>Kota Mataram</item>
+    </string-array>
+
+    <string-array name="prov_ntt">
+        <item>Kab. Alur</item>
+        <item>Kab. Belu</item>
+        <item>Kab. Ende</item>
+        <item>Kab. Flores Timur</item>
+        <item>Kab. Kupang</item>
+        <item>Kab. Lembata Barat</item>
+        <item>Kab. Manggarai</item>
+        <item>Kab. Ngada</item>
+        <item>Kab. Rote Ndao</item>
+        <item>Kab. Sikka</item>
+        <item>Kab. Sumba Barat</item>
+        <item>Kab. Sumba Timur</item>
+        <item>Kab. Timor Tengah Selatan</item>
+        <item>Kab. Timor Tengah Utara</item>
+        <item>Kota Kupang</item>
+    </string-array>
+
+    <string-array name="prov_papua">
+        <item>Kab. Asmat </item>
+        <item>Kab. Biak Numfor </item>
+        <item>Kab. Boven Digoel </item>
+        <item>Kab. Deiyai </item>
+        <item>Kab. Dogiyai </item>
+        <item>Kab. Intan Jaya </item>
+        <item>Kab. Jayapura </item>
+        <item>Kab. Jayawijaya </item>
+        <item>Kab. Keerom </item>
+        <item>Kab. Kepulauan Yapen</item>
+        <item>Kab. Lanny Jaya </item>
+        <item>Kab. Mamberamo Raya </item>
+        <item>Kab. Mamberamo Tengah </item>
+        <item>Kab. Mappi </item>
+        <item>Kab. Merauke </item>
+        <item>Kab. Mimika </item>
+        <item>Kab. Nabire </item>
+        <item>Kab. Nduga </item>
+        <item>Kab. Paniai </item>
+        <item>Kab. Pegunungan Bintang </item>
+        <item>Kab. Puncak </item>
+        <item>Kab. Puncak Jaya </item>
+        <item>Kab. Sarmi </item>
+        <item>Kab. Supiori </item>
+        <item>Kab. Tolikara</item>
+        <item>Kab. Waropen </item>
+        <item>Kab. Yahukimo </item>
+        <item>Kab. Yalimo </item>
+    </string-array>
+
+    <string-array name="prov_papua_barat">
+        <item>Kab. Fakfak</item>
+        <item>Kab. Kaimana</item>
+        <item>Kab. Manokwari</item>
+        <item>Kab. Maybrat</item>
+        <item>Kab. Raja Ampat</item>
+        <item>Kab. Sorong</item>
+        <item>Kab. Sorong Selatan</item>
+        <item>Kab. Tambrauw</item>
+        <item>Kab. Teluk Bintuni</item>
+        <item>Kab. Teluk Wondama</item>
+        <item>Kota Sorong</item>
+    </string-array>
+
+    <string-array name="prov_riau">
+        <item>Kab. Bengkalis</item>
+        <item>Kab. Indragiri Hilir</item>
+        <item>Kab. Indragiri Hulu</item>
+        <item>Kab. Kampar</item>
+        <item>Kab. Kuantan Singigi</item>
+        <item>Kab. Pelalawan</item>
+        <item>Kab. Rokan Hilir</item>
+        <item>Kab. Rokan Hulu</item>
+        <item>Kab. Siak</item>
+        <item>Kota Dumai</item>
+        <item>Kota Pekan Baru</item>
+    </string-array>
+
+    <string-array name="prov_sulawesi_barat">
+        <item>Kab. Majene</item>
+        <item>Kab. Mamasa</item>
+        <item>Kab. mamuju</item>
+        <item>Kab. Mamuju Utara</item>
+        <item>Kota Polewali</item>
+    </string-array>
+
+    <string-array name="prov_sulawesi_selatan">
+        <item>KKab. Bantaeng</item>
+        <item>KKab. Baru</item>
+        <item>KKab. Bone</item>
+        <item>KKab. Bulukumba</item>
+        <item>KKab. Enrekang</item>
+        <item>KKab. Gowa</item>
+        <item>KKab. Jeneponto</item>
+        <item>KKab. Luwu</item>
+        <item>KKab. Luwu Timur</item>
+        <item>KKab. Luwu Utara</item>
+        <item>KKab. Maros</item>
+        <item>KKab. Pangkep</item>
+        <item>KKab. Pinrang</item>
+        <item>KKab. Palopo</item>
+        <item>KKab. Selayar</item>
+        <item>KKab. Sindrap</item>
+        <item>KKab. Sinjai</item>
+        <item>KKab. Soppeng</item>
+        <item>KKab. Takalar</item>
+        <item>KKab. Tana Toraja</item>
+        <item>KKab. Toraja Utara</item>
+        <item>KKab. Wajo</item>
+        <item>KKota Makassar</item>
+        <item>KKota Pare-pare</item>
+    </string-array>
+
+
+    <string-array name="prov_sulawesi_tengah">
+        <item>Kab. Banggai</item>
+        <item>Kab. Banggai Kepulauan</item>
+        <item>Kab. Buoi</item>
+        <item>Kab. Donggala</item>
+        <item>Kab. Morowali</item>
+        <item>Kab. Parigi Moutong</item>
+        <item>Kab. Poso</item>
+        <item>Kab. Sigi</item>
+        <item>Kab. Tojo Una-una</item>
+        <item>Kab. Toli-toli</item>
+        <item>Kota Palu</item>
+    </string-array>
+
+    <string-array name="prov_sulawesi_tenggara">
+        <item>Kab. Bombana</item>
+        <item>Kab. Buton</item>
+        <item>Kab. Buton Selatan</item>
+        <item>Kab. Buton Tengah</item>
+        <item>Kab. Buton Utara</item>
+        <item>Kab. Kolaka</item>
+        <item>Kab. Kolaka Timur</item>
+        <item>Kab. Kolaka Utara</item>
+        <item>Kab. Konawe</item>
+        <item>Kab. Konawe Kepulauan</item>
+        <item>Kab. Konawe Selatan</item>
+        <item>Kab. Konawe Utara</item>
+        <item>Kab. Muna</item>
+        <item>Kab. Muna Barat</item>
+        <item>Kab. Wakatobi</item>
+        <item>Kota Bau-Bau</item>
+        <item>Kota Kendari</item>
+    </string-array>
+
+    <string-array name="prov_sulawesi_utara">
+        <item>Kab. Bolang Mongondow</item>
+        <item>Kab. Kep. Singihe Talaud</item>
+        <item>Kab. Kepulauan Talaud</item>
+        <item>Kab. Minahasa</item>
+        <item>Kab. Minahasa Selatan</item>
+        <item>Kab. Minahasa Utara</item>
+        <item>Kota Bitung</item>
+        <item>Kota Manado</item>
+        <item>Kota Tomohon</item>
+    </string-array>
+
+    <string-array name="prov_sumatera_barat">
+        <item>Kab. Agam</item>
+        <item>Kab. Dharmasraya</item>
+        <item>Kab. Kepulauan Mentawai</item>
+        <item>Kab. Limapuluh Kota</item>
+        <item>Kab. Padang Pariaman</item>
+        <item>Kab. Pariaman</item>
+        <item>Kab. Pasaman</item>
+        <item>Kab. Pasaman Barat</item>
+        <item>Kab. Pesisir Selatan</item>
+        <item>Kab. Sawahlunto Sijunjung</item>
+        <item>Kab. Solok </item>
+        <item>Kab. Solok Selatan</item>
+        <item>Kab. Tanah Datar</item>
+        <item>Kota Bukit Tinggi</item>
+        <item>Kota Padang</item>
+        <item>Kota Padang Panjang</item>
+        <item>Kota Payakumbuh</item>
+        <item>Kota Sawahlunto</item>
+        <item>Kota Solok</item>
+    </string-array>
+
+    <string-array name="prov_sumatera_selatan">
+        <item>Kab. Banyuasin</item>
+        <item>Kab. Lahat</item>
+        <item>Kab. Muara Enim</item>
+        <item>Kab. Musi Banyuasin</item>
+        <item>Kab. Musi Rawas</item>
+        <item>Kab. Ogan Hilir</item>
+        <item>Kab. Ogan Komering Ilir</item>
+        <item>Kab. Ogan Komering Ulu</item>
+        <item>Kab. Ogan Komering Ulu Selatan</item>
+        <item>Kab. Ogan Komering Ulu Timur</item>
+        <item>Kab. Pagar Alam</item>
+        <item>Kota Lubuk Lingau</item>
+        <item>Kota Palembang</item>
+        <item>Kota Prabumulih</item>
+    </string-array>
+
+    <string-array name="prov_sumatera_utara">
+        <item>Kab. Asahan</item>
+        <item>Kab. Bharat</item>
+        <item>Kab. Dairi</item>
+        <item>Kab. Deli Serdang</item>
+        <item>Kab. Hasundutan</item>
+        <item>Kab. Karo</item>
+        <item>Kab. Labuhan Batu</item>
+        <item>Kab. Langkat</item>
+        <item>Kab. Nias</item>
+        <item>Kab. Nias Selatan</item>
+        <item>Kab. Pematang Siantar</item>
+        <item>Kab. Rantau Prapat</item>
+        <item>Kab. Samosir</item>
+        <item>Kab. Serdang Bedagai</item>
+        <item>Kab. Sibolga</item>
+        <item>Kab. Simalungun</item>
+        <item>Kab. Tanjung Balai</item>
+        <item>Kab. Tapanuli Selatan</item>
+        <item>Kab. Tapanuli Tengah</item>
+        <item>Kab. Tapanuli Utara</item>
+        <item> Kab. Tebing Tinggi</item>
+        <item>Kab. Toba Samosir</item>
+        <item>Kota Binjai</item>
+        <item>Kota Mandailing Natal</item>
+        <item>Kota Medan</item>
+        <item>Padang Lawas</item>
+    </string-array>
+
 </resources>

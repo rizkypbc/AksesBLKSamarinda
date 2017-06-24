@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:background="#c9ffc4"
     android:paddingLeft="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_vertical_margin"
     android:paddingTop="@dimen/activity_horizontal_margin">
 
 
-    <Button
-        android:id="@+id/btnPerusahaan"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Form Registrasi Perusahaan"
-        android:textSize="15dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:elevation="5dp"/>
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Klik Icon dibawah jika ingin mengisi formulir perusahaan"
+        android:textColor="#3d108b"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/btnPerusahaan"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/forms"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <!--<Button-->
+        <!--android:id="@+id/btnPerusahaan"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Form Registrasi Perusahaan"-->
+        <!--android:textSize="15dp"-->
+        <!--android:backgroundTint="@color/colorPrimary"-->
+        <!--android:elevation="5dp"/>-->
 
 
-</LinearLayout>
+</RelativeLayout>

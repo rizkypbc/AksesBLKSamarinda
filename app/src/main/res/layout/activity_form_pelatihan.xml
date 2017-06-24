@@ -131,6 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
+            android:entries="@array/provinsi"
             android:prompt="@string/nama_provinsi" />
 
         <!--<EditText-->
@@ -152,7 +153,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kabupaten" />
+            android:prompt="@string/nama_kabupaten"
+            android:entries="@array/prov_aceh"/>
 
         <!--<EditText-->
         <!--android:id="@+id/txt_kab_kota"-->

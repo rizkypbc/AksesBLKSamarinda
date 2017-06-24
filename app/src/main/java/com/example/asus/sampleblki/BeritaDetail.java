@@ -29,7 +29,8 @@ public class BeritaDetail extends AppCompatActivity {
 
         if (getIntent().getSerializableExtra("berita") != null) {
             Berita berita = (Berita) getIntent().getSerializableExtra("berita");
-            String fullUrl = "http://192.168.65.2/kios/" + berita.photoberita;
+//            String fullUrl = "http://10.223.242.157/kios/" + berita.photoberita;
+            String fullUrl = "http://putrarizky1410.16mb.com/kios/" + berita.photoberita;
             Picasso.with(this)
                     .load(fullUrl)
                     .placeholder(R.drawable.news)

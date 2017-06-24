@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.asus.sampleblki.FormPelatihan;
 import com.example.asus.sampleblki.FormPencariKerja;
@@ -34,8 +35,8 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstaceState){
         View view = inflater.inflate(R.layout.fragment_two, container, false);
-        Button button = (Button) view.findViewById(R.id.btnKerja);
-        button.setOnClickListener(this);
+        ImageView imageView = (ImageView) view.findViewById(R.id.btnKerja);
+        imageView.setOnClickListener(this);
         return view;
     }
 

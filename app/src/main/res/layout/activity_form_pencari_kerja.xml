@@ -190,7 +190,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_provinsi" />
+            android:prompt="@string/nama_provinsi"
+            android:entries="@array/provinsi"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -206,7 +207,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kabupaten" />
+            android:prompt="@string/nama_kabupaten"
+            android:entries="@array/prov_aceh"/>
 
         <TextView
             android:layout_width="wrap_content"

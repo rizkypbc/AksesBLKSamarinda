@@ -84,7 +84,8 @@ public class FragmentOne extends Fragment {
 //        BeritaAdapter adapter = new BeritaAdapter(getActivity(), berita);
 //        recyclerView.setAdapter(adapter);
 
-        String url = "http://192.168.65.2/kios/berita.php";
+//        String url = "http://10.223.242.157/kios/berita.php";
+        String url = "http://putrarizky1410.16mb.com/kios/berita.php";
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 url, new Response.Listener<String>() {
             @Override

@@ -29,6 +29,9 @@ import android.widget.Toast;
 import com.example.asus.sampleblki.Api.AccessServiceAPI;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 
+import static com.example.asus.sampleblki.R.id.parent;
+
+
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
@@ -110,8 +113,8 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
 
         radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
 
-        spnProgram.setOnItemSelectedListener(this);
-//        spnProvinsi.setOnItemSelectedListener(this);
+//        spnProgram.setOnItemSelectedListener(this);
+        spnProvinsi.setOnItemSelectedListener(this);
 //        spnAgama.setOnItemSelectedListener(this);
 //        spnKabupaten.setOnItemSelectedListener(this);
 //        spnPendidikan.setOnItemSelectedListener(this);
@@ -135,17 +138,17 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
         dataProgram.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnProgram.setAdapter(dataProgram);
 
-        ArrayAdapter dataProvinsi = ArrayAdapter.createFromResource(this, R.array.provinsi, android.R.layout.simple_spinner_item);
-        dataProvinsi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnProvinsi.setAdapter(dataProvinsi);
+//        ArrayAdapter dataProvinsi = ArrayAdapter.createFromResource(this, R.array.provinsi, android.R.layout.simple_spinner_item);
+//        dataProvinsi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spnProvinsi.setAdapter(dataProvinsi);
 
         ArrayAdapter dataAgama = ArrayAdapter.createFromResource(this, R.array.agama, android.R.layout.simple_spinner_item);
         dataAgama.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnAgama.setAdapter(dataAgama);
 
-        ArrayAdapter dataKabupaten = ArrayAdapter.createFromResource(this, R.array.kabupaten, android.R.layout.simple_spinner_item);
-        dataKabupaten.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnKabupaten.setAdapter(dataKabupaten);
+//        ArrayAdapter dataKabupaten = ArrayAdapter.createFromResource(this, R.array.kabupaten, android.R.layout.simple_spinner_item);
+//        dataKabupaten.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spnKabupaten.setAdapter(dataKabupaten);
 
         ArrayAdapter dataPendidikan = ArrayAdapter.createFromResource(this, R.array.pendidikan, android.R.layout.simple_spinner_item);
         dataPendidikan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -236,6 +239,173 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+        parent.getItemAtPosition(position);
+        if (position == 0){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_aceh,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 1){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_bali,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 2){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_bangka_belitung,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 3){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_banten,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 4){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_bengkulu,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 5){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_yogyakarta,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 6){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_jakarta,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 7){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_gorontalo,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 8){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_jambi,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 9){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_jawa_barat,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 10){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_jawa_tengah,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 11){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_jawa_timur,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 12){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_kalimantan_barat,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 13){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_kalimantan_selatan,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 14){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_kalimantan_tengah,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 15){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_kalimantan_timur,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 16){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_kepulauan_riau,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 17){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_lampung,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 18){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_maluku,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 19){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_maluku_utara,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 20){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_ntb,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 21){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_ntt,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 22){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_papua,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 23){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_papua_barat,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 24){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_riau,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 25){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sulawesi_barat,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 26){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sulawesi_selatan,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 27){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sulawesi_tengah,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 28){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sulawesi_tenggara,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 29){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sulawesi_utara,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 30){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sumatera_barat,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 31){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sumatera_selatan,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        } else if (position == 32){
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                    .createFromResource(this, R.array.prov_sumatera_utara,
+                            android.R.layout.simple_spinner_item);
+            spnKabupaten.setAdapter(adapter);
+        }
     }
 
     @Override

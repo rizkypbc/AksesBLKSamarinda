@@ -46,8 +46,8 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.HolderItem
         holder.mNama.setText(currentBerita.judulberita);
         holder.mTanggal.setText(currentBerita.tglkirim);
 
-        String fullUrl = "http://192.168.65.2/kios/" + currentBerita.photoberita;
-
+//        String fullUrl = "http://10.223.242.157/kios/" + currentBerita.photoberita;
+        String fullUrl = "http://putrarizky1410.16mb.com/kios/" + currentBerita.photoberita;
         Picasso.with(mContext)
                 .load(fullUrl)
                 .placeholder(R.drawable.news)
