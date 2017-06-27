@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.asus.sampleblki.FormTambahBerita">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Tanggal Berita"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/editTextTglBerita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Tanggal Berita"
+            android:inputType="text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Judul Berita"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/editTextJudulBerita"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Judul Berita atau Pengumuman Anda"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Deskripsi Berita"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/editTextDeskripsiBerita"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Deskripsi Berita atau Pengumuman Anda"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Photo Berita"
+            android:textSize="12sp" />
+
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Path" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": " />
+
+            <TextView
+                android:id="@+id/textViewPathPhotoBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Path Photo" />
+
+
+        </TableRow>
+
+        <Button
+            android:id="@+id/buttonPilihFilePhotoBerita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Browse File Photo Berita" />
+
+        <Button
+            android:id="@+id/buttonUploadBerita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="btnPencariKerja_Click"
+            android:text="Kirim"
+            android:textAllCaps="true" />
+
+    </LinearLayout>
+</ScrollView>
