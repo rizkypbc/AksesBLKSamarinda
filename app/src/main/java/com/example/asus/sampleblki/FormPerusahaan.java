@@ -40,7 +40,7 @@ public class FormPerusahaan extends AppCompatActivity {
     private EditText txtPassword2Perusahaan;
     private EditText txtNamaPerusahaan, txtAlamatPerusahaan, txtTelepon,
             txtFax, txtEmail, txtWebsite, txtProfil, txtPj, txtJabatan,
-            txtHp, txtKet;
+            txtHp, txtKet, txtSektor, txtBidang, txtJenis;
     private TextView txtPathLogo;
     private static final int STORAGE_PERMISSION_CODE = 123;
     private Button buttonPilihFileLogo;
@@ -58,9 +58,10 @@ public class FormPerusahaan extends AppCompatActivity {
         txtPassword1Perusahaan = (EditText) findViewById(R.id.txt_pwd_perusahaan);
         txtPassword2Perusahaan = (EditText) findViewById(R.id.txt_konfirmasi_perusahaan);
         txtNamaPerusahaan = (EditText) findViewById(R.id.txt_nama_perusahaan);
-        spnJenis = (Spinner) findViewById(R.id.spnJenis);
-        spnSektor = (Spinner) findViewById(R.id.spnSektor);
-        spnBidang = (Spinner) findViewById(R.id.spnBidang);
+//        spnJenis = (Spinner) findViewById(R.id.spnJenis);
+        txtJenis = (EditText) findViewById(R.id.txt_jenis);
+//        spnSektor = (Spinner) findViewById(R.id.spnSektor);
+//        spnBidang = (Spinner) findViewById(R.id.spnBidang);
         txtAlamatPerusahaan = (EditText) findViewById(R.id.txt_alamat_perusahaan);
         spnProvinsi = (Spinner) findViewById(R.id.spnProvinsi);
         spnKab = (Spinner) findViewById(R.id.spnKabupaten);
@@ -73,8 +74,8 @@ public class FormPerusahaan extends AppCompatActivity {
         txtJabatan = (EditText) findViewById(R.id.txt_jabatan);
         txtHp = (EditText) findViewById(R.id.txt_telp_hp);
         txtKet = (EditText) findViewById(R.id.txt_ket_lain);
-//        txtSektor = (EditText) findViewById(R.id.txt_sektor);
-//        txtBidang = (EditText) findViewById(R.id.txt_bidang);
+        txtSektor = (EditText) findViewById(R.id.txt_sektor);
+        txtBidang = (EditText) findViewById(R.id.txt_bidang);
 //        txtAlamatPerusahaan = (EditText) findViewById(R.id.txt_alamat_perusahaan);
         m_AccessServiceAPI = new AccessServiceAPI();
 
@@ -255,18 +256,18 @@ public class FormPerusahaan extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter dataJenis = ArrayAdapter.createFromResource(this, R.array.kejuruan, android.R.layout.simple_spinner_item);
-        dataJenis.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnJenis.setAdapter(dataJenis);
-
-
-        ArrayAdapter dataSektor = ArrayAdapter.createFromResource(this, R.array.sub_kejuruan, android.R.layout.simple_spinner_item);
-        dataSektor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnSektor.setAdapter(dataSektor);
-
-        ArrayAdapter dataBidang = ArrayAdapter.createFromResource(this, R.array.jurusan, android.R.layout.simple_spinner_item);
-        dataBidang.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnBidang.setAdapter(dataBidang);
+//        ArrayAdapter dataJenis = ArrayAdapter.createFromResource(this, R.array.kejuruan, android.R.layout.simple_spinner_item);
+//        dataJenis.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spnJenis.setAdapter(dataJenis);
+//
+//
+//        ArrayAdapter dataSektor = ArrayAdapter.createFromResource(this, R.array.sub_kejuruan, android.R.layout.simple_spinner_item);
+//        dataSektor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spnSektor.setAdapter(dataSektor);
+//
+//        ArrayAdapter dataBidang = ArrayAdapter.createFromResource(this, R.array.jurusan, android.R.layout.simple_spinner_item);
+//        dataBidang.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spnBidang.setAdapter(dataBidang);
 //
 //        ArrayAdapter dataProvinsi = ArrayAdapter.createFromResource(this, R.array.provinsi, android.R.layout.simple_spinner_item);
 //        dataProvinsi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -332,8 +333,8 @@ public class FormPerusahaan extends AppCompatActivity {
 
             new FormPerusahaan.TaskPerusahaan().execute(txtUsernamePerusahaan.getText().toString(),
                     txtPassword1Perusahaan.getText().toString(), txtNamaPerusahaan.getText().toString(),
-                    spnJenis.getSelectedItem().toString(), spnSektor.getSelectedItem().toString(),
-                    spnBidang.getSelectedItem().toString(), txtAlamatPerusahaan.getText().toString(),
+                    txtJenis.getText().toString(), txtSektor.getText().toString(),
+                    txtBidang.getText().toString(), txtAlamatPerusahaan.getText().toString(),
                     spnProvinsi.getSelectedItem().toString(), spnKab.getSelectedItem().toString(),
                     txtTelepon.getText().toString(), txtFax.getText().toString(), txtEmail.getText().toString(),
                     txtWebsite.getText().toString(), txtProfil.getText().toString(), txtPathLogo.getText().toString(),
@@ -397,9 +398,12 @@ public class FormPerusahaan extends AppCompatActivity {
                 i.putExtra("username", txtUsernamePerusahaan.getText().toString());
                 i.putExtra("password", txtPassword1Perusahaan.getText().toString());
                 i.putExtra("nama_perusahaan", txtNamaPerusahaan.getText().toString());
-                i.putExtra("jenis", spnJenis.getSelectedItem().toString());
-                i.putExtra("sektor", spnSektor.getSelectedItem().toString());
-                i.putExtra("bidang", spnBidang.getSelectedItem().toString());
+//                i.putExtra("jenis", spnJenis.getSelectedItem().toString());
+//                i.putExtra("sektor", spnSektor.getSelectedItem().toString());
+//                i.putExtra("bidang", spnBidang.getSelectedItem().toString());
+                i.putExtra("jenis", txtJenis.getText().toString());
+                i.putExtra("sektor", txtSektor.getText().toString());
+                i.putExtra("bidang", txtBidang.getText().toString());
                 i.putExtra("alamat_perusahaan", txtAlamatPerusahaan.getText().toString());
                 i.putExtra("provinsi", spnProvinsi.getSelectedItem().toString());
                 i.putExtra("kab", spnKab.getSelectedItem().toString());

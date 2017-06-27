@@ -99,8 +99,8 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
         spnAgama = (Spinner) findViewById(R.id.spnAgama);
 //        txtPendidikan = (EditText) findViewById(R.id.txt_pendidikan);
         spnPendidikan = (Spinner) findViewById(R.id.spnPendidikan);
-//        txtJurusan = (EditText) findViewById(R.id.txt_jurusan);
-        spnJurusan = (Spinner) findViewById(R.id.spnJurusan);
+        txtJurusan = (EditText) findViewById(R.id.txt_jurusan);
+//        spnJurusan = (Spinner) findViewById(R.id.spnJurusan);
         txtAsal = (EditText) findViewById(R.id.txt_asal_sekolah);
 //        txtKejuruan = (EditText) findViewById(R.id.txt_kejuruan);
         spnKejuruan = (Spinner) findViewById(R.id.spnKejuruan);
@@ -154,9 +154,9 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
         dataPendidikan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnPendidikan.setAdapter(dataPendidikan);
 
-        ArrayAdapter dataJurusan = ArrayAdapter.createFromResource(this, R.array.jurusan, android.R.layout.simple_spinner_item);
-        dataJurusan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnJurusan.setAdapter(dataJurusan);
+//        ArrayAdapter dataJurusan = ArrayAdapter.createFromResource(this, R.array.jurusan, android.R.layout.simple_spinner_item);
+//        dataJurusan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spnJurusan.setAdapter(dataJurusan);
 
         ArrayAdapter dataKejuruan = ArrayAdapter.createFromResource(this, R.array.kejuruan, android.R.layout.simple_spinner_item);
         dataKejuruan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -231,7 +231,7 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
                 radioSexButton.getText().toString(), txtTTL.getText().toString(), txtAlamat.getText().toString(),
                 spnProgram.getSelectedItem().toString(), spnKabupaten.getSelectedItem().toString(), txtNoTelp.getText().toString(),
                 txtEmail.getText().toString(), spnAgama.getSelectedItem().toString(), spnPendidikan.getSelectedItem().toString(),
-                spnJurusan.getSelectedItem().toString(), txtAsal.getText().toString(), spnKejuruan.getSelectedItem().toString(),
+                txtJurusan.getText().toString(), txtAsal.getText().toString(), txtJurusan.getText().toString(),
                 spnSubKejuruan.getSelectedItem().toString(), spnProgram.getSelectedItem().toString(), textViewPath.getText().toString());
 
     }
@@ -478,8 +478,8 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
                 i.putExtra("agama", spnAgama.getSelectedItem().toString());
 //                i.putExtra("pendidikan", txtPendidikan.getText().toString());
                 i.putExtra("pendidikan", spnPendidikan.getSelectedItem().toString());
-//                i.putExtra("jurusan", txtJurusan.getText().toString());
-                i.putExtra("jurusan", spnJurusan.getSelectedItem().toString());
+                i.putExtra("jurusan", txtJurusan.getText().toString());
+//                i.putExtra("jurusan", spnJurusan.getSelectedItem().toString());
                 i.putExtra("asal_sekolah", txtAsal.getText().toString());
 //                i.putExtra("kejuruan", txtKejuruan.getText().toString());
                 i.putExtra("kejuruan", spnKejuruan.getSelectedItem().toString());
@@ -492,7 +492,7 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
                 setResult(1, i);
                 finish();
             } else {
-                Toast.makeText(FormPelatihan.this, "Registration fail!", Toast.LENGTH_LONG).show();
+                Toast.makeText(FormPelatihan.this, "Registration Gagal!", Toast.LENGTH_LONG).show();
 
             }
         }

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="120dp"
+                android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/rm"
                 android:id="@+id/img_icon"
@@ -42,6 +42,17 @@
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"/>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_calender"
+                    android:layout_marginRight="5dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -49,6 +60,7 @@
                     android:text="Tanggalnya"
                     android:textSize="14dp"/>
 
+                </LinearLayout>
             </LinearLayout>
 
         </RelativeLayout>

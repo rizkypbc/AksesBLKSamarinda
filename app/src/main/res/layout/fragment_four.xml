@@ -11,21 +11,49 @@
 
 
     <TextView
+        android:id="@+id/tv_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="18sp"
         android:text="Klik Icon dibawah jika ingin mengisi formulir perusahaan"
         android:textColor="#3d108b"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"/>
 
     <ImageView
         android:id="@+id/btnPerusahaan"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/forms"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@+id/tv_form"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
+
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Klik Icon dibawah jika ingin login perusahaan"
+        android:textColor="#101a8b"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/btnLoginPerusahaan"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/btnLoginPerusahaan"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/account"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/btnPerusahaan"
+        android:layout_alignStart="@+id/btnPerusahaan"
+        android:layout_marginBottom="16dp" />
 
     <!--<Button-->
         <!--android:id="@+id/btnPerusahaan"-->

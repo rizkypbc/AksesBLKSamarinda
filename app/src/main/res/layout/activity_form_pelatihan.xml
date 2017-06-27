@@ -245,18 +245,22 @@
             android:text="Jurusan"
             android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnJurusan"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <!--<Spinner-->
+            <!--android:id="@+id/spnJurusan"-->
+            <!--style="@android:style/Widget.Holo.Light.Spinner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:backgroundTint="@color/colorPrimary"-->
+            <!--android:prompt="@string/nama_jurusan" />-->
+
+        <EditText
+            android:id="@+id/txt_jurusan"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Jurusan Anda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_jurusan" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_jurusan"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+            android:textSize="14sp"/>
 
         <TextView
             android:layout_width="wrap_content"

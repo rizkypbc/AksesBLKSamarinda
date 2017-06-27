@@ -115,13 +115,22 @@
             android:text="Jenis Perusahaan"
             android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnJenis"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <EditText
+            android:id="@+id/txt_jenis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kabupaten" />
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Jenis Perusahaan Anda"
+            android:textSize="14sp" />
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spnJenis"-->
+            <!--style="@android:style/Widget.Holo.Light.Spinner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:backgroundTint="@color/colorPrimary"-->
+            <!--android:prompt="@string/nama_kabupaten" />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -131,18 +140,22 @@
             android:text="Sektor Industri"
             android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnSektor"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <EditText
+            android:id="@+id/txt_sektor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kabupaten" />
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Sektor Perusahaan Anda"
+            android:textSize="14sp" />
 
-        <!--<EditText-->
-        <!--android:id="@+id/txt_sektor"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"/>-->
+        <!--<Spinner-->
+            <!--android:id="@+id/spnSektor"-->
+            <!--style="@android:style/Widget.Holo.Light.Spinner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:backgroundTint="@color/colorPrimary"-->
+            <!--android:prompt="@string/nama_kabupaten" />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,13 +165,22 @@
             android:text="Bidang Usaha"
             android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnBidang"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <EditText
+            android:id="@+id/txt_bidang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kabupaten" />
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Bidang Perusahaan Anda"
+            android:textSize="14sp" />
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spnBidang"-->
+            <!--style="@android:style/Widget.Holo.Light.Spinner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:backgroundTint="@color/colorPrimary"-->
+            <!--android:prompt="@string/nama_kabupaten" />-->
 
         <TextView
             android:layout_width="wrap_content"

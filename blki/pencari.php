@@ -1,5 +1,6 @@
+<?php require_once("PDOConnection.php");?>
 <?php
-include("PDOConnection.php");
+// include("PDOConnection.php");
 
 //Define some value
 define("ACTION_ADD_USER", "add");
