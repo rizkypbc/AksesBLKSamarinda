@@ -3,18 +3,6 @@
     <string name="pelatihan">Form Pelatihan</string>
 
     <!--<string name="country_prompt">Choose a country</string>-->
-    <string name="country_name">Choose a country</string>
-    <string-array name="countries">
-        <item>India</item>
-        <item>London</item>
-        <item>USA</item>
-        <item>Burma</item>
-        <item>China</item>
-        <item>Malaysia</item>
-        <item>singapore</item>
-        <item>Italy</item>
-        <item>Russia</item>
-    </string-array>
 
     <string name="nama_provinsi">Pilih Provinsi</string>
     <string-array name="provinsi">
@@ -82,14 +70,19 @@
         <item>S1</item>
     </string-array>
 
-    <string name="nama_jurusan">Pilih Jurusan</string>
     <string-array name="jurusan">
-        <item>Teknik Informatika</item>
-        <item>Ilmu Komputer</item>
-        <item>Teknik Mesin</item>
-        <item>Teknik Sipil</item>
-        <item>Teknik Pertambangan</item>
-        <item>Teknik Kimia</item>
+        <item>Agribisnis</item>
+        <item>Bangunan</item>
+        <item>Bisnis dan Manajemen</item>
+        <item>Garmen Apparel</item>
+        <item>Processing</item>
+        <item>Refrigeration</item>
+        <item>Teknik Elektronika</item>
+        <item>Teknik Las</item>
+        <item>Teknik Listrik</item>
+        <item>Teknik Manufaktur</item>
+        <item>Teknik Otomotif</item>
+        <item>Teknologi Informasi Komunikasi</item>
     </string-array>
 
     <string name="nama_kejuruan">Pilih Kejuruan</string>
@@ -695,6 +688,54 @@
         <item>Kota Mandailing Natal</item>
         <item>Kota Medan</item>
         <item>Padang Lawas</item>
+    </string-array>
+
+    <string name="nama_jenis">Pilih Jenis Perusahaan</string>
+    <string-array name="jenis">
+        <item>Instansi Pemerintah</item>
+        <item>BUMN/BUMD</item>
+        <item>Koperasi</item>
+        <item>Perusahaan Swasta</item>
+        <item>PPTKIS</item>
+        <item>Badan Usaha Lainnya</item>
+        <item>Perorangan</item>
+    </string-array>
+
+    <string name="nama_sektor">Pilih Sektor Perusahaan</string>
+    <string-array name="sektor">
+        <item>Industri Pengolahan</item>
+        <item>Jasa-Jasa</item>
+        <item>Keuangan, Real Estate &amp; Jasa Perusahaan</item>
+        <item>Konstruksi</item>
+        <item>Listrik, Gas, &amp; Air Bersih</item>
+        <item>Pengangkitan &amp; Komunikasi</item>
+        <item>Perdagangan, Hotel &amp; Restoran</item>
+        <item>Pertambangan &amp; Penggalian</item>
+        <item>Pertanian, Peternakan, Kehutanan &amp; Perikanan</item>
+    </string-array>
+
+    <string name="nama_bidang">Pilih Bidang Perusahaan</string>
+    <string-array name="bidang">
+        <item>Agribisnis</item>
+        <item>Akuntan Auditor</item>
+        <item>Asuransi</item>
+        <item>Biro Perjalanan</item>
+        <item>Bubur Kertas/Kertas</item>
+        <item>Desain Interior</item>
+        <item>Ekspedisi/Agen Kargo</item>
+        <item>Elektronika/Semikonduktor</item>
+        <item>Energi</item>
+        <item>Farmasi</item>
+        <item>Furnitur</item>
+        <item>Garmen/Tekstil</item>
+        <item>Hiburan</item>
+        <item>Hotel</item>
+        <item>Hukum</item>
+        <item>Internet</item>
+        <item>Jasa Pembiayaan</item>
+        <item>Jasa Pemindahan</item>
+        <item>Jasa Pengamanan</item>
+        <item>Kehutanan/Perkayuan</item>
     </string-array>
 
 </resources>

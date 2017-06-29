@@ -26,7 +26,7 @@
 
 	function getUserByUsernameAndPassword($username, $password){
 		global $connection;
-		$query = "SELECT * from perusahaan where username = '{$username}' and password = '{$password}'";
+		$query = "SELECT * from perusahaan where username = '{$username}' and password = '{$password}' and status = 'Aktif'";
 	
 		$user = mysqli_query($connection, $query);
 		

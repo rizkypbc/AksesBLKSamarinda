@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.asus.sampleblki">
+    package="com.akses.blk.samarinda">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,11 +22,22 @@
         </activity>
         <activity
             android:name=".FormPelatihan"
-            android:label="@string/pelatihan"
             android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".FormPelatihanBaru"
+            android:label="Form Pelatihan"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FormPencariKerja"
             android:label="Form Pencari Kerja"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FormPencaker"
+            android:label="Form Pencari Kerja Baru"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FormRegistrasiPerusahaan"
+            android:label="Form Registrasi Perusahaan Baru"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FormPerusahaan"
@@ -38,12 +49,12 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.asus.sampleblki.MainActivity" />
+                android:value="com.akses.blk.samarinda.MainActivity" />
         </activity>
         <activity
             android:name=".FormLoginPerusahaan"
             android:label="Form Login Perusahaan"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".WelcomeActivity" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
@@ -60,10 +71,14 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormTambahBerita"
+        <activity
+            android:name=".FormTambahBerita"
             android:label="Form Tambah Berita"
-            android:parentActivityName=".FormLoginPerusahaan">
-        </activity>
+            android:parentActivityName=".FormLoginPerusahaan"></activity>
+        <activity
+            android:name=".Profil"
+            android:label="Profil BLK Samarinda"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

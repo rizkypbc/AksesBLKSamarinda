@@ -4,7 +4,7 @@ require_once 'include/db_functions.php';
 // json response array
 $response = array("error" => FALSE);
  
-if (isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['username']) && isset($_POST['password']) ) {
  
     // receiving the post params
     $username = $_POST['username'];
@@ -18,8 +18,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $response["error"] = FALSE;
 		$response["user"]["id"] = $user["id"];
         $response["user"]["username"] = $user["username"];
-         $response["user"]["password"] = $user["password"];
-		
+        $response["user"]["password"] = $user["password"];
+        $response["user"]["status"] = 'Aktif';
+        
         echo json_encode($response);
     } else {
         // user is not found with the credentials

@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.asus.sampleblki.FormTambahBerita">
+    tools:context="com.akses.blk.samarinda.FormTambahBerita">
 
 
     <LinearLayout
@@ -17,24 +17,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Tanggal Berita"
-            android:textSize="12sp" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:paddingBottom="5dp"-->
+            <!--android:text="Tanggal Berita"-->
+            <!--android:textSize="12sp" />-->
 
-        <EditText
-            android:id="@+id/editTextTglBerita"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
-            android:ems="5"
-            android:gravity="top"
-            android:hint="Isi Tanggal Berita"
-            android:inputType="text"
-            android:textSize="14sp" />
+        <!--<EditText-->
+            <!--android:id="@+id/editTextTglBerita"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/custom_edit_text"-->
+            <!--android:ems="5"-->
+            <!--android:gravity="top"-->
+            <!--android:hint="Isi Tanggal Berita"-->
+            <!--android:inputType="text"-->
+            <!--android:textSize="14sp" />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +51,6 @@
             android:background="@drawable/custom_edit_text"
             android:ems="5"
             android:gravity="top"
-            android:hint="Isi Judul Berita atau Pengumuman Anda"
             android:inputType="textMultiLine"
             android:textSize="14sp" />
 
@@ -71,7 +70,6 @@
             android:background="@drawable/custom_edit_text"
             android:ems="5"
             android:gravity="top"
-            android:hint="Isi Deskripsi Berita atau Pengumuman Anda"
             android:inputType="textMultiLine"
             android:textSize="14sp" />
 

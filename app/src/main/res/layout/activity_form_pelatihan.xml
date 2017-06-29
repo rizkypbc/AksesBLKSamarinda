@@ -41,7 +41,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Nama Lengkap Anda"
             android:textSize="14sp">
 
             <requestFocus />
@@ -96,7 +95,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Tempat Tanggal Lahir Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -113,7 +111,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Alamat Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -175,7 +172,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Nomor Telp Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -192,7 +188,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Email Anda Jika Ada"
             android:textSize="14sp" />
 
         <TextView
@@ -257,7 +252,6 @@
             android:id="@+id/txt_jurusan"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Jurusan Anda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"/>
@@ -276,7 +270,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Asal Sekolah Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -293,7 +286,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kejuruan" />
+            android:entries="@array/jurusan"/>
 
         <!--<EditText-->
         <!--android:id="@+id/txt_kejuruan"-->
@@ -334,8 +327,7 @@
             style="@android:style/Widget.Holo.Light.Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/country_name" />
+            android:backgroundTint="@color/colorPrimary" />
 
         <!--<EditText-->
         <!--android:id="@+id/txt_program"-->
@@ -395,6 +387,7 @@
             <!--android:textSize="12sp" />-->
 
         <Button
+            android:id="@+id/buttonUpload"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

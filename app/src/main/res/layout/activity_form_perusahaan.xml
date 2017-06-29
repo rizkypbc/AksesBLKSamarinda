@@ -41,7 +41,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Username Anda"
             android:textSize="14sp">
 
             <requestFocus />
@@ -61,7 +60,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Password Anda"
             android:inputType="textPassword"
             android:textSize="14sp" />
 
@@ -79,7 +77,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Konfirmasi Password Anda"
             android:inputType="textPassword"
             android:textSize="14sp" />
 
@@ -104,7 +101,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Nama Perusahaan Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -115,22 +111,22 @@
             android:text="Jenis Perusahaan"
             android:textSize="12sp" />
 
-        <EditText
-            android:id="@+id/txt_jenis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
-            android:ems="5"
-            android:hint="Isi Jenis Perusahaan Anda"
-            android:textSize="14sp" />
-
-        <!--<Spinner-->
-            <!--android:id="@+id/spnJenis"-->
-            <!--style="@android:style/Widget.Holo.Light.Spinner"-->
+        <!--<EditText-->
+            <!--android:id="@+id/txt_jenis"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:backgroundTint="@color/colorPrimary"-->
-            <!--android:prompt="@string/nama_kabupaten" />-->
+            <!--android:background="@drawable/custom_edit_text"-->
+            <!--android:ems="5"-->
+            <!--android:hint="Isi Jenis Perusahaan Anda"-->
+            <!--android:textSize="14sp" />-->
+
+        <Spinner
+            android:id="@+id/spnJenis"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_jenis" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -140,22 +136,22 @@
             android:text="Sektor Industri"
             android:textSize="12sp" />
 
-        <EditText
-            android:id="@+id/txt_sektor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
-            android:ems="5"
-            android:hint="Isi Sektor Perusahaan Anda"
-            android:textSize="14sp" />
-
-        <!--<Spinner-->
-            <!--android:id="@+id/spnSektor"-->
-            <!--style="@android:style/Widget.Holo.Light.Spinner"-->
+        <!--<EditText-->
+            <!--android:id="@+id/txt_sektor"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:backgroundTint="@color/colorPrimary"-->
-            <!--android:prompt="@string/nama_kabupaten" />-->
+            <!--android:background="@drawable/custom_edit_text"-->
+            <!--android:ems="5"-->
+            <!--android:hint="Isi Sektor Perusahaan Anda"-->
+            <!--android:textSize="14sp" />-->
+
+        <Spinner
+            android:id="@+id/spnSektor"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_sektor" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -165,22 +161,22 @@
             android:text="Bidang Usaha"
             android:textSize="12sp" />
 
-        <EditText
-            android:id="@+id/txt_bidang"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
-            android:ems="5"
-            android:hint="Isi Bidang Perusahaan Anda"
-            android:textSize="14sp" />
-
-        <!--<Spinner-->
-            <!--android:id="@+id/spnBidang"-->
-            <!--style="@android:style/Widget.Holo.Light.Spinner"-->
+        <!--<EditText-->
+            <!--android:id="@+id/txt_bidang"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:backgroundTint="@color/colorPrimary"-->
-            <!--android:prompt="@string/nama_kabupaten" />-->
+            <!--android:background="@drawable/custom_edit_text"-->
+            <!--android:ems="5"-->
+            <!--android:hint="Isi Bidang Perusahaan Anda"-->
+            <!--android:textSize="14sp" />-->
+
+        <Spinner
+            android:id="@+id/spnBidang"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_bidang" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -197,7 +193,6 @@
             android:background="@drawable/custom_edit_text"
             android:ems="5"
             android:gravity="top"
-            android:hint="Isi Alamat Perusahaan Anda"
             android:inputType="textMultiLine"
             android:textSize="14sp" />
 
@@ -263,7 +258,6 @@
                 android:layout_below="@+id/tv_telp"
                 android:background="@drawable/custom_edit_text"
                 android:ems="5"
-                android:hint="Isi Telepon Perusahaan Anda"
                 android:textSize="12sp" />
 
             <TextView
@@ -285,7 +279,6 @@
                 android:layout_below="@id/tv_fax"
                 android:background="@drawable/custom_edit_text"
                 android:ems="5"
-                android:hint="Isi Fax Perusahaan Anda"
                 android:textSize="12sp" />
 
         </RelativeLayout>
@@ -311,7 +304,6 @@
                 android:layout_below="@+id/tv_email"
                 android:background="@drawable/custom_edit_text"
                 android:ems="5"
-                android:hint="Isi Email Perusahaan Anda"
                 android:textSize="12sp" />
 
             <TextView
@@ -333,7 +325,6 @@
                 android:layout_below="@id/tv_web"
                 android:background="@drawable/custom_edit_text"
                 android:ems="5"
-                android:hint="Isi Website Perusahaan Anda"
                 android:textSize="12sp" />
 
         </RelativeLayout>
@@ -353,7 +344,6 @@
             android:background="@drawable/custom_edit_text"
             android:ems="5"
             android:gravity="top"
-            android:hint="Isi Profil Perusahaan Anda"
             android:inputType="textMultiLine"
             android:textSize="14sp" />
 
@@ -422,7 +412,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Penanggung Jawab Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -439,7 +428,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Jabatan Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -456,7 +444,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi No Telp atau Hp Perusahaan Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -474,11 +461,11 @@
             android:background="@drawable/custom_edit_text"
             android:ems="5"
             android:gravity="top"
-            android:hint="Isi Keterangan Lain"
             android:inputType="textMultiLine"
             android:textSize="14sp" />
 
         <Button
+            android:id="@+id/buttonUploadPerusahaan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

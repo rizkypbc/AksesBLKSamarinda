@@ -219,7 +219,7 @@
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/txt_asal_sekolah"
+            android:id="@+id/txt_asal_sekolah_pencaker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
@@ -435,6 +435,7 @@
 
 
         <Button
+            android:id="@+id/buttonUploadPencaker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

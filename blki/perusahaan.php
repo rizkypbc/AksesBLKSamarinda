@@ -33,6 +33,7 @@ if(isset($action)){
 	$jabatan = $_POST['jabatan'];
 	$hp = $_POST['hp'];
 	$ket_lain = $_POST['ket_lain'];
+	// $status = $_POST['status'];
 	
 
 	if(ACTION_ADD_USER == $action){
@@ -68,7 +69,7 @@ echo(json_encode(array("result" => $result)));
 
 function insertUser($cnn, $username, $password, $nama_perusahaan, $jenis, $sektor, $bidang, $alamat_perusahaan, $provinsi, $kab, $telepon, $fax, $email, $website, $profil_perusahaan, $logo, $pj, $jabatan, $hp, $ket_lain){
 
-	$query = "INSERT INTO PERUSAHAAN(USERNAME, PASSWORD, NAMA_PERUSAHAAN, JENIS, SEKTOR, BIDANG, ALAMAT_PERUSAHAAN, PROVINSI, KAB, TELEPON, FAX, EMAIL, WEBSITE, PROFIL_PERUSAHAAN, LOGO, PJ, JABATAN, HP, KET_LAIN) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	$query = "INSERT INTO PERUSAHAAN(USERNAME, PASSWORD, NAMA_PERUSAHAAN, JENIS, SEKTOR, BIDANG, ALAMAT_PERUSAHAAN, PROVINSI, KAB, TELEPON, FAX, EMAIL, WEBSITE, PROFIL_PERUSAHAAN, LOGO, PJ, JABATAN, HP, KET_LAIN, STATUS) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Non Aktif')";
 	$stmt = $cnn->prepare($query);
 	// $stmt->bindParam(1, $id);
 	$stmt->bindParam(1, $username);
@@ -90,6 +91,7 @@ function insertUser($cnn, $username, $password, $nama_perusahaan, $jenis, $sekto
 	$stmt->bindParam(17, $jabatan);
 	$stmt->bindParam(18, $hp);
 	$stmt->bindParam(19, $ket_lain);
+	// $stmt->bindParam(20, $status);
 	$stmt->execute();
 }
 
