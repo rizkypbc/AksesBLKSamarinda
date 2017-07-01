@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.akses.blk.samarinda.FormPelatihan;
 import com.akses.blk.samarinda.FormPelatihanBaru;
 import com.akses.blk.samarinda.R;
 

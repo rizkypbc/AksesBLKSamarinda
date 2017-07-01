@@ -26,10 +26,12 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.HolderItem
     private Context mContext;
     private ArrayList<Berita> mBerita;
 
+
     public BeritaAdapter(Context context, ArrayList<Berita> berita){
         this.mContext = context;
         this.mBerita = berita;
     }
+
 
     @Override
     public HolderItem onCreateViewHolder(ViewGroup parent, int viewType){
@@ -43,14 +45,14 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.HolderItem
 
         final Berita currentBerita = mBerita.get(position);
 
-        holder.mNama.setText(currentBerita.judulberita);
-        holder.mTanggal.setText(currentBerita.tglkirim);
+//        holder.mNama.setText(currentBerita.judulberita);
+//        holder.mTanggal.setText(currentBerita.tglkirim);
 
-//        holder.mNama.setText(currentBerita.judul);
-//        holder.mTanggal.setText(currentBerita.tanggal);
+        holder.mNama.setText(currentBerita.judul);
+        holder.mTanggal.setText(currentBerita.tanggal);
 
-//        String fullUrl = "http://192.168.43.212/uploadberita/upload/" + currentBerita.nama_file;
-        String fullUrl = "http://putrarizky1410.16mb.com/kios/" + currentBerita.photoberita;
+        String fullUrl = "http://aksesblk-samarinda.com/aksesblksamarinda/img/berita/" + currentBerita.nama_file;
+//        String fullUrl = "http://aksesblk-samarinda.com/aksesblksamarinda/kios/" + currentBerita.photoberita;
         Picasso.with(mContext)
                 .load(fullUrl)
                 .placeholder(R.drawable.news)

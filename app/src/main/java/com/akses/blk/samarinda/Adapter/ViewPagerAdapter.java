@@ -17,7 +17,7 @@ import com.akses.blk.samarinda.Fragments.FragmentTwo;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 4;
-    private String tabTitles[] = new String[]{"Berita", "Pelatihan", "Pencari", "Perusahaan"};
+    private String tabTitles[] = new String[]{"Berita", "Pelatihan", "Bursa Kerja", "Perusahaan"};
     private Context context;
 
     public ViewPagerAdapter(FragmentManager fragmentManager, Context context){

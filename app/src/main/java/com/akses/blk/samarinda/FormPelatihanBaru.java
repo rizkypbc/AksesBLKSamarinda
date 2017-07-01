@@ -820,7 +820,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                           String jurusan, String asal_sekolah, String kejuruan, String sub_kejuruan, String program) {
 
         // ip komputer server
-        String upLoadServerUri = "http://192.168.43.212/blki/pelatihan.php";
+        String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/blk/pelatihan.php";
         String fileName = sourceFileUri;
 
         HttpURLConnection conn = null;
@@ -991,6 +991,9 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
+            } else {
+
+                Toast.makeText(FormPelatihanBaru.this, "Gagal Input Data", Toast.LENGTH_LONG).show();
             }
 
             // close the streams //

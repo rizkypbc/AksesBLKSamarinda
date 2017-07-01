@@ -70,6 +70,8 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         txtViewPathCV = (TextView)findViewById(R.id.textViewPathCv);
 
         txtUsername = (EditText) findViewById(R.id.txt_username);
+
+
         txtPassword1 = (EditText) findViewById(R.id.txt_pwd);
         txtPassword2 = (EditText) findViewById(R.id.txt_konfirmasi);
         txtNoktp = (EditText) findViewById(R.id.txt_noktp);
@@ -417,7 +419,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                           String ketrampilan, String pengalaman, String alumni) {
 
         // ip komputer server
-        String upLoadServerUri = "http://192.168.43.212/blki/pencariNew.php";
+        String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/blk/pencariNew.php";
         String fileName = sourceFileUri;
 //        String fileNameCV = sourceFileUri1;
 
@@ -631,7 +633,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
     public int uploadFileCV(String sourceFileUriCV) {
 
         // ip komputer server
-        String upLoadServerUri = "http://192.168.43.212/blki/pencariFile.php";
+        String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/blk/pencariFile.php";
         String fileName = sourceFileUriCV;
 //        String fileNameCV = sourceFileUri1;
 

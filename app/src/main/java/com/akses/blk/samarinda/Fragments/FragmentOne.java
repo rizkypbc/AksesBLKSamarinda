@@ -1,6 +1,8 @@
 package com.akses.blk.samarinda.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,6 +24,7 @@ import com.akses.blk.samarinda.R;
 import com.kosalgeek.android.json.JsonConverter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ASUS on 09/05/2017.
@@ -29,11 +32,9 @@ import java.util.ArrayList;
 
 public class FragmentOne extends Fragment {
 
-    SearchView sv;
 
     final String TAG = "Fragment One";
 
-    RecyclerView rvItem;
     public FragmentOne(){
         // Required empty public constructor
     }
@@ -82,7 +83,7 @@ public class FragmentOne extends Fragment {
 //        recyclerView.setAdapter(adapter);
 
 //        String url = "http://192.168.43.212/uploadberita/berita.php";
-        String url = "http://putrarizky1410.16mb.com/kios/berita.php";
+        String url = "http://aksesblk-samarinda.com/aksesblksamarinda/uploadberita/filterBerita.php";
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 url, new Response.Listener<String>() {
             @Override
@@ -101,7 +102,7 @@ public class FragmentOne extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         if (error != null) {
                             Log.d(TAG, error.getMessage());
-                            Toast.makeText(getContext(), "Something Wrong", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Periksa Koneksi Internet Anda", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -110,4 +111,6 @@ public class FragmentOne extends Fragment {
         MySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
         return rootView;
     }
+
+
 }

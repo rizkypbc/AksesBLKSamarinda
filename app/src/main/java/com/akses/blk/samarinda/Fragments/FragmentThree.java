@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.akses.blk.samarinda.FormPencaker;
-import com.akses.blk.samarinda.FormPencariKerja;
 import com.akses.blk.samarinda.R;
 
 /**

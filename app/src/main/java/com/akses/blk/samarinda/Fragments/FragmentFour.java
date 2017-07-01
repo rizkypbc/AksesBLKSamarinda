@@ -10,7 +10,6 @@ import android.widget.ImageView;
 
 
 import com.akses.blk.samarinda.FormLoginPerusahaan;
-import com.akses.blk.samarinda.FormPerusahaan;
 import com.akses.blk.samarinda.FormRegistrasiPerusahaan;
 import com.akses.blk.samarinda.R;
 

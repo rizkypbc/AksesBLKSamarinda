@@ -28,16 +28,16 @@ public class BeritaDetail extends AppCompatActivity {
 
         if (getIntent().getSerializableExtra("berita") != null) {
             Berita berita = (Berita) getIntent().getSerializableExtra("berita");
-//            String fullUrl = "http://192.168.43.212/uploadberita/upload/" + berita.nama_file;
-            String fullUrl = "http://putrarizky1410.16mb.com/kios/" + berita.photoberita;
+            String fullUrl = "http://aksesblk-samarinda.com/aksesblksamarinda/img/berita/" + berita.nama_file;
+//            String fullUrl = "http://aksesblk-samarinda.com/aksesblksamarinda/kios/" + berita.photoberita;
             Picasso.with(this)
                     .load(fullUrl)
                     .placeholder(R.drawable.news)
                     .error(android.R.drawable.stat_notify_error)
                     .into(ivImage);
 
-            tvTitle.setText(berita.judulberita);
-//            tvTitle.setText(berita.judul);
+//            tvTitle.setText(berita.judulberita);
+            tvTitle.setText(berita.judul);
             tvDesc.setText(berita.deskripsi);
         }
     }

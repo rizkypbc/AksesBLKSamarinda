@@ -41,7 +41,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Username Anda"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+            android:inputType="text"
             android:textSize="14sp">
 
             <requestFocus />
@@ -61,7 +62,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Password Anda"
             android:inputType="textPassword"
             android:textSize="14sp" />
 
@@ -79,7 +79,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Konfirmasi Password Anda"
             android:inputType="textPassword"
             android:textSize="14sp" />
 
@@ -104,7 +103,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi No KTP Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -121,8 +119,14 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Nama Anda"
             android:textSize="14sp" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="* Nama Harus Sesuai dengan Ijazah Terakhir \n Jika Tidak Maka Pendaftaran Tidak akan diproses"
+        android:textSize="10sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -172,7 +176,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Tempat Tanggal Lahir Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -224,7 +227,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Asal Sekolah Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -261,7 +263,6 @@
             android:background="@drawable/custom_edit_text"
             android:ems="5"
             android:gravity="top"
-            android:hint="Isi Ketrampilan Anda"
             android:inputType="textMultiLine"
             android:textSize="14sp" />
 

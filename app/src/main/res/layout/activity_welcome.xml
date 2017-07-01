@@ -27,17 +27,59 @@
         android:textSize="20sp"
         android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:id="@+id/btnTambahBerita"
+    <TextView
+        android:id="@+id/tv_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Berita" />
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Klik Icon dibawah jika ingin menambah berita atau pengumuman"
+        android:textColor="#3d108b"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"/>
 
-    <Button
-        android:id="@+id/logout"
+    <ImageView
+        android:id="@+id/btnTambahBerita"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/news_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
+
+
+    <TextView
+        android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="logout" />
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Klik Icon dibawah jika ingin logout"
+        android:textColor="#101a8b"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/btnTambahBerita" />
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+    <!--<Button-->
+        <!--android:id="@+id/btnTambahBerita"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Tambah Berita" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/logout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="logout" />-->
 
 
 </LinearLayout>

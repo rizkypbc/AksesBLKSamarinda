@@ -21,26 +21,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FormPelatihan"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity
             android:name=".FormPelatihanBaru"
             android:label="Form Pelatihan"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".FormPencariKerja"
+            android:name=".FormPencaker"
             android:label="Form Pencari Kerja"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".FormPencaker"
-            android:label="Form Pencari Kerja Baru"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".FormRegistrasiPerusahaan"
-            android:label="Form Registrasi Perusahaan Baru"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".FormPerusahaan"
             android:label="Form Registrasi Perusahaan"
             android:parentActivityName=".MainActivity" />
         <activity

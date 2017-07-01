@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.akses.blk.samarinda.prefs.UserInfo;
@@ -17,7 +18,7 @@ import com.akses.blk.samarinda.prefs.UserSession;
 public class WelcomeActivity extends AppCompatActivity {
 
 
-    private Button logout, tambahBerita;
+    private ImageView logout, tambahBerita;
     private TextView tvUsername, tvEmail;
     private UserInfo userInfo;
     private UserSession userSession;
@@ -29,8 +30,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         userInfo        = new UserInfo(this);
         userSession     = new UserSession(this);
-        logout          = (Button)findViewById(R.id.logout);
-        tambahBerita    = (Button)findViewById(R.id.btnTambahBerita);
+        logout          = (ImageView)findViewById(R.id.logout);
+        tambahBerita    = (ImageView)findViewById(R.id.btnTambahBerita);
         tvUsername      = (TextView)findViewById(R.id.key_username);
         tvEmail         = (TextView)findViewById(R.id.key_email);
 

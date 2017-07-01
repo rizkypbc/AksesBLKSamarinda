@@ -9,16 +9,16 @@ import java.util.Date;
 
 public class Berita implements Serializable {
 
-//    public String tanggal;
-//    public String judul;
-//    public String deskripsi;
-//    public String nama_file;
-//    public String Keterangan;
-
-
-    public String photoberita;
-    public String tglkirim;
-    public String judulberita;
+    public String tanggal;
+    public String judul;
     public String deskripsi;
+    public String nama_file;
+    public String Keterangan;
+
+
+//    public String photoberita;
+//    public String tglkirim;
+//    public String judulberita;
+//    public String deskripsi;
 
     }

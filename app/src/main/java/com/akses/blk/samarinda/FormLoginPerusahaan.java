@@ -95,11 +95,13 @@ public class FormLoginPerusahaan extends AppCompatActivity implements View.OnCli
                         // Error in login. Get the error message
                         String errorMsg = jObj.getString("error_msg");
                         toast(errorMsg);
+                        progressDialog.hide();
                     }
                 } catch (JSONException e) {
                     // JSON error
                     e.printStackTrace();
                     toast("Json error: " + e.getMessage());
+
                 }
 
             }
@@ -130,7 +132,7 @@ public class FormLoginPerusahaan extends AppCompatActivity implements View.OnCli
     }
 
     private void toast(String x) {
-        Toast.makeText(this, x, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, x, Toast.LENGTH_LONG).show();
     }
 
     @Override

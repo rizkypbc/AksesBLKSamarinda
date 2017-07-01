@@ -29,9 +29,99 @@
         <!--</EditText>-->
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:typeface="serif"
+            android:layout_marginTop="12dp"
+            android:text="KEJURUAN DAN PROGRAM"
+            android:textSize="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Kejuruan"
+            android:textSize="12sp" />
+
+
+        <Spinner
+            android:id="@+id/spnKejuruan"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:entries="@array/jurusan"/>
+
+        <!--<EditText-->
+        <!--android:id="@+id/txt_kejuruan"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Sub Kejuruan"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnSubKejuruan"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_sub_kejuruan" />
+
+        <!--<EditText-->
+        <!--android:id="@+id/txt_sub_kejuruan"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Program"
+
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnProgram"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary" />
+
+       <!--<View-->
+           <!--android:layout_marginTop="12dp"-->
+           <!--android:layout_width="match_parent"-->
+           <!--android:background="#000000"-->
+           <!--android:layout_height="30dp"-->
+           <!--&gt;-->
+       <!--</View>-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:typeface="serif"
+            android:layout_marginTop="12dp"
+            android:text="DATA PRIBADI"
+            android:textSize="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"/>
+
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
+            android:layout_marginTop="12dp"
             android:text="Nama Lengkap"
             android:textSize="12sp" />
 
@@ -45,6 +135,13 @@
 
             <requestFocus />
         </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="* Nama Harus Sesuai dengan Ijazah Terakhir \n Jika Tidak Maka Pendaftaran Tidak akan diproses"
+            android:textSize="10sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -272,62 +369,8 @@
             android:ems="5"
             android:textSize="14sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Kejuruan"
-            android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnKejuruan"
-            style="@android:style/Widget.Holo.Light.Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:entries="@array/jurusan"/>
 
-        <!--<EditText-->
-        <!--android:id="@+id/txt_kejuruan"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Sub Kejuruan"
-            android:textSize="12sp" />
-
-        <Spinner
-            android:id="@+id/spnSubKejuruan"
-            style="@android:style/Widget.Holo.Light.Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_sub_kejuruan" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_sub_kejuruan"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Program"
-            android:textSize="12sp" />
-
-        <Spinner
-            android:id="@+id/spnProgram"
-            style="@android:style/Widget.Holo.Light.Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary" />
 
         <!--<EditText-->
         <!--android:id="@+id/txt_program"-->

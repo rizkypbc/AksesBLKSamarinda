@@ -484,7 +484,7 @@ public class FormRegistrasiPerusahaan extends AppCompatActivity implements View.
                           , String hp , String ket_lain) {
 
         // ip komputer server
-        String upLoadServerUri = "http://192.168.43.212/blki/perusahaanRegistrasi.php";
+        String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/blk/perusahaanRegistrasi.php";
         String fileName = sourceFileUri;
 
         HttpURLConnection conn = null;

@@ -157,7 +157,7 @@ public class FormTambahBerita extends AppCompatActivity implements View.OnClickL
     public int uploadFile(String sourceFileUri, String judul, String deskripsi) {
 
         // ip komputer server
-        String upLoadServerUri = "http://192.168.43.212/uploadberita/server.php";
+        String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/uploadberita/Server.php";
         String fileName = sourceFileUri;
 
         HttpURLConnection conn = null;

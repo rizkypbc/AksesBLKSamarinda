@@ -1,7 +1,9 @@
 package com.akses.blk.samarinda;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -10,12 +12,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.akses.blk.samarinda.Adapter.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DialogInterface alert;
+
+    private AlertDialog alert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
         menu.setDisplayShowHomeEnabled(true);
         menu.setLogo(R.mipmap.ic_launcher);
         menu.setDisplayUseLogoEnabled(true);
+
+//        Context context = getApplicationContext(); // or activity.getApplicationContext()
+//        PackageManager packageManager = context.getPackageManager();
+//        String packageName = context.getPackageName();
+//
+//        String myVersionName = "not available"; // initialize String
+//
+//        try {
+//            myVersionName = packageManager.getPackageInfo(packageName, 0).versionName;
+//        } catch (PackageManager.NameNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -65,8 +81,23 @@ public class MainActivity extends AppCompatActivity {
                break;
 
            case R.id.about:
+
+
                AlertDialog.Builder tentang = new AlertDialog.Builder(this);
-               tentang.setMessage("Akses BLKI Versi 1.0 \n\nCreated By : Sampel").setPositiveButton("Lanjut", new DialogInterface.OnClickListener(){
+
+               Context context = getApplicationContext(); // or activity.getApplicationContext()
+               PackageManager packageManager = context.getPackageManager();
+               String packageName = context.getPackageName();
+
+               String myVersionName = "not available"; // initialize String
+
+               try {
+                   myVersionName = packageManager.getPackageInfo(packageName, 0).versionName;
+               } catch (PackageManager.NameNotFoundException e) {
+                   e.printStackTrace();
+               }
+
+               tentang.setMessage("Akses BLKI Versi : " + (myVersionName) + "\n\nCreated By : Kios3in1 Samarinda  \n\n Email : Kios.3in1@gmail.com \n\n Website : www.kios3in1.net/009/").setPositiveButton("Close", new DialogInterface.OnClickListener(){
                    @Override
                    public void onClick(DialogInterface dialogInterface, int i) {
                        dialogInterface.dismiss();
@@ -86,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
         builder.setMessage("Are you sure you want to exit?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

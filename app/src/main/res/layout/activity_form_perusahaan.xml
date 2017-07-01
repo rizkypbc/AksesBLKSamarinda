@@ -41,6 +41,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+            android:inputType="text"
             android:textSize="14sp">
 
             <requestFocus />
@@ -237,9 +239,7 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"/>-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+
 
             <TextView
                 android:id="@+id/tv_telp"
@@ -252,7 +252,7 @@
 
             <EditText
                 android:id="@+id/txt_telp_perusahaan"
-                android:layout_width="180dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/tv_telp"
@@ -273,7 +273,7 @@
 
             <EditText
                 android:id="@+id/txt_fax_perusahaan"
-                android:layout_width="160dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/tv_fax"
@@ -281,11 +281,7 @@
                 android:ems="5"
                 android:textSize="12sp" />
 
-        </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tv_email"
@@ -298,7 +294,7 @@
 
             <EditText
                 android:id="@+id/txt_email_perusahaan"
-                android:layout_width="160dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/tv_email"
@@ -319,7 +315,7 @@
 
             <EditText
                 android:id="@+id/txt_web_perusahaan"
-                android:layout_width="180dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/tv_web"
@@ -327,7 +323,6 @@
                 android:ems="5"
                 android:textSize="12sp" />
 
-        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
