@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                    e.printStackTrace();
                }
 
-               tentang.setMessage("Akses BLKI Versi : " + (myVersionName) + "\n\nCreated By : Kios3in1 Samarinda  \n\n Email : Kios.3in1@gmail.com \n\n Website : www.kios3in1.net/009/").setPositiveButton("Close", new DialogInterface.OnClickListener(){
+               tentang.setMessage("Akses BLKI Versi : " + (myVersionName) + "\n\nCreated By : Kios3in1 Samarinda  \n\n Email : Kios3in1.blki@gmail.com \n\n Website : www.kios3in1.net/009/").setPositiveButton("Close", new DialogInterface.OnClickListener(){
                    @Override
                    public void onClick(DialogInterface dialogInterface, int i) {
                        dialogInterface.dismiss();

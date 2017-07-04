@@ -110,7 +110,7 @@ public class FormLoginPerusahaan extends AppCompatActivity implements View.OnCli
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Login Error: " + error.getMessage());
-                toast("Unknown Error occurred");
+                toast("Koneksi Internet Anda Tidak Stabil");
                 progressDialog.hide();
             }
         }) {

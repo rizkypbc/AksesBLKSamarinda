@@ -319,7 +319,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                 }
 
                 dialog = ProgressDialog.show(FormPencaker.this, "",
-                        "Upload file...", true);
+                        "Mohon Tunggu Sebentar, Sedang Proses Mengirim Data Anda Ke Database BLK Samarinda...", true);
 
                 new Thread(new Runnable() {
                     public void run() {
@@ -599,7 +599,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                 runOnUiThread(new Runnable() {
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
-                        Toast.makeText(FormPencaker.this, "Berhasil Input Data",
+                        Toast.makeText(FormPencaker.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -717,7 +717,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                 runOnUiThread(new Runnable() {
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
-                        Toast.makeText(FormPencaker.this, "Berhasil Input Data",
+                        Toast.makeText(FormPencaker.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });

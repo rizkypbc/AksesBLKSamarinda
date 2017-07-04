@@ -737,7 +737,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                 }
 
                 dialog = ProgressDialog.show(FormPelatihanBaru.this, "",
-                        "Mohon Tunggu Sebentar, Sedang Proses Menginput Data...", true);
+                        "Mohon Tunggu Sebentar, Sedang Proses Mengirim Data Anda Ke Database BLK Samarinda...", true);
 
                 new Thread(new Runnable() {
                     public void run() {
@@ -830,7 +830,8 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         String boundary = "*****";
         int bytesRead, bytesAvailable, bufferSize;
         byte[] buffer;
-        int maxBufferSize = 1 * 1024 * 1024;
+//        int maxBufferSize = 1 * 1024 * 1024;
+        int maxBufferSize = 1 * 1500;
         File sourceFile = new File(sourceFileUri);
         if (!sourceFile.isFile()) {
             Log.e("uploadFile", "Source File Does not exist");
@@ -987,7 +988,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                 runOnUiThread(new Runnable() {
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
-                        Toast.makeText(FormPelatihanBaru.this, "Berhasil Input Data",
+                        Toast.makeText(FormPelatihanBaru.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });

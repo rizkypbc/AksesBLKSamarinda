@@ -32,6 +32,20 @@
 
 
     <TextView
+        android:id="@+id/tv_ket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:text="Perusahaan yang melakukan rekrut tenaga kerja harus sudah menandatangani dokumen MoU dengan pihak BLK."
+        android:textColor="#3d108b"
+        android:textStyle="bold"
+        android:layout_below="@id/btnPerusahaan"
+        android:layout_marginBottom="5dp"/>
+
+
+    <TextView
         android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

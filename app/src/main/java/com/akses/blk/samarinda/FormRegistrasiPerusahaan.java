@@ -399,7 +399,7 @@ public class FormRegistrasiPerusahaan extends AppCompatActivity implements View.
                 }
 
                 dialog = ProgressDialog.show(FormRegistrasiPerusahaan.this, "",
-                        "Mohon Tunggu Sebentar, Sedang Proses Menginput Data...", true);
+                        "Mohon Tunggu Sebentar, Sedang Proses Mengirim Data Anda Ke Database BLK Samarinda...", true);
 
                 new Thread(new Runnable() {
                     public void run() {
@@ -672,7 +672,7 @@ public class FormRegistrasiPerusahaan extends AppCompatActivity implements View.
                 runOnUiThread(new Runnable() {
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
-                        Toast.makeText(FormRegistrasiPerusahaan.this, "Berhasil Input Data",
+                        Toast.makeText(FormRegistrasiPerusahaan.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });

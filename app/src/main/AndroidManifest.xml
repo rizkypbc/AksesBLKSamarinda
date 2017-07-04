@@ -63,11 +63,11 @@
         <activity
             android:name=".FormTambahBerita"
             android:label="Form Tambah Berita"
-            android:parentActivityName=".FormLoginPerusahaan"></activity>
+            android:parentActivityName=".FormLoginPerusahaan" />
         <activity
             android:name=".Profil"
             android:label="Profil BLK Samarinda"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
