@@ -50,6 +50,12 @@
         <item>Katolik</item>
     </string-array>
 
+    <string name="nama_status">Pilih Status Perkawinan</string>
+    <string-array name="status_perkawinan">
+        <item>Belum Kawin</item>
+        <item>Sudah Kawin</item>
+    </string-array>
+
 
     <string name="nama_kabupaten">Pilih Kabupaten</string>
     <string-array name="kabupaten">

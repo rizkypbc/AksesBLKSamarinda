@@ -38,20 +38,24 @@ import java.net.URL;
 
 public class FormPencaker extends AppCompatActivity implements View.OnClickListener {
 
+    private static final int STORAGE_PERMISSION_CODE = 123;
+    private static final int REQUEST_CHOOSER = 1234;
+    private static final int REQUEST_CHOOSER_CV = 12345;
+    int serverResponseCode = 0;
+    ProgressDialog dialog = null;
     private EditText txtUsername;
     private EditText txtPassword1;
     private EditText txtPassword2;
     private EditText txtNoktp;
     private EditText txtNamaPencariKerja;
     private EditText txtJkPencari;
-    private EditText txtTtlPencari;
-    private EditText txtAsalSekolah, txtPendidikan, txtKetrampilan, txtPengalaman;
+    private EditText txtTtlPencari, txtAlamatBursa, txtJurusanBursa;
+    private EditText txtAsalSekolah, txtPendidikan, txtKetrampilan, txtPengalaman, txtTelpBursa;
     private ProgressDialog m_ProgressDialog;
     private AccessServiceAPI m_AccessServiceAPI;
-    private Spinner spnProvinsi, spnKab;
+    private Spinner spnProvinsi, spnKab, spnAgamaBursa, spnStatus, spnPendidikanBursa;
     private RadioGroup radioSexGroup, radioAlumniGroup;
     private RadioButton radioSexButton, radioAlumniButton;
-    private static final int STORAGE_PERMISSION_CODE = 123;
     private Button buttonPilihFilePhoto, buttonPilihFileCV, buttonUploadPencaker;
     private TextView txtViewPathPhoto, txtViewPathCV;
 
@@ -82,9 +86,18 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         txtPendidikan = (EditText)findViewById(R.id.txt_pendidikan);
         txtKetrampilan = (EditText)findViewById(R.id.txt_ketrampilan);
         txtPengalaman = (EditText)findViewById(R.id.txt_pengalaman);
+        txtTelpBursa = (EditText)findViewById(R.id.txt_telp_bursa);
+        txtAlamatBursa = (EditText)findViewById(R.id.txt_alamat_bursa);
+        txtJurusanBursa = (EditText)findViewById(R.id.txt_jurusan_bursa);
+
         m_AccessServiceAPI = new AccessServiceAPI();
+
         spnProvinsi = (Spinner)findViewById(R.id.spnProvinsiKerja);
         spnKab = (Spinner)findViewById(R.id.spnKabupatenKerja);
+        spnAgamaBursa = (Spinner)findViewById(R.id.spnAgamaKerja);
+        spnPendidikanBursa = (Spinner)findViewById(R.id.spnPendidikanBursa);
+        spnStatus = (Spinner)findViewById(R.id.spnStatus);
+
         radioAlumniGroup = (RadioGroup)findViewById(R.id.radioAlumni);
         radioSexGroup = (RadioGroup)findViewById(R.id.radioJenisKelamin);
 
@@ -96,6 +109,20 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
 
         buttonUploadPencaker = (Button) findViewById(R.id.buttonUploadPencaker);
         buttonUploadPencaker.setOnClickListener(this);
+
+        ArrayAdapter dataAgama = ArrayAdapter.createFromResource(this, R.array.agama, android.R.layout.simple_spinner_item);
+        dataAgama.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnAgamaBursa.setAdapter(dataAgama);
+
+        ArrayAdapter dataPendidikan = ArrayAdapter.createFromResource(this, R.array.pendidikan, android.R.layout.simple_spinner_item);
+        dataPendidikan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnPendidikanBursa.setAdapter(dataPendidikan);
+
+        ArrayAdapter dataStatus = ArrayAdapter.createFromResource(this, R.array.status_perkawinan, android.R.layout.simple_spinner_item);
+        dataStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnStatus.setAdapter(dataStatus);
+
+
 
         spnProvinsi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -276,9 +303,6 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    private static final int REQUEST_CHOOSER = 1234;
-    private static final int REQUEST_CHOOSER_CV = 12345;
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -347,6 +371,17 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
 
                         String ttl_pencari = txtTtlPencari.getText().toString();
 
+                        String agama_bursa = spnAgamaBursa.getSelectedItem().toString();
+
+                        String status_perkawinan = spnStatus.getSelectedItem().toString();
+
+                        String telp_bursa = txtTelpBursa.getText().toString();
+
+                        String alamat_bursa = txtAlamatBursa.getText().toString();
+
+                        String pendidikan_bursa = spnPendidikanBursa.getSelectedItem().toString();
+
+                        String jurusan_bursa = txtJurusanBursa.getText().toString();
 
                         String provinsi = spnProvinsi.getSelectedItem().toString();
 
@@ -366,8 +401,9 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
 
 
                         response = uploadFile(path, username, password, noktp, nama_pencari,
-                                jk_pencari, ttl_pencari, provinsi, kab, asal,
-                                pendidikan, ketrampilan, pengalaman, alumni);
+                                jk_pencari, ttl_pencari, agama_bursa, status_perkawinan,
+                                telp_bursa, alamat_bursa, provinsi, kab, pendidikan_bursa,
+                                jurusan_bursa, asal, pendidikan, ketrampilan, pengalaman, alumni);
                         System.out.println("RES : " + response);
 //
                         responseFile = uploadFileCV(path1);
@@ -410,13 +446,11 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    int serverResponseCode = 0;
-    ProgressDialog dialog = null;
-
     public int uploadFile(String sourceFileUri, String username, String password,
                           String noktp, String nama_pencari, String jk_pencari, String ttl_pencari,
-                          String provinsi, String kab, String asal, String pendidikan,
-                          String ketrampilan, String pengalaman, String alumni) {
+                          String agama_bursa, String status_perkawinan, String telp_bursa, String alamat_bursa,
+                          String provinsi, String kab, String pendidikan_bursa, String jurusan_bursa,
+                          String asal, String pendidikan, String ketrampilan, String pengalaman, String alumni) {
 
         // ip komputer server
         String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/blk/pencariNew.php";
@@ -505,6 +539,34 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
+            dos.writeBytes("Content-Disposition: form-data; name=\"agama_bursa\""+
+                    lineEnd);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(agama_bursa);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(twoHyphens + boundary + lineEnd);
+
+            dos.writeBytes("Content-Disposition: form-data; name=\"status_perkawinan\""+
+                    lineEnd);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(status_perkawinan);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(twoHyphens + boundary + lineEnd);
+
+            dos.writeBytes("Content-Disposition: form-data; name=\"telp_bursa\""+
+                    lineEnd);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(telp_bursa);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(twoHyphens + boundary + lineEnd);
+
+            dos.writeBytes("Content-Disposition: form-data; name=\"alamat_bursa\""+
+                    lineEnd);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(alamat_bursa);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(twoHyphens + boundary + lineEnd);
+
             dos.writeBytes("Content-Disposition: form-data; name=\"provinsi\""+
                     lineEnd);
             dos.writeBytes(lineEnd);
@@ -516,6 +578,20 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(kab);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(twoHyphens + boundary + lineEnd);
+
+            dos.writeBytes("Content-Disposition: form-data; name=\"pendidikan_bursa\""+
+                    lineEnd);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(pendidikan_bursa);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(twoHyphens + boundary + lineEnd);
+
+            dos.writeBytes("Content-Disposition: form-data; name=\"jurusan_bursa\""+
+                    lineEnd);
+            dos.writeBytes(lineEnd);
+            dos.writeBytes(jurusan_bursa);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 

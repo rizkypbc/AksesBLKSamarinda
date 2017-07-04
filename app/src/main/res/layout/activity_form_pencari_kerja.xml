@@ -40,8 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
-            android:ems="5"
             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+            android:ems="5"
             android:inputType="text"
             android:textSize="14sp">
 
@@ -179,6 +179,70 @@
             android:textSize="14sp" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Agama"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnAgamaKerja"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_agama" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Status Perkawinan"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnStatus"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_status" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Telepon / Hp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_telp_bursa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Alamat"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_alamat_bursa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:textSize="14sp" />
+
+        <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -193,8 +257,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_provinsi"
-            android:entries="@array/provinsi"/>
+            android:entries="@array/provinsi"
+            android:prompt="@string/nama_provinsi"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -210,8 +274,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kabupaten"
-            android:entries="@array/prov_aceh"/>
+            android:entries="@array/prov_aceh"
+            android:prompt="@string/nama_kabupaten"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Pendidikan"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnPendidikanBursa"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:prompt="@string/nama_pendidikan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Jurusan"
+            android:textSize="12sp" />
+
+
+        <EditText
+            android:id="@+id/txt_jurusan_bursa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:textSize="14sp"/>
 
         <TextView
             android:layout_width="wrap_content"

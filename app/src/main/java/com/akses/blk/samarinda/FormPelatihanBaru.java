@@ -39,6 +39,11 @@ import java.net.URL;
 public class FormPelatihanBaru extends AppCompatActivity implements View.OnClickListener {
 
 
+    private static final int STORAGE_PERMISSION_CODE = 123;
+    private static final int REQUEST_CHOOSER = 1234;
+    int sp1, sp2;
+    int serverResponseCode = 0;
+    ProgressDialog dialog = null;
     private EditText txtNama;
     private EditText txtJK;
     private EditText txtTTL;
@@ -61,10 +66,8 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
             spnKabupaten, spnPendidikan, spnJurusan, spnKejuruan, spnSubKejuruan;
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
-    private static final int STORAGE_PERMISSION_CODE = 123;
     private Button buttonPilihFile, buttonUpload;
     private TextView textViewPath;
-    int sp1, sp2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,167 +138,167 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         spnProvinsi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0){
+                if (position == 0) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_aceh,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 1){
+                } else if (position == 1) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_bali,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 2){
+                } else if (position == 2) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_bangka_belitung,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 3){
+                } else if (position == 3) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_banten,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 4){
+                } else if (position == 4) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_bengkulu,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 5){
+                } else if (position == 5) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_yogyakarta,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 6){
+                } else if (position == 6) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_jakarta,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 7){
+                } else if (position == 7) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_gorontalo,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 8){
+                } else if (position == 8) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_jambi,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 9){
+                } else if (position == 9) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_jawa_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 10){
+                } else if (position == 10) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_jawa_tengah,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 11){
+                } else if (position == 11) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_jawa_timur,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 12){
+                } else if (position == 12) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_kalimantan_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 13){
+                } else if (position == 13) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_kalimantan_selatan,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 14){
+                } else if (position == 14) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_kalimantan_tengah,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 15){
+                } else if (position == 15) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_kalimantan_timur,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 16){
+                } else if (position == 16) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_kepulauan_riau,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 17){
+                } else if (position == 17) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_lampung,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 18){
+                } else if (position == 18) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_maluku,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 19){
+                } else if (position == 19) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_maluku_utara,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 20){
+                } else if (position == 20) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_ntb,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 21){
+                } else if (position == 21) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_ntt,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 22){
+                } else if (position == 22) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getApplication(), R.array.prov_papua,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 23){
+                } else if (position == 23) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_papua_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 24){
+                } else if (position == 24) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getApplication(), R.array.prov_riau,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 25){
+                } else if (position == 25) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sulawesi_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 26){
+                } else if (position == 26) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sulawesi_selatan,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 27){
+                } else if (position == 27) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sulawesi_tengah,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 28){
+                } else if (position == 28) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sulawesi_tenggara,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 29){
+                } else if (position == 29) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sulawesi_utara,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 30){
+                } else if (position == 30) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sumatera_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 31){
+                } else if (position == 31) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sumatera_selatan,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
-                } else if (position == 32){
+                } else if (position == 32) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sumatera_utara,
                                     android.R.layout.simple_spinner_item);
@@ -312,47 +315,42 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         spnKejuruan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String province = (String)parent.getItemAtPosition(position);
+                String province = (String) parent.getItemAtPosition(position);
 
-                if(province.matches("Agribisnis")){
-                    sp1= 0;
+                if (province.matches("Agribisnis")) {
+                    sp1 = 0;
                     populateDist();
-                }
-
-                else if(province.matches("Bangunan")){
-                    sp1= 1;
+                } else if (province.matches("Bangunan")) {
+                    sp1 = 1;
                     populateDist();
-                }
-
-                else if(province.matches("Bisnis dan Manajemen")){
+                } else if (province.matches("Bisnis dan Manajemen")) {
                     sp1 = 2;
                     populateDist();
-                }
-                else if(province.matches("Garmen Apparel")){
+                } else if (province.matches("Garmen Apparel")) {
                     sp1 = 3;
                     populateDist();
-                }else if(province.matches("Processing")){
+                } else if (province.matches("Processing")) {
                     sp1 = 4;
                     populateDist();
-                }else if(province.matches("Refrigeration")){
+                } else if (province.matches("Refrigeration")) {
                     sp1 = 5;
                     populateDist();
-                }else if(province.matches("Teknik Elektronika")){
+                } else if (province.matches("Teknik Elektronika")) {
                     sp1 = 6;
                     populateDist();
-                }else if(province.matches("Teknik Las")){
+                } else if (province.matches("Teknik Las")) {
                     sp1 = 7;
                     populateDist();
-                }else if(province.matches("Teknik Listrik")){
+                } else if (province.matches("Teknik Listrik")) {
                     sp1 = 8;
                     populateDist();
-                }else if(province.matches("Teknik Manufaktur")){
+                } else if (province.matches("Teknik Manufaktur")) {
                     sp1 = 9;
                     populateDist();
-                }else if(province.matches("Teknik Otomotif")){
+                } else if (province.matches("Teknik Otomotif")) {
                     sp1 = 10;
                     populateDist();
-                }else if(province.matches("Teknologi Informasi Komunikasi")){
+                } else if (province.matches("Teknologi Informasi Komunikasi")) {
                     sp1 = 11;
                     populateDist();
                 }
@@ -367,97 +365,75 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         spnSubKejuruan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String spinDist = (String)parent.getItemAtPosition(position);
+                String spinDist = (String) parent.getItemAtPosition(position);
 
-                if(spinDist.matches("Agribisnis Produksi Peternakan") && sp1 == 0){
+                if (spinDist.matches("Agribisnis Produksi Peternakan") && sp1 == 0) {
                     sp2 = 0;
                     populateLocal();
-                }
-                else if(spinDist.matches("Furniture") && sp1 == 1){
+                } else if (spinDist.matches("Furniture") && sp1 == 1) {
                     sp2 = 1;
                     populateLocal();
-                }
-                else if(spinDist.matches("Gambar Bangunan") && sp1 == 1){
+                } else if (spinDist.matches("Gambar Bangunan") && sp1 == 1) {
                     sp2 = 2;
                     populateLocal();
-                }
-                else if(spinDist.matches("Surver dan Pemetaan") && sp1 == 1){
+                } else if (spinDist.matches("Surver dan Pemetaan") && sp1 == 1) {
                     sp2 = 3;
                     populateLocal();
-                }
-                else if(spinDist.matches("Administrasi Perkantoran") && sp1 == 2){
+                } else if (spinDist.matches("Administrasi Perkantoran") && sp1 == 2) {
                     sp2 = 4;
                     populateLocal();
-                }
-                else if(spinDist.matches("Sekretaris") && sp1 == 2){
+                } else if (spinDist.matches("Sekretaris") && sp1 == 2) {
                     sp2 = 5;
                     populateLocal();
-                }
-                else if(spinDist.matches("Menjahit (Knitting, Woven)") && sp1 == 3){
+                } else if (spinDist.matches("Menjahit (Knitting, Woven)") && sp1 == 3) {
                     sp2 = 6;
                     populateLocal();
-                }
-                else if(spinDist.matches("Teknik Bordir") && sp1 == 3){
+                } else if (spinDist.matches("Teknik Bordir") && sp1 == 3) {
                     sp2 = 7;
                     populateLocal();
-                }
-                else if(spinDist.matches("Pengolahan Hasil Perikanan") && sp1 == 4){
+                } else if (spinDist.matches("Pengolahan Hasil Perikanan") && sp1 == 4) {
                     sp2 = 8;
                     populateLocal();
-                }
-                else if(spinDist.matches("Ac Ruangan") && sp1 == 5){
+                } else if (spinDist.matches("Ac Ruangan") && sp1 == 5) {
                     sp2 = 9;
                     populateLocal();
-                }
-                else if(spinDist.matches("Telekomunikasi") && sp1 == 6){
+                } else if (spinDist.matches("Telekomunikasi") && sp1 == 6) {
                     sp2 = 10;
                     populateLocal();
-                }
-                else if(spinDist.matches("Las Industri - Listrik") && sp1 == 7){
+                } else if (spinDist.matches("Las Industri - Listrik") && sp1 == 7) {
                     sp2 = 11;
                     populateLocal();
-                }
-                else if(spinDist.matches("Instalasi Penerangan") && sp1 == 8){
+                } else if (spinDist.matches("Instalasi Penerangan") && sp1 == 8) {
                     sp2 = 12;
                     populateLocal();
-                }
-                else if(spinDist.matches("Mesin Prosuksi") && sp1 == 9){
+                } else if (spinDist.matches("Mesin Prosuksi") && sp1 == 9) {
                     sp2 = 13;
                     populateLocal();
-                }
-                else if(spinDist.matches("AC Cold Storage") && sp1 == 10){
+                } else if (spinDist.matches("AC Cold Storage") && sp1 == 10) {
                     sp2 = 14;
                     populateLocal();
-                }
-                else if(spinDist.matches("Teknik Alat Berat") && sp1 == 10){
+                } else if (spinDist.matches("Teknik Alat Berat") && sp1 == 10) {
                     sp2 = 15;
                     populateLocal();
-                }
-                else if(spinDist.matches("Teknik Kendaraan Ringan - Bensin") && sp1 == 10){
+                } else if (spinDist.matches("Teknik Kendaraan Ringan - Bensin") && sp1 == 10) {
                     sp2 = 16;
                     populateLocal();
-                }
-                else if(spinDist.matches("Teknik Sepeda Motor") && sp1 == 10){
+                } else if (spinDist.matches("Teknik Sepeda Motor") && sp1 == 10) {
                     sp2 = 17;
                     populateLocal();
-                }
-                else if(spinDist.matches("Database") && sp1 == 11){
+                } else if (spinDist.matches("Database") && sp1 == 11) {
                     sp2 = 18;
                     populateLocal();
-                }
-                else if(spinDist.matches("Graphic Design") && sp1 == 11){
+                } else if (spinDist.matches("Graphic Design") && sp1 == 11) {
                     sp2 = 19;
                     populateLocal();
-                }
-                else if(spinDist.matches("Operator komputer") && sp1 == 11){
+                } else if (spinDist.matches("Operator komputer") && sp1 == 11) {
                     sp2 = 20;
                     populateLocal();
-                }
-                else if(spinDist.matches("Technical Support") && sp1 == 11){
+                } else if (spinDist.matches("Technical Support") && sp1 == 11) {
                     sp2 = 21;
                     populateLocal();
-                }
-                else if(spinDist.matches("Web Administrator") && sp1 == 11){
+                } else if (spinDist.matches("Web Administrator") && sp1 == 11) {
                     sp2 = 22;
                     populateLocal();
                 }
@@ -536,137 +512,109 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         }
     }
 
-    void populateLocal(){
+    void populateLocal() {
         //Baffalo City
-        if(sp2 == 0){
-            String [] pbk = {"Pelatihan Berbasis Kompetensi"};
+        if (sp2 == 0) {
+            String[] pbk = {"Pelatihan Berbasis Kompetensi"};
 
             ArrayAdapter<String> adapterL0 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk);
             spnProgram.setAdapter(adapterL0);
-        }
-        else if(sp2 == 1){
-            String [] mf = {"Meubelair & Finishing"};
+        } else if (sp2 == 1) {
+            String[] mf = {"Meubelair & Finishing"};
 
             ArrayAdapter<String> adapterL1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mf);
             spnProgram.setAdapter(adapterL1);
         }
         //Nelson Mandela Bay
-        else if(sp2 == 2){
-            String [] da = {"Drafter arsitektur"};
+        else if (sp2 == 2) {
+            String[] da = {"Drafter arsitektur"};
 
             ArrayAdapter<String> adapterL2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, da);
             spnProgram.setAdapter(adapterL2);
-        }
-
-        else if(sp2 == 3){
-            String [] ju = {"Juru Ukur (Surveyor)"};
+        } else if (sp2 == 3) {
+            String[] ju = {"Juru Ukur (Surveyor)"};
 
             ArrayAdapter<String> adapterL3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ju);
             spnProgram.setAdapter(adapterL3);
-        }
-
-        else if(sp2 == 4){
-            String [] ap = {"Administrasi Perkantoran"};
+        } else if (sp2 == 4) {
+            String[] ap = {"Administrasi Perkantoran"};
 
             ArrayAdapter<String> adapterL4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ap);
             spnProgram.setAdapter(adapterL4);
-        }
-
-        else if(sp2 == 5){
-            String [] sk = {"Sekretaris"};
+        } else if (sp2 == 5) {
+            String[] sk = {"Sekretaris"};
             ArrayAdapter<String> adapterL5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sk);
             spnProgram.setAdapter(adapterL5);
-        }
-
-        else if(sp2 == 6){
-            String [] pkw = {"Penjahit Pakaian Wanita"};
+        } else if (sp2 == 6) {
+            String[] pkw = {"Penjahit Pakaian Wanita"};
             ArrayAdapter<String> adapterL6 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pkw);
             spnProgram.setAdapter(adapterL6);
-        }
-        else if(sp2 == 7){
-            String [] apw = {"Asisten Penjahit Wanita"};
+        } else if (sp2 == 7) {
+            String[] apw = {"Asisten Penjahit Wanita"};
             ArrayAdapter<String> adapterL7 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, apw);
             spnProgram.setAdapter(adapterL7);
-        }
-        else if(sp2 == 8){
-            String [] pbk1 = {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 8) {
+            String[] pbk1 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL8 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk1);
             spnProgram.setAdapter(adapterL8);
-        }
-
-        else if(sp2 == 9){
-            String [] tpa = {"Teknisi Pendingin AC Split","Teknisi Refrigerasi Komersial"};
+        } else if (sp2 == 9) {
+            String[] tpa = {"Teknisi Pendingin AC Split", "Teknisi Refrigerasi Komersial"};
             ArrayAdapter<String> adapterL9 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tpa);
             spnProgram.setAdapter(adapterL9);
-        }
-        else if(sp2 == 10){
-            String [] th = {"Teknisi Handphone"};
+        } else if (sp2 == 10) {
+            String[] th = {"Teknisi Handphone"};
             ArrayAdapter<String> adapterL10 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, th);
             spnProgram.setAdapter(adapterL10);
-        }
-        else if(sp2 == 11){
-            String [] pbk2 = {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 11) {
+            String[] pbk2 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL11 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk2);
             spnProgram.setAdapter(adapterL11);
-        }
-        else if(sp2 == 12){
-            String [] li = {"Listrik Industri","Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 12) {
+            String[] li = {"Listrik Industri", "Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL12 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, li);
             spnProgram.setAdapter(adapterL12);
-        }
-        else if(sp2 == 13){
-            String [] pbk3 = {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 13) {
+            String[] pbk3 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL13 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk3);
             spnProgram.setAdapter(adapterL13);
-        }
-        else if(sp2 == 14){
-            String [] pbk4 = {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 14) {
+            String[] pbk4 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL14 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk4);
             spnProgram.setAdapter(adapterL14);
-        }
-        else if(sp2 == 15){
-            String [] mab= {"Mekanik Alat Berat","Pelatihan Berbasis Kompetensi","Swadana","Teknik Alat Berat (Operator Excavator)"};
+        } else if (sp2 == 15) {
+            String[] mab = {"Mekanik Alat Berat", "Pelatihan Berbasis Kompetensi", "Swadana", "Teknik Alat Berat (Operator Excavator)"};
             ArrayAdapter<String> adapterL15 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mab);
             spnProgram.setAdapter(adapterL15);
-        }
-        else if(sp2 == 16){
-            String [] oht= {"Over Houl Tune Up Diesel","Pelatihan Berbasis Kompetensi","Tune Up Bensin dan Diesel"};
+        } else if (sp2 == 16) {
+            String[] oht = {"Over Houl Tune Up Diesel", "Pelatihan Berbasis Kompetensi", "Tune Up Bensin dan Diesel"};
             ArrayAdapter<String> adapterL16 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, oht);
             spnProgram.setAdapter(adapterL16);
-        }
-        else if(sp2 == 17){
-            String [] mjsp= {"Mekanik Junior Sepeda Motor","Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 17) {
+            String[] mjsp = {"Mekanik Junior Sepeda Motor", "Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL17 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mjsp);
             spnProgram.setAdapter(adapterL17);
-        }
-        else if(sp2 == 18){
-            String [] pbk5= {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 18) {
+            String[] pbk5 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL18 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk5);
             spnProgram.setAdapter(adapterL18);
-        }
-        else if(sp2 == 19){
-            String [] pbk6= {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 19) {
+            String[] pbk6 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL19 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk6);
             spnProgram.setAdapter(adapterL19);
-        }
-        else if(sp2 == 20){
-            String [] op= {"Operator Komputer","Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 20) {
+            String[] op = {"Operator Komputer", "Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL20 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, op);
             spnProgram.setAdapter(adapterL20);
-        }
-        else if(sp2 == 21){
-            String [] pbk7= {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 21) {
+            String[] pbk7 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL21 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk7);
             spnProgram.setAdapter(adapterL21);
-        }
-        else if(sp2 == 22){
-            String [] pbk8= {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 22) {
+            String[] pbk8 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL22 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk8);
             spnProgram.setAdapter(adapterL22);
         }
     }
-
-    private static final int REQUEST_CHOOSER = 1234;
 
     @Override
     public void onClick(View v) {
@@ -752,7 +700,6 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                         String nama = txtNama.getText().toString();
 
 
-
                         int selectedId = radioSexGroup.getCheckedRadioButtonId();
                         radioSexButton = (RadioButton) findViewById(selectedId);
                         String jk = radioSexButton.getText().toString();
@@ -784,7 +731,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                         String program = spnProgram.getSelectedItem().toString();
 
                         response = uploadFile(path, nama, jk, ttl, alamat,
-                                   provinsi, kab_kota, notelp, email, agama,
+                                provinsi, kab_kota, notelp, email, agama,
                                 pendidikan, jurusan, asal_sekolah, kejuruan, sub_kejuruan,
                                 program);
                         System.out.println("RES : " + response);
@@ -811,9 +758,6 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
-
-    int serverResponseCode = 0;
-    ProgressDialog dialog = null;
 
     public int uploadFile(String sourceFileUri, String nama, String jk, String ttl, String alamat, String provinsi,
                           String kab_kota, String notelp, String email, String agama, String pendidikan,
@@ -870,91 +814,91 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
 
             // jika ingin menambahkan parameter baru, silahkan buat baris baru
             // lagi seperti berikut
-            dos.writeBytes("Content-Disposition: form-data; name=\"ttl\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"ttl\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(ttl);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"alamat\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"alamat\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(alamat);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"provinsi\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"provinsi\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(provinsi);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"kab_kota\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"kab_kota\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(kab_kota);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"notelp\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"notelp\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(notelp);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"email\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"email\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(email);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"agama\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"agama\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(agama);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"pendidikan\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"pendidikan\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(pendidikan);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"jurusan\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"jurusan\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(jurusan);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"asal_sekolah\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"asal_sekolah\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(asal_sekolah);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"kejuruan\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"kejuruan\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(kejuruan);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"sub_kejuruan\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"sub_kejuruan\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(sub_kejuruan);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"program\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"program\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(program);
@@ -1013,7 +957,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
             e.printStackTrace();
             Toast.makeText(FormPelatihanBaru.this, "Exception : " + e.getMessage(),
                     Toast.LENGTH_SHORT).show();
-            Log.e("Upload ","Exception : " + e.getMessage(), e);
+            Log.e("Upload ", "Exception : " + e.getMessage(), e);
         }
         dialog.dismiss();
         finish();
