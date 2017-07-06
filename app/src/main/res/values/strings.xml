@@ -22,6 +22,7 @@
         <item>Kalimantan Selatan</item>
         <item>Kalimantan Tengah</item>
         <item>Kalimantan Timur</item>
+        <item>Kalimantan Utara</item>
         <item>Kepulauan Riau</item>
         <item>Lampung</item>
         <item>Maluku </item>
@@ -393,18 +394,23 @@
 
     <string-array name="prov_kalimantan_timur">
         <item>Kab. Berau</item>
-        <item>Kab. Bulungan</item>
-        <item>Kab. Kutai</item>
         <item>Kab. Kutai Barat</item>
+        <item>Kab. Kutai Kartanegara</item>
         <item>Kab. Kutai Timur</item>
-        <item>Kab. Malianau</item>
-        <item>Kab. Nunukan</item>
         <item>Kab. Pasir</item>
-        <item> Kab. Penajam</item>
+        <item>Kab. Penajam Paser Utara</item>
+        <item>Kab. Mahakam Ulu</item>
         <item>Kota Balikpapan</item>
         <item>Kota Bontang</item>
         <item>Kota Samarinda</item>
-        <item>Kota Tarakan</item>
+    </string-array>
+
+    <string-array name="prov_kalimantan_utara">
+        <item>Kab. Bulungan</item>
+        <item>Kab. Malinau</item>
+        <item>Kab. Nunukan</item>
+        <item>Kab. Tanah Tidung</item>
+        <item>Kota. Tarakan</item>
     </string-array>
 
     <string-array name="prov_kepulauan_riau">
@@ -421,7 +427,6 @@
         <item>Kab. Lampung Selatan</item>
         <item>Kab. Lampung Tengah</item>
         <item>Kab. Lampung Timur</item>
-        <item>Kab. Lampung Selatan</item>
         <item>Kab. Tanggamus</item>
         <item>Kab. Tulang Bawang</item>
         <item>Kab. Way Kanan</item>
@@ -555,30 +560,30 @@
     </string-array>
 
     <string-array name="prov_sulawesi_selatan">
-        <item>KKab. Bantaeng</item>
-        <item>KKab. Baru</item>
-        <item>KKab. Bone</item>
-        <item>KKab. Bulukumba</item>
-        <item>KKab. Enrekang</item>
-        <item>KKab. Gowa</item>
-        <item>KKab. Jeneponto</item>
-        <item>KKab. Luwu</item>
-        <item>KKab. Luwu Timur</item>
-        <item>KKab. Luwu Utara</item>
-        <item>KKab. Maros</item>
-        <item>KKab. Pangkep</item>
-        <item>KKab. Pinrang</item>
-        <item>KKab. Palopo</item>
-        <item>KKab. Selayar</item>
-        <item>KKab. Sindrap</item>
-        <item>KKab. Sinjai</item>
-        <item>KKab. Soppeng</item>
-        <item>KKab. Takalar</item>
-        <item>KKab. Tana Toraja</item>
-        <item>KKab. Toraja Utara</item>
-        <item>KKab. Wajo</item>
-        <item>KKota Makassar</item>
-        <item>KKota Pare-pare</item>
+        <item>Kab. Bantaeng</item>
+        <item>Kab. Baru</item>
+        <item>Kab. Bone</item>
+        <item>Kab. Bulukumba</item>
+        <item>Kab. Enrekang</item>
+        <item>Kab. Gowa</item>
+        <item>Kab. Jeneponto</item>
+        <item>Kab. Luwu</item>
+        <item>Kab. Luwu Timur</item>
+        <item>Kab. Luwu Utara</item>
+        <item>Kab. Maros</item>
+        <item>Kab. Pangkep</item>
+        <item>Kab. Pinrang</item>
+        <item>Kab. Palopo</item>
+        <item>Kab. Selayar</item>
+        <item>Kab. Sindrap</item>
+        <item>Kab. Sinjai</item>
+        <item>Kab. Soppeng</item>
+        <item>Kab. Takalar</item>
+        <item>Kab. Tana Toraja</item>
+        <item>Kab. Toraja Utara</item>
+        <item>Kab. Wajo</item>
+        <item>Kota Makassar</item>
+        <item>Kota Pare-pare</item>
     </string-array>
 
 
@@ -688,7 +693,7 @@
         <item>Kab. Tapanuli Selatan</item>
         <item>Kab. Tapanuli Tengah</item>
         <item>Kab. Tapanuli Utara</item>
-        <item> Kab. Tebing Tinggi</item>
+        <item>Kab. Tebing Tinggi</item>
         <item>Kab. Toba Samosir</item>
         <item>Kota Binjai</item>
         <item>Kota Mandailing Natal</item>

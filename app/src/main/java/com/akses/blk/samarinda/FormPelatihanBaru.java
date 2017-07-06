@@ -220,27 +220,27 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 16) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_kepulauan_riau,
+                            .createFromResource(getBaseContext(), R.array.prov_kalimantan_utara,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 17) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_lampung,
+                            .createFromResource(getBaseContext(), R.array.prov_kepulauan_riau,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 18) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_maluku,
+                            .createFromResource(getBaseContext(), R.array.prov_lampung,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 19) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_maluku_utara,
+                            .createFromResource(getBaseContext(), R.array.prov_maluku,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 20) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_ntb,
+                            .createFromResource(getBaseContext(), R.array.prov_maluku_utara,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 21) {
@@ -250,55 +250,60 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 22) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getApplication(), R.array.prov_papua,
+                            .createFromResource(getBaseContext(), R.array.prov_ntb,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 23) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_papua_barat,
+                            .createFromResource(getApplication(), R.array.prov_papua,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 24) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getApplication(), R.array.prov_riau,
+                            .createFromResource(getBaseContext(), R.array.prov_papua_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 25) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_barat,
+                            .createFromResource(getApplication(), R.array.prov_riau,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 26) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_selatan,
+                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 27) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_tengah,
+                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_selatan,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 28) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_tenggara,
+                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_tengah,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 29) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_utara,
+                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_tenggara,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 30) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_sumatera_barat,
+                            .createFromResource(getBaseContext(), R.array.prov_sulawesi_utara,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 31) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.prov_sumatera_selatan,
+                            .createFromResource(getBaseContext(), R.array.prov_sumatera_barat,
                                     android.R.layout.simple_spinner_item);
                     spnKabupaten.setAdapter(adapter);
                 } else if (position == 32) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.prov_sumatera_selatan,
+                                    android.R.layout.simple_spinner_item);
+                    spnKabupaten.setAdapter(adapter);
+                } else if (position == 33) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_sumatera_utara,
                                     android.R.layout.simple_spinner_item);
