@@ -1,8 +1,6 @@
 package com.akses.blk.samarinda.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -24,7 +21,6 @@ import com.akses.blk.samarinda.R;
 import com.kosalgeek.android.json.JsonConverter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ASUS on 09/05/2017.
@@ -46,6 +42,7 @@ public class FragmentOne extends Fragment {
 
 
 //        ArrayList<Berita> berita = new ArrayList<>();
+
 //
 //        berita.add(new Berita(R.drawable.news, "Ceritanya Judul Berita", "Tanggal Beritanya"));
 //        berita.add(new Berita(R.drawable.news, "Ceritanya Judul Berita", "Tanggal Beritanya"));
@@ -59,6 +56,8 @@ public class FragmentOne extends Fragment {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
+
+
 
 
 //        sv=(SearchView) rootView.findViewById(R.id.searchView1);
@@ -82,7 +81,7 @@ public class FragmentOne extends Fragment {
 //        BeritaAdapter adapter = new BeritaAdapter(getActivity(), berita);
 //        recyclerView.setAdapter(adapter);
 
-//        String url = "http://192.168.43.212/uploadberita/berita.php";
+//        String url = "http://192.168.43.212/aksesblksamarinda/kios/berita.php";
         String url = "http://aksesblk-samarinda.com/aksesblksamarinda/uploadberita/filterBerita.php";
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 url, new Response.Listener<String>() {
@@ -101,7 +100,7 @@ public class FragmentOne extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         if (error != null) {
-                            Log.d(TAG, error.getMessage());
+                            Log.d(TAG, error.getMessage(), null);
                             Toast.makeText(getContext(), "Periksa Koneksi Internet Anda", Toast.LENGTH_LONG).show();
                         }
                     }
@@ -110,6 +109,7 @@ public class FragmentOne extends Fragment {
 
         MySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
         return rootView;
+
     }
 
 
