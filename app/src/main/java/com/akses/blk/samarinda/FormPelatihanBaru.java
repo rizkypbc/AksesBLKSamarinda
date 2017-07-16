@@ -510,7 +510,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
             ArrayAdapter<String> adapter10 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, to);
             spnSubKejuruan.setAdapter(adapter10);
         } else if (sp1 == 11) {
-            String[] tik = {"Database", "Graphic Design", "Operator komputer", "Operator komputer", "Web Administrator"};
+            String[] tik = {"Database", "Graphic Design", "Operator komputer", "Technical Support", "Web Administrator"};
 
             ArrayAdapter<String> adapter11 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tik);
             spnSubKejuruan.setAdapter(adapter11);
