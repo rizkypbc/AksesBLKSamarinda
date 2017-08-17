@@ -77,6 +77,225 @@
         <item>S1</item>
     </string-array>
 
+    <string name="nama_perusahaan">Pilih Perusahaan</string>
+    <string-array name="perusahaan">
+        <item>Bank Sahabat Sampoerna</item>
+        <item>PT. Aneka Roda Kencana</item>
+        <item>PT. Bank Danamon Indonesia, Tbk</item>
+        <item>PT. BCA</item>
+        <item>PT. Equalindo Makmur Alam Sejahtera</item>
+        <item>PT. Equityworld Futures</item>
+        <item>PT. Indomarco Prismatama</item>
+        <item>PT. Karya Putra Surya Gemilang</item>
+        <item>PT. Midi Utama Indonesia</item>
+        <item>PT. HK Group</item>
+        <item>PT. Panen Lestari Internusa/Sogo Dept Store</item>
+        <item>PT. Paragon Technology And Innovation</item>
+        <item>PT. Paula Jaya</item>
+        <item>PT. Pharos Group Indonesia</item>
+        <item>PT. Raya Indo Makmur</item>
+        <item>PT. Sanggar Sarana Baja</item>
+        <item>PT. Salim Surya Phone</item>
+        <item>PT. Surganya Motor Indonesia</item>
+        <item>PT. Surya Hutani Jaya</item>
+        <item>PT. Sriwijaya Teknik Utama</item>
+        <item>PT. Tata Optima Property</item>
+    </string-array>
+
+    <string-array name="bank_sahabat">
+        <item>Account Officer</item>
+    </string-array>
+
+    <string-array name="pt_aneka">
+        <item>Marketing</item>
+        <item>Driver</item>
+        <item>Office Boy</item>
+        <item>HRD</item>
+    </string-array>
+
+    <string-array name="pt_bank_danamon">
+        <item>Marketing Lending</item>
+        <item>Marketing Funding</item>
+    </string-array>
+
+    <string-array name="pt_bca">
+        <item>Customer Service</item>
+        <item>Teller</item>
+    </string-array>
+
+    <string-array name="pt_equalindo">
+        <item>Drafter</item>
+        <item>Civil Surveyor</item>
+        <item>HSE Supervisor</item>
+        <item>HRGA Site</item>
+    </string-array>
+
+    <string-array name="pt_equityworld">
+        <item>Business Consultant</item>
+        <item>WPB(Wakil Pialang Berjangka)</item>
+        <item>Assistant Manager</item>
+        <item>Administration Business</item>
+    </string-array>
+
+    <string-array name="pt_indomarco">
+        <item>Merchandiser</item>
+        <item>Pemegang Shift</item>
+        <item>Driver/Sopir</item>
+        <item>Staff Office</item>
+        <item>Staff Operation</item>
+        <item>Assistent Apoteker</item>
+        <item>Pramuniaga</item>
+        <item>Kasir</item>
+    </string-array>
+
+    <string-array name="pt_karya">
+        <item>Bancassurance Area Manager</item>
+        <item>Insurance Consultant Priority Banking</item>
+        <item>Insurance Consultant Regular Banking</item>
+        <item>Sales Mikro</item>
+        <item>Administrasi Kredit</item>
+        <item>Teller Administrasi</item>
+        <item>Sales Konsumer</item>
+        <item>Sales Dana dan Jasa</item>
+        <item>IT Support</item>
+        <item>Administrasi KUR</item>
+    </string-array>
+
+    <string-array name="pt_midi">
+        <item>Pramuniaga/Kasir</item>
+        <item>Sales Canvaser</item>
+        <item>Finance Staff</item>
+        <item>General Affair Staff</item>
+        <item>Buyer</item>
+        <item>Surveyor</item>
+        <item>Inventory Control</item>
+        <item>Maintenance</item>
+        <item>Kepala Toko</item>
+    </string-array>
+
+    <string-array name="pt_hkgroup">
+        <item>Kurir</item>
+    </string-array>
+
+    <string-array name="pt_panen">
+        <item>Supervisor Area</item>
+        <item>Manager Area</item>
+        <item>Sales Staff</item>
+    </string-array>
+
+    <string-array name="pt_paragon">
+        <item>Sales Representative</item>
+        <item>Field Account Receiver(Kolektor)</item>
+        <item>Driver</item>
+        <item>Beauty Advisor(Wardah Cosmetics)</item>
+        <item>Make Over Consultant</item>
+        <item>Promotion Officer</item>
+        <item>Customer Development Officer</item>
+    </string-array>
+
+    <string-array name="pt_paula">
+        <item>Project Manager</item>
+        <item>Site Manager</item>
+        <item>Site Engineer</item>
+        <item>Pelaksana</item>
+        <item>Logistik Project</item>
+        <item>Surveyor</item>
+        <item>Admin Project</item>
+        <item>Operator Motor Greader</item>
+        <item>Operator Excavator</item>
+        <item>Operator Dozer</item>
+        <item>Operator Vibro Roller</item>
+        <item>Operator Compect</item>
+        <item>Driver Dump Truck</item>
+        <item>Driver Mixer</item>
+        <item>Driver Triton</item>
+    </string-array>
+
+    <string-array name="pt_pharos">
+        <item>Animator</item>
+        <item>Graphic Designer</item>
+        <item>Programmer</item>
+        <item>Video Editor</item>
+        <item>Techinical Support</item>
+        <item>Apoteker</item>
+        <item>Asisten Apoteker</item>
+        <item>Quality Control Staff</item>
+        <item>Quality Assurance Staff</item>
+        <item>Quality Control Supervisor/Manager</item>
+        <item>Quality Assurance Supervisor/Manager</item>
+        <item>Key Account Sales Manager</item>
+        <item>Store Supervisor/Manager</item>
+        <item>Health Advisor/Beauty Advisor</item>
+        <item>Area Sales Manager</item>
+        <item>Marketing Supervisor</item>
+        <item>Sales Representative</item>
+        <item>Sales Promotion Girl/Officer</item>
+        <item>Staff Farmasi</item>
+        <item>Admin Operational</item>
+    </string-array>
+
+    <string-array name="pt_raya">
+        <item>Relationship Manager</item>
+        <item>Business Manager</item>
+    </string-array>
+
+    <string-array name="pt_sanggar">
+        <item>Welder</item>
+        <item>Setter</item>
+        <item>Manchinist</item>
+    </string-array>
+
+    <string-array name="pt_salim">
+        <item>Frontliner</item>
+        <item>Admin Toko</item>
+        <item>Kasir Toko</item>
+        <item>Supervisor</item>
+        <item>Team Setting</item>
+    </string-array>
+
+    <string-array name="pt_surganya">
+        <item>Kepala Toko</item>
+        <item>Mekanik</item>
+    </string-array>
+
+    <string-array name="pt_surya">
+        <item>Pengawas Harvesting</item>
+        <item>Pengawas Plantation</item>
+        <item>Koordinator Plantation</item>
+        <item>Community Development/Conflict Resolution</item>
+        <item>Petugas Tata Usaha Kayu</item>
+        <item>Fire Marshall</item>
+        <item>Heavy Equipment Section Head</item>
+        <item>Pengawas Infrastructure/Road</item>
+        <item>Technology Transfer Specialist</item>
+        <item>People Development Officer</item>
+        <item>Mapping Officer</item>
+    </string-array>
+
+    <string-array name="pt_sriwijaya">
+        <item>Teknisi Cylinder Head</item>
+        <item>Operator Mesin Crankshaft</item>
+        <item>Operator Center Block</item>
+    </string-array>
+
+    <string-array name="pt_tata">
+        <item>Marketing SPV/Staff</item>
+        <item>IT SPV</item>
+        <item>HVAC SPV(Pendingin dan Tata Udara</item>
+    </string-array>
+
+    <string name="nama_posisi">Pilih Posisi</string>
+    <string-array name="posisi">
+        <item>Agrobisnis</item>
+        <item>Bangunan</item>
+        <item>Bisnis dan Manajemen</item>
+        <item>Processing</item>
+        <item>Teknik Las</item>
+        <item>Teknik Listrik</item>
+        <item>Teknik Otomotif</item>
+    </string-array>
+
+
     <string-array name="jurusan">
         <item>Agribisnis</item>
         <item>Bangunan</item>

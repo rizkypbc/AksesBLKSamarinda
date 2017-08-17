@@ -298,6 +298,40 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:paddingBottom="5dp"
+            android:text="Perusahaan"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnPerusahaan"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:entries="@array/perusahaan"
+            android:prompt="@string/nama_perusahaan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Posisi"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spnPosisi"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:entries="@array/posisi"
+            android:prompt="@string/nama_posisi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
             android:text="Jurusan"
             android:textSize="12sp" />
 
