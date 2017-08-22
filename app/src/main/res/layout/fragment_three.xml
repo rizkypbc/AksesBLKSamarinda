@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#c9ffc4"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_horizontal_margin"
     android:paddingLeft="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_vertical_margin"
@@ -12,21 +12,47 @@
 
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="18sp"
         android:text="Klik Icon dibawah jika ingin mengisi formulir pencari kerja"
         android:textColor="#0c2176"
-        android:textStyle="bold"/>
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/btnOrang"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/docs2"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:src="@drawable/docs2" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ImageLoginPencari"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Klik Icon dibawah jika ingin login\n Pencari Kerja"
+        android:textColor="#101a8b"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ImageLoginPencari"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignLeft="@+id/btnOrang"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnOrang"
+        android:layout_marginBottom="19dp"
+        android:src="@drawable/account" />
     <!--<Button-->
         <!--android:id="@+id/btnOrang"-->
         <!--android:layout_width="match_parent"-->

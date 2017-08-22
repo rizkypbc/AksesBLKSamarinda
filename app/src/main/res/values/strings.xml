@@ -2,6 +2,8 @@
     <string name="app_name">Akses BLK Samarinda</string>
     <string name="pelatihan">Form Pelatihan</string>
 
+    <string name="greeting">Hi, %s :)</string>
+
     <!--<string name="country_prompt">Choose a country</string>-->
 
     <string name="nama_provinsi">Pilih Provinsi</string>
@@ -100,6 +102,10 @@
         <item>PT. Surya Hutani Jaya</item>
         <item>PT. Sriwijaya Teknik Utama</item>
         <item>PT. Tata Optima Property</item>
+        <item>PT. Sriwijaya Teknik Utama</item>
+        <item>CV. Rizky Patria</item>
+        <item>PT. Bukit Intan Indoperkasa</item>
+        <item>PT. BFI Finance Indonesia</item>
     </string-array>
 
     <string-array name="bank_sahabat">
@@ -282,6 +288,34 @@
         <item>Marketing SPV/Staff</item>
         <item>IT SPV</item>
         <item>HVAC SPV(Pendingin dan Tata Udara</item>
+    </string-array>
+
+    <string-array name="pt_sriwijaya_teknik">
+        <item>Teknisi Cylinder Head</item>
+        <item>Operator Mesin Crankshaft</item>
+        <item>Operator Center Block</item>
+    </string-array>
+
+    <string-array name="pt_rizky">
+        <item>Teknisi Lapangan</item>
+        <item>Teknisi Kelistrikan</item>
+        <item>Teknisi Jaringan</item>
+    </string-array>
+
+    <string-array name="pt_bukit">
+        <item>Foreman Produksi</item>
+        <item>Mekanik A2B</item>
+        <item>Electric A2B</item>
+        <item>Departemen HD</item>
+        <item>Mekanik dan Elt DT/HD</item>
+    </string-array>
+
+    <string-array name="pt_bfi">
+        <item>Administrasi</item>
+        <item>Marketing/Telemarketing</item>
+        <item>Collector</item>
+        <item>IT Wilayah</item>
+        <item>Management Trainee</item>
     </string-array>
 
     <string name="nama_posisi">Pilih Posisi</string>

@@ -419,6 +419,26 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                             .createFromResource(getBaseContext(), R.array.pt_tata,
                                     android.R.layout.simple_spinner_item);
                     spnPosisi.setAdapter(adapter);
+                } else if (position == 21) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_sriwijaya_teknik,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 22) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_rizky,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 23) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_bukit,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 24) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_bfi,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
                 }
             }
 

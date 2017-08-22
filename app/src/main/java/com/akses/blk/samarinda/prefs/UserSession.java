@@ -28,5 +28,7 @@ public class UserSession {
         editor.apply();
     }
 
-    public boolean isUserLoggedin(){return prefs.getBoolean(KEY_IS_LOGGED_IN, false);}
+    public boolean isUserLoggedin() {
+        return prefs.getBoolean(KEY_IS_LOGGED_IN, false);
+    }
 }

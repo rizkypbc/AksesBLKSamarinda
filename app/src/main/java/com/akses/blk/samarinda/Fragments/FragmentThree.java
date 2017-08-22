@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.akses.blk.samarinda.FormPencaker;
+import com.akses.blk.samarinda.LoginPencari;
 import com.akses.blk.samarinda.R;
 
 /**
@@ -25,8 +26,20 @@ public class FragmentThree extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstaceState) {
         View view = inflater.inflate(R.layout.fragment_three, container, false);
+
         ImageView button = (ImageView) view.findViewById(R.id.btnOrang);
+        ImageView buttonLoginPencari = (ImageView) view.findViewById(R.id.ImageLoginPencari);
+
         button.setOnClickListener(this);
+        buttonLoginPencari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentPencari = new Intent(getActivity(), LoginPencari.class);
+                startActivityForResult(intentPencari, 1);
+            }
+        });
+
         return view;
     }
 

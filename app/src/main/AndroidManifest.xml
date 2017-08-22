@@ -68,6 +68,14 @@
             android:name=".Profil"
             android:label="Profil BLK Samarinda"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LoginPencari"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".HalamanPencari" />
+        <activity
+            android:name=".ListPencari"
+            android:label="List Data Pencari Kerja"
+            android:parentActivityName=".HalamanPencari" />
     </application>
 
 </manifest>
