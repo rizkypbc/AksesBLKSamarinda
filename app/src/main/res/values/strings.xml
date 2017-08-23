@@ -90,7 +90,7 @@
         <item>PT. Indomarco Prismatama</item>
         <item>PT. Karya Putra Surya Gemilang</item>
         <item>PT. Midi Utama Indonesia</item>
-        <item>PT. HK Group</item>
+        <item>CV. PESANGBUNGKUS</item>
         <item>PT. Panen Lestari Internusa/Sogo Dept Store</item>
         <item>PT. Paragon Technology And Innovation</item>
         <item>PT. Paula Jaya</item>
@@ -102,10 +102,10 @@
         <item>PT. Surya Hutani Jaya</item>
         <item>PT. Sriwijaya Teknik Utama</item>
         <item>PT. Tata Optima Property</item>
-        <item>PT. Sriwijaya Teknik Utama</item>
         <item>CV. Rizky Patria</item>
         <item>PT. Bukit Intan Indoperkasa</item>
         <item>PT. BFI Finance Indonesia</item>
+        <item>PT. CARSURIN</item>
     </string-array>
 
     <string-array name="bank_sahabat">
@@ -290,11 +290,6 @@
         <item>HVAC SPV(Pendingin dan Tata Udara</item>
     </string-array>
 
-    <string-array name="pt_sriwijaya_teknik">
-        <item>Teknisi Cylinder Head</item>
-        <item>Operator Mesin Crankshaft</item>
-        <item>Operator Center Block</item>
-    </string-array>
 
     <string-array name="pt_rizky">
         <item>Teknisi Lapangan</item>
@@ -316,6 +311,12 @@
         <item>Collector</item>
         <item>IT Wilayah</item>
         <item>Management Trainee</item>
+    </string-array>
+
+    <string-array name="pt_carsurin">
+        <item>Site Coordinator</item>
+        <item>Sampler Supervisor</item>
+        <item>Preparator Supervisor</item>
     </string-array>
 
     <string name="nama_posisi">Pilih Posisi</string>
