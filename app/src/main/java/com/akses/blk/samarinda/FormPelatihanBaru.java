@@ -938,7 +938,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
                         Toast.makeText(FormPelatihanBaru.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
-                                Toast.LENGTH_SHORT).show();
+                                Toast.LENGTH_LONG).show();
                     }
                 });
             } else {

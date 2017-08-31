@@ -100,12 +100,19 @@
         <item>PT. Salim Surya Phone</item>
         <item>PT. Surganya Motor Indonesia</item>
         <item>PT. Surya Hutani Jaya</item>
-        <item>PT. Sriwijaya Teknik Utama</item>
+        <item>PT. Tirta Mahakam Jaya</item>
         <item>PT. Tata Optima Property</item>
         <item>CV. Rizky Patria</item>
         <item>PT. Bukit Intan Indoperkasa</item>
         <item>PT. BFI Finance Indonesia</item>
         <item>PT. CARSURIN</item>
+        <item>PT. Bina Sarana Sukses</item>
+        <item>PT. BTPN Syariah</item>
+        <item>PT. Surya Mustika Nusantara</item>
+        <item>PT. Dian Kencana Puri Prima(Indosat Ooredoo)</item>
+        <item>PT. Surya Madistrindo</item>
+        <item>PT. Asuransi Jiwa Sequislife</item>
+        <item>PT. Laut Timur Ardiprima</item>
     </string-array>
 
     <string-array name="bank_sahabat">
@@ -278,10 +285,11 @@
         <item>Mapping Officer</item>
     </string-array>
 
-    <string-array name="pt_sriwijaya">
-        <item>Teknisi Cylinder Head</item>
-        <item>Operator Mesin Crankshaft</item>
-        <item>Operator Center Block</item>
+    <string-array name="pt_tirta">
+        <item>MT Foreman Produksi</item>
+        <item>MT Teknisi Mesin Produksi</item>
+        <item>MT Teknisi Elektri</item>
+        <item>MT Laboratorium Produksi</item>
     </string-array>
 
     <string-array name="pt_tata">
@@ -317,6 +325,62 @@
         <item>Site Coordinator</item>
         <item>Sampler Supervisor</item>
         <item>Preparator Supervisor</item>
+    </string-array>
+
+    <string-array name="pt_bina">
+        <item>Kabag Produksi</item>
+        <item>Supervisor Produksi</item>
+        <item>Foreman Produksi</item>
+        <item>Safety Patroll</item>
+        <item>Safety Officer</item>
+        <item>Operator Excavator</item>
+        <item>Operator Dozer</item>
+        <item>Operator HD</item>
+        <item>Operator Greader</item>
+        <item>Operator Compact</item>
+        <item>Driver DT Roda 12</item>
+        <item>Driver Fuel Truck</item>
+        <item>Supervisor HRD</item>
+        <item>Staff HRD</item>
+        <item>Supervisor Trainer Operator</item>
+        <item>Trainer Operator</item>
+        <item>Trainer Mekanik</item>
+        <item>Warehouse Officer</item>
+        <item>Storeman</item>
+        <item>Foreman Mekanik</item>
+        <item>Mekanik A2B</item>
+        <item>Mekanik DT</item>
+        <item>Junior Planer</item>
+        <item>Administrasi</item>
+    </string-array>
+
+    <string-array name="pt_btpn">
+        <item>Pembina Sentra</item>
+    </string-array>
+
+    <string-array name="pt_surya_mustika">
+        <item>Salesman Retail</item>
+        <item>Assistant Merchendiser Consumer</item>
+        <item>Admin Post Balikpapan</item>
+    </string-array>
+
+    <string-array name="pt_dian">
+        <item>Sales Force</item>
+    </string-array>
+
+    <string-array name="pt_surya_madistrindo">
+        <item>OMT/Salesman</item>
+    </string-array>
+
+    <string-array name="pt_asuransi">
+        <item>Insurance Counselor</item>
+    </string-array>
+
+    <string-array name="pt_laut">
+        <item>Accounting</item>
+        <item>Administrasi Pajak</item>
+        <item>Kepala Gudang</item>
+        <item>Sales Supervisor</item>
     </string-array>
 
     <string name="nama_posisi">Pilih Posisi</string>

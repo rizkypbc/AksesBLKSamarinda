@@ -677,7 +677,7 @@ public class FormRegistrasiPerusahaan extends AppCompatActivity implements View.
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
                         Toast.makeText(FormRegistrasiPerusahaan.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
-                                Toast.LENGTH_SHORT).show();
+                                Toast.LENGTH_LONG).show();
                     }
                 });
             }

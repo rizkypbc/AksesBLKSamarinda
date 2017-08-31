@@ -28,11 +28,14 @@ import java.net.URL;
 
 public class FormTambahBerita extends AppCompatActivity implements View.OnClickListener {
 
+    //storage permission code
+    private static final int STORAGE_PERMISSION_CODE = 123;
+    private static final int REQUEST_CHOOSER = 1234;
     TextView textViewPathPhotoBerita, textViewKeterangan;
     EditText editTextJudul, editTextKonten, editTextTgl;
     Button buttonPilihFile, buttonUpload;
-    //storage permission code
-    private static final int STORAGE_PERMISSION_CODE = 123;
+    int serverResponseCode = 0;
+    ProgressDialog dialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +67,6 @@ public class FormTambahBerita extends AppCompatActivity implements View.OnClickL
         buttonUpload = (Button) findViewById(R.id.buttonUploadBerita);
         buttonUpload.setOnClickListener(this);
     }
-
-    private static final int REQUEST_CHOOSER = 1234;
 
     @Override
     public void onClick(View v) {
@@ -150,9 +151,6 @@ public class FormTambahBerita extends AppCompatActivity implements View.OnClickL
         }
 
     }
-
-    int serverResponseCode = 0;
-    ProgressDialog dialog = null;
 
     public int uploadFile(String sourceFileUri, String judul, String deskripsi) {
 
@@ -241,7 +239,7 @@ public class FormTambahBerita extends AppCompatActivity implements View.OnClickL
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
                         Toast.makeText(FormTambahBerita.this, "Tambah Berita Berhasil.",
-                                Toast.LENGTH_SHORT).show();
+                                Toast.LENGTH_LONG).show();
                     }
                 });
             }

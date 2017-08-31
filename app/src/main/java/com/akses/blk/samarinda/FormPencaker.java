@@ -411,7 +411,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                     spnPosisi.setAdapter(adapter);
                 } else if (position == 19) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_sriwijaya,
+                            .createFromResource(getBaseContext(), R.array.pt_tirta,
                                     android.R.layout.simple_spinner_item);
                     spnPosisi.setAdapter(adapter);
                 } else if (position == 20) {
@@ -437,6 +437,41 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                 } else if (position == 24) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.pt_carsurin,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 25) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_bina,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 26) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_btpn,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 27) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_surya_mustika,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 28) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_dian,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 29) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_surya_madistrindo,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 30) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_asuransi,
+                                    android.R.layout.simple_spinner_item);
+                    spnPosisi.setAdapter(adapter);
+                } else if (position == 31) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                            .createFromResource(getBaseContext(), R.array.pt_laut,
                                     android.R.layout.simple_spinner_item);
                     spnPosisi.setAdapter(adapter);
                 }
@@ -960,7 +995,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
                         Toast.makeText(FormPencaker.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
-                                Toast.LENGTH_SHORT).show();
+                                Toast.LENGTH_LONG).show();
                     }
                 });
             }

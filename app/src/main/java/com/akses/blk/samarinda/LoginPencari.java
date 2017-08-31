@@ -158,7 +158,7 @@ public class LoginPencari extends AppCompatActivity {
 
     private void toast(String tag) {
 
-        Toast.makeText(this, tag, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, tag, Toast.LENGTH_LONG).show();
     }
 
 }
