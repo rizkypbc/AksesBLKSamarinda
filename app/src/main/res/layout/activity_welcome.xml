@@ -1,75 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:orientation="vertical"
     android:background="#c9ffc4"
+    android:padding="10dp"
     tools:context="com.akses.blk.samarinda.WelcomeActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
 
     <TextView
         android:id="@+id/key_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
+        android:text="Username"
         android:textColor="#000"
-        android:layout_gravity="center_horizontal"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/key_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="Email"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tv_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:textSize="18sp"
         android:text="Klik Icon dibawah jika ingin menambah berita atau pengumuman"
         android:textColor="#3d108b"
-        android:textStyle="bold"
-        android:layout_marginBottom="5dp"/>
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/btnTambahBerita"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/news_icon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/news_icon" />
 
+
+    <TextView
+        android:id="@+id/tv_data_perusahaan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnTambahBerita"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Klik Icon dibawah jika ingin melihat data pendaftar"
+        android:textColor="#101a8b"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/list_perusahaan"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/search" />
 
     <TextView
         android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/list_perusahaan"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:textSize="18sp"
         android:text="Klik Icon dibawah jika ingin logout"
         android:textColor="#101a8b"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/btnTambahBerita" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/logout"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/logout"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/logout" />
 
-    <!--<Button-->
+
+  </LinearLayout>
+
+
+  <!--<Button-->
         <!--android:id="@+id/btnTambahBerita"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
@@ -82,7 +111,7 @@
         <!--android:text="logout" />-->
 
 
-</LinearLayout>
+</ScrollView>
 
     <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
     <!--android:layout_width="match_parent"-->

@@ -76,6 +76,10 @@
             android:name=".ListPencari"
             android:label="List Data Pencari Kerja"
             android:parentActivityName=".HalamanPencari" />
+        <activity
+            android:name=".ListPerusahaan"
+            android:label="List Perusahaan"
+            android:parentActivityName=".WelcomeActivity" />
     </application>
 
 </manifest>

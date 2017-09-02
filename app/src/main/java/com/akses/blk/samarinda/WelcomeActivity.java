@@ -18,7 +18,7 @@ import com.akses.blk.samarinda.prefs.UserSession;
 public class WelcomeActivity extends AppCompatActivity {
 
 
-    private ImageView logout, tambahBerita;
+    private ImageView logout, tambahBerita, listPerusahaan;
     private TextView tvUsername, tvEmail;
     private UserInfo userInfo;
     private UserSession userSession;
@@ -34,6 +34,7 @@ public class WelcomeActivity extends AppCompatActivity {
         tambahBerita    = (ImageView)findViewById(R.id.btnTambahBerita);
         tvUsername      = (TextView)findViewById(R.id.key_username);
         tvEmail         = (TextView)findViewById(R.id.key_email);
+        listPerusahaan = (ImageView) findViewById(R.id.list_perusahaan);
 
         if(!userSession.isUserLoggedin()){
             startActivity(new Intent(this, FormLoginPerusahaan.class));
@@ -61,6 +62,14 @@ public class WelcomeActivity extends AppCompatActivity {
                 userInfo.clearUserInfo();
                 startActivity(new Intent(WelcomeActivity.this, FormLoginPerusahaan.class));
                 finish();
+            }
+        });
+
+        listPerusahaan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(WelcomeActivity.this, ListPerusahaan.class));
             }
         });
 
