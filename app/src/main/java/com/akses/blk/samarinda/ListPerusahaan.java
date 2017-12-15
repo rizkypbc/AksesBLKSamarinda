@@ -29,6 +29,10 @@ public class ListPerusahaan extends AppCompatActivity implements SearchView.OnQu
 
     public static final String URL = "http://aksesblk-samarinda.com/aksesblksamarinda/loginUserPencaker/";
     static String urlAddress = "http://aksesblk-samarinda.com/aksesblksamarinda/loginUserPencaker/readPerusahaan.php";
+
+//    public static final String URL = "http://10.223.193.134/aksesblksamarinda/loginUserPencaker/";
+//    static String urlAddress = "http://10.223.193.134/aksesblksamarinda/loginUserPencaker/readPerusahaan.php";
+
     RecyclerView recyclerView;
     private ArrayList<Pencari> pencariArrayList = new ArrayList<>();
     private PerusahaanAdapter perusahaanAdapter;

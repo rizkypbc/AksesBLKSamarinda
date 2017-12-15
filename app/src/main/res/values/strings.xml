@@ -113,6 +113,12 @@
         <item>PT. Surya Madistrindo</item>
         <item>PT. Asuransi Jiwa Sequislife</item>
         <item>PT. Laut Timur Ardiprima</item>
+        <item>PT. Kawan Lama Retail</item>
+        <item>PT. Segar Harum Kalimantan</item>
+        <item>PT. SLJ Global, Tbk</item>
+        <item>PT. Telkom Samarinda</item>
+        <item>PT. Infomedia Solusi Humanika</item>
+        <item>PT. Axa Finansial Indonesia</item>
     </string-array>
 
     <string-array name="bank_sahabat">
@@ -383,6 +389,47 @@
         <item>Sales Supervisor</item>
     </string-array>
 
+    <string-array name="pt_kawan">
+        <item>Sales Project</item>
+        <item>Asissten Store Manager</item>
+        <item>Store Supervisor</item>
+        <item>Leader Store (Food &amp; Beferages/Chatime)</item>
+        <item>Customer Service</item>
+        <item>Kasir</item>
+        <item>Barista</item>
+        <item>Sales Executive/Advisor/Pramuniaga</item>
+    </string-array>
+
+    <string-array name="pt_segar">
+        <item>Supervisor</item>
+        <item>Administrasi</item>
+        <item>Sales</item>
+        <item>Sales Motoris</item>
+        <item>Driver</item>
+    </string-array>
+
+    <string-array name="pt_slj">
+        <item>Operator Control Room</item>
+        <item>Mekanik HE</item>
+        <item>Ganis PHPL</item>
+        <item>Staff GIS</item>
+    </string-array>
+
+    <string-array name="pt_telkom">
+        <item>Marketing</item>
+        <item>Teknisi Jaringan</item>
+    </string-array>
+
+    <string-array name="pt_infomedia">
+        <item>CSR Telkom Plaza</item>
+        <item>Agen Kartu Halo Telkomsel</item>
+        <item>Marketing Eksekutif</item>
+    </string-array>
+
+    <string-array name="pt_axa">
+        <item>Finansial Counsultan</item>
+    </string-array>
+
     <string name="nama_posisi">Pilih Posisi</string>
     <string-array name="posisi">
         <item>Agrobisnis</item>
@@ -396,7 +443,7 @@
 
 
     <string-array name="jurusan">
-        <item>Agribisnis</item>
+        <!--<item>Agribisnis</item>-->
         <item>Bangunan</item>
         <item>Bisnis dan Manajemen</item>
         <item>Garmen Apparel</item>
@@ -1045,7 +1092,7 @@
 
     <string name="nama_bidang">Pilih Bidang Perusahaan</string>
     <string-array name="bidang">
-        <item>Agribisnis</item>
+        <!--<item>Agribisnis</item>-->
         <item>Akuntan Auditor</item>
         <item>Asuransi</item>
         <item>Biro Perjalanan</item>

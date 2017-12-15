@@ -1,7 +1,9 @@
 package com.akses.blk.samarinda;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -11,7 +13,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -426,6 +430,9 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                 } else if (spinDist.matches("Teknik Sepeda Motor") && sp1 == 10) {
                     sp2 = 17;
                     populateLocal();
+                } else if (spinDist.matches("Teknik Kendaraan Ringan") && sp1 == 10) {
+                    sp2 = 23;
+                    populateLocal();
                 } else if (spinDist.matches("Database") && sp1 == 11) {
                     sp2 = 18;
                     populateLocal();
@@ -505,7 +512,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
             ArrayAdapter<String> adapter9 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tm);
             spnSubKejuruan.setAdapter(adapter9);
         } else if (sp1 == 10) {
-            String[] to = {"AC Cold Storage", "Teknik Alat Berat", "Teknik Kendaraan Ringan - Bensin", "Teknik Sepeda Motor"};
+            String[] to = {"AC Cold Storage", "Teknik Alat Berat", "Teknik Kendaraan Ringan - Bensin", "Teknik Sepeda Motor", "Teknik Kendaraan Ringan"};
 
             ArrayAdapter<String> adapter10 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, to);
             spnSubKejuruan.setAdapter(adapter10);
@@ -598,24 +605,24 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
             String[] mjsp = {"Mekanik Junior Sepeda Motor", "Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL17 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mjsp);
             spnProgram.setAdapter(adapterL17);
-        } else if (sp2 == 18) {
+        } else if (sp2 == 19) {
             String[] pbk5 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL18 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk5);
             spnProgram.setAdapter(adapterL18);
-        } else if (sp2 == 19) {
+        } else if (sp2 == 20) {
             String[] pbk6 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL19 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk6);
             spnProgram.setAdapter(adapterL19);
-        } else if (sp2 == 20) {
+        } else if (sp2 == 21) {
             String[] op = {"Operator Komputer", "Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL20 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, op);
             spnProgram.setAdapter(adapterL20);
-        } else if (sp2 == 21) {
+        } else if (sp2 == 22) {
             String[] pbk7 = {"Pelatihan Berbasis Kompetensi"};
             ArrayAdapter<String> adapterL21 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk7);
             spnProgram.setAdapter(adapterL21);
-        } else if (sp2 == 22) {
-            String[] pbk8 = {"Pelatihan Berbasis Kompetensi"};
+        } else if (sp2 == 23) {
+            String[] pbk8 = {"Body Repair & Painting"};
             ArrayAdapter<String> adapterL22 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk8);
             spnProgram.setAdapter(adapterL22);
         }
@@ -741,13 +748,17 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                                 program);
                         System.out.println("RES : " + response);
 
-                    }
-                }).start();
 
+                    }
+
+                }).start();
                 break;
             default:
+
                 break;
         }
+
+
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -927,27 +938,49 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                 bytesRead = fileInputStream.read(buffer, 0, bufferSize);
             }
 
+
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
             serverResponseCode = conn.getResponseCode();
             String serverResponseMessage = conn.getResponseMessage();
 
+
             if (serverResponseCode == 200) {
                 runOnUiThread(new Runnable() {
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
-                        Toast.makeText(FormPelatihanBaru.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
-                                Toast.LENGTH_LONG).show();
+
+
+                        LayoutInflater inflater = getLayoutInflater();
+                        View toastLayout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_layout));
+
+                        Toast toast = new Toast(getApplicationContext());
+
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setView(toastLayout);
+                        toast.show();
+                        toast.show();
+                        toast.show();
+//                        Toast.makeText(FormPelatihanBaru.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
+//                                Toast.LENGTH_LONG).show();
+
                     }
+
                 });
+
             } else {
 
                 Toast.makeText(FormPelatihanBaru.this, "Gagal Input Data", Toast.LENGTH_LONG).show();
             }
 
             // close the streams //
+
             fileInputStream.close();
+
             dos.flush();
             dos.close();
 
@@ -964,6 +997,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                     Toast.LENGTH_SHORT).show();
             Log.e("Upload ", "Exception : " + e.getMessage(), e);
         }
+
         dialog.dismiss();
         finish();
         return serverResponseCode;

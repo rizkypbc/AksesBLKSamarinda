@@ -11,7 +11,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -68,10 +70,10 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         init();
     }
 
-    protected void init(){
+    protected void init() {
 
-        txtViewPathPhoto = (TextView)findViewById(R.id.textViewPathPhoto);
-        txtViewPathCV = (TextView)findViewById(R.id.textViewPathCv);
+        txtViewPathPhoto = (TextView) findViewById(R.id.textViewPathPhoto);
+        txtViewPathCV = (TextView) findViewById(R.id.textViewPathCv);
 
         txtUsername = (EditText) findViewById(R.id.txt_username);
 
@@ -83,26 +85,26 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
 //        txtJkPencari = (EditText) findViewById(R.id.txt_jk_pencari_kerja);
         txtTtlPencari = (EditText) findViewById(R.id.txt_ttl_pencari_kerja);
         txtAsalSekolah = (EditText) findViewById(R.id.txt_asal_sekolah_pencaker);
-        txtPendidikan = (EditText)findViewById(R.id.txt_pendidikan);
-        txtKetrampilan = (EditText)findViewById(R.id.txt_ketrampilan);
-        txtPengalaman = (EditText)findViewById(R.id.txt_pengalaman);
-        txtTelpBursa = (EditText)findViewById(R.id.txt_telp_bursa);
-        txtAlamatBursa = (EditText)findViewById(R.id.txt_alamat_bursa);
-        txtJurusanBursa = (EditText)findViewById(R.id.txt_jurusan_bursa);
+        txtPendidikan = (EditText) findViewById(R.id.txt_pendidikan);
+        txtKetrampilan = (EditText) findViewById(R.id.txt_ketrampilan);
+        txtPengalaman = (EditText) findViewById(R.id.txt_pengalaman);
+        txtTelpBursa = (EditText) findViewById(R.id.txt_telp_bursa);
+        txtAlamatBursa = (EditText) findViewById(R.id.txt_alamat_bursa);
+        txtJurusanBursa = (EditText) findViewById(R.id.txt_jurusan_bursa);
 
         m_AccessServiceAPI = new AccessServiceAPI();
 
-        spnProvinsi = (Spinner)findViewById(R.id.spnProvinsiKerja);
-        spnKab = (Spinner)findViewById(R.id.spnKabupatenKerja);
-        spnAgamaBursa = (Spinner)findViewById(R.id.spnAgamaKerja);
-        spnPendidikanBursa = (Spinner)findViewById(R.id.spnPendidikanBursa);
-        spnStatus = (Spinner)findViewById(R.id.spnStatus);
+        spnProvinsi = (Spinner) findViewById(R.id.spnProvinsiKerja);
+        spnKab = (Spinner) findViewById(R.id.spnKabupatenKerja);
+        spnAgamaBursa = (Spinner) findViewById(R.id.spnAgamaKerja);
+        spnPendidikanBursa = (Spinner) findViewById(R.id.spnPendidikanBursa);
+        spnStatus = (Spinner) findViewById(R.id.spnStatus);
 
-        spnPerusahaan = (Spinner) findViewById(R.id.spnPerusahaan);
-        spnPosisi = (Spinner) findViewById(R.id.spnPosisi);
+//        spnPerusahaan = (Spinner) findViewById(R.id.spnPerusahaan);
+//        spnPosisi = (Spinner) findViewById(R.id.spnPosisi);
 
-        radioAlumniGroup = (RadioGroup)findViewById(R.id.radioAlumni);
-        radioSexGroup = (RadioGroup)findViewById(R.id.radioJenisKelamin);
+        radioAlumniGroup = (RadioGroup) findViewById(R.id.radioAlumni);
+        radioSexGroup = (RadioGroup) findViewById(R.id.radioJenisKelamin);
 
         buttonPilihFilePhoto = (Button) findViewById(R.id.buttonPilihFilePhoto);
         buttonPilihFilePhoto.setOnClickListener(this);
@@ -124,7 +126,6 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         ArrayAdapter dataStatus = ArrayAdapter.createFromResource(this, R.array.status_perkawinan, android.R.layout.simple_spinner_item);
         dataStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnStatus.setAdapter(dataStatus);
-
 
 
         spnProvinsi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -310,178 +311,208 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        spnPerusahaan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                parent.getItemAtPosition(position);
-                if (position == 0) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.bank_sahabat,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 1) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_aneka,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 2) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_bank_danamon,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 3) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_bca,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 4) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_equalindo,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 5) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_equityworld,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 6) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_indomarco,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 7) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_karya,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 8) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_midi,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 9) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_hkgroup,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 10) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_panen,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 11) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_paragon,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 12) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_paula,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 13) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_pharos,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 14) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_raya,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 15) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_sanggar,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 16) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_salim,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 17) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_surganya,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 18) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_surya,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 19) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_tirta,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 20) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_tata,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 21) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_rizky,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 22) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_bukit,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 23) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_bfi,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 24) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_carsurin,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 25) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_bina,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 26) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_btpn,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 27) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_surya_mustika,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 28) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_dian,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 29) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_surya_madistrindo,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 30) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_asuransi,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                } else if (position == 31) {
-                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                            .createFromResource(getBaseContext(), R.array.pt_laut,
-                                    android.R.layout.simple_spinner_item);
-                    spnPosisi.setAdapter(adapter);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        spnPerusahaan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                parent.getItemAtPosition(position);
+//                if (position == 0) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.bank_sahabat,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 1) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_aneka,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 2) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_bank_danamon,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 3) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_bca,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 4) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_equalindo,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 5) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_equityworld,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 6) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_indomarco,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 7) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_karya,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 8) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_midi,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 9) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_hkgroup,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 10) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_panen,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 11) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_paragon,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 12) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_paula,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 13) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_pharos,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 14) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_raya,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 15) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_sanggar,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 16) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_salim,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 17) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_surganya,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 18) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_surya,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 19) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_tirta,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 20) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_tata,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 21) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_rizky,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 22) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_bukit,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 23) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_bfi,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 24) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_carsurin,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 25) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_bina,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 26) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_btpn,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 27) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_surya_mustika,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 28) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_dian,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 29) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_surya_madistrindo,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 30) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_asuransi,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 31) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_laut,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 32) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_kawan,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 33) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_segar,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 34) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_slj,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 35) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_telkom,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 36) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_infomedia,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                } else if (position == 37) {
+//                    ArrayAdapter<CharSequence> adapter = ArrayAdapter
+//                            .createFromResource(getBaseContext(), R.array.pt_axa,
+//                                    android.R.layout.simple_spinner_item);
+//                    spnPosisi.setAdapter(adapter);
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
     }
 
     @Override
@@ -576,20 +607,19 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
 
                         String pengalaman = txtPengalaman.getText().toString();
 
-                        String perusahaan = spnPerusahaan.getSelectedItem().toString();
-
-                        String posisi = spnPosisi.getSelectedItem().toString();
+//                        String perusahaan = spnPerusahaan.getSelectedItem().toString();
+//
+//                        String posisi = spnPosisi.getSelectedItem().toString();
 
                         int selectedAlumni = radioAlumniGroup.getCheckedRadioButtonId();
-                        radioAlumniButton = (RadioButton)findViewById(selectedAlumni);
+                        radioAlumniButton = (RadioButton) findViewById(selectedAlumni);
                         String alumni = radioAlumniButton.getText().toString();
 
 
                         response = uploadFile(path, username, password, noktp, nama_pencari,
                                 jk_pencari, ttl_pencari, agama_bursa, status_perkawinan,
                                 telp_bursa, alamat_bursa, provinsi, kab, pendidikan_bursa,
-                                jurusan_bursa, asal, pendidikan, ketrampilan, pengalaman, alumni,
-                                perusahaan, posisi);
+                                jurusan_bursa, asal, pendidikan, ketrampilan, pengalaman, alumni);
                         System.out.println("RES : " + response);
 //
                         responseFile = uploadFileCV(path1);
@@ -636,11 +666,12 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                           String noktp, String nama_pencari, String jk_pencari, String ttl_pencari,
                           String agama_bursa, String status_perkawinan, String telp_bursa, String alamat_bursa,
                           String provinsi, String kab, String pendidikan_bursa, String jurusan_bursa,
-                          String asal, String pendidikan, String ketrampilan, String pengalaman, String alumni,
-                          String perusahaan, String posisi) {
+                          String asal, String pendidikan, String ketrampilan, String pengalaman, String alumni) {
 
         // ip komputer server
         String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/blk/pencariNew.php";
+
+//        String upLoadServerUri = "http://192.168.1.14/aksesblksamarinda/blk/pencariNew.php";
         String fileName = sourceFileUri;
 //        String fileNameCV = sourceFileUri1;
 
@@ -649,7 +680,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         String lineEnd = "\r\n";
         String twoHyphens = "--";
         String boundary = "*****";
-        int bytesRead, bytesAvailable, bufferSize, bytesRead1, bufferSizeCV,  bytesAvailableCV;
+        int bytesRead, bytesAvailable, bufferSize, bytesRead1, bufferSizeCV, bytesAvailableCV;
         byte[] buffer;
         int maxBufferSize = 1 * 1024 * 1024;
         File sourceFile = new File(sourceFileUri);
@@ -698,138 +729,138 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
 
             // jika ingin menambahkan parameter baru, silahkan buat baris baru
             // lagi seperti berikut
-            dos.writeBytes("Content-Disposition: form-data; name=\"noktp\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"noktp\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(noktp);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"nama_pencari\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"nama_pencari\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(nama_pencari);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"jk_pencari\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"jk_pencari\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(jk_pencari);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"ttl_pencari\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"ttl_pencari\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(ttl_pencari);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"agama_bursa\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"agama_bursa\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(agama_bursa);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"status_perkawinan\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"status_perkawinan\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(status_perkawinan);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"telp_bursa\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"telp_bursa\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(telp_bursa);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"alamat_bursa\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"alamat_bursa\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(alamat_bursa);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"provinsi\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"provinsi\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(provinsi);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"kab\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"kab\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(kab);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"pendidikan_bursa\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"pendidikan_bursa\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(pendidikan_bursa);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"jurusan_bursa\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"jurusan_bursa\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(jurusan_bursa);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"asal\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"asal\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(asal);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"pendidikan\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"pendidikan\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(pendidikan);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"ketrampilan\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"ketrampilan\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(ketrampilan);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"pengalaman\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"pengalaman\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(pengalaman);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"alumni\""+
+            dos.writeBytes("Content-Disposition: form-data; name=\"alumni\"" +
                     lineEnd);
             dos.writeBytes(lineEnd);
             dos.writeBytes(alumni);
             dos.writeBytes(lineEnd);
             dos.writeBytes(twoHyphens + boundary + lineEnd);
 
-            dos.writeBytes("Content-Disposition: form-data; name=\"perusahaan\"" +
-                    lineEnd);
-            dos.writeBytes(lineEnd);
-            dos.writeBytes(perusahaan);
-            dos.writeBytes(lineEnd);
-            dos.writeBytes(twoHyphens + boundary + lineEnd);
-
-            dos.writeBytes("Content-Disposition: form-data; name=\"posisi\"" +
-                    lineEnd);
-            dos.writeBytes(lineEnd);
-            dos.writeBytes(posisi);
-            dos.writeBytes(lineEnd);
-            dos.writeBytes(twoHyphens + boundary + lineEnd);
+//            dos.writeBytes("Content-Disposition: form-data; name=\"perusahaan\"" +
+//                    lineEnd);
+//            dos.writeBytes(lineEnd);
+//            dos.writeBytes(perusahaan);
+//            dos.writeBytes(lineEnd);
+//            dos.writeBytes(twoHyphens + boundary + lineEnd);
+//
+//            dos.writeBytes("Content-Disposition: form-data; name=\"posisi\"" +
+//                    lineEnd);
+//            dos.writeBytes(lineEnd);
+//            dos.writeBytes(posisi);
+//            dos.writeBytes(lineEnd);
+//            dos.writeBytes(twoHyphens + boundary + lineEnd);
 
 
             dos.writeBytes("Content-Disposition: form-data; name=\"uploaded_file\";filename=\""
@@ -876,8 +907,21 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
                 runOnUiThread(new Runnable() {
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
-                        Toast.makeText(FormPencaker.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
-                                Toast.LENGTH_SHORT).show();
+                        LayoutInflater inflater = getLayoutInflater();
+                        View toastLayout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_layout));
+
+                        Toast toast = new Toast(getApplicationContext());
+
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setView(toastLayout);
+                        toast.show();
+                        toast.show();
+                        toast.show();
+//                        Toast.makeText(FormPencaker.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
+//                                Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -899,7 +943,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
             Toast.makeText(FormPencaker.this, "Exception : " + e.getMessage(),
                     Toast.LENGTH_SHORT).show();
-            Log.e("Upload ","Exception : " + e.getMessage(), e);
+            Log.e("Upload ", "Exception : " + e.getMessage(), e);
         }
         dialog.dismiss();
         finish();
@@ -911,6 +955,9 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
 
         // ip komputer server
         String upLoadServerUri = "http://aksesblk-samarinda.com/aksesblksamarinda/blk/pencariFile.php";
+
+//        String upLoadServerUri = "http://192.168.1.14/aksesblksamarinda/blk/pencariFile.php";
+
         String fileName = sourceFileUriCV;
 //        String fileNameCV = sourceFileUri1;
 
@@ -919,7 +966,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
         String lineEnd = "\r\n";
         String twoHyphens = "--";
         String boundary = "*****";
-        int bytesRead, bytesAvailable, bufferSize, bytesRead1, bufferSizeCV,  bytesAvailableCV;
+        int bytesRead, bytesAvailable, bufferSize, bytesRead1, bufferSizeCV, bytesAvailableCV;
         byte[] buffer;
         int maxBufferSize = 1 * 1024 * 1024;
         File sourceFile = new File(sourceFileUriCV);
@@ -1017,7 +1064,7 @@ public class FormPencaker extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
             Toast.makeText(FormPencaker.this, "Exception : " + e.getMessage(),
                     Toast.LENGTH_SHORT).show();
-            Log.e("Upload ","Exception : " + e.getMessage(), e);
+            Log.e("Upload ", "Exception : " + e.getMessage(), e);
         }
         dialog.dismiss();
         finish();

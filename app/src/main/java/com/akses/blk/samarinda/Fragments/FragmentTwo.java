@@ -17,6 +17,7 @@ import com.akses.blk.samarinda.R;
 
 public class FragmentTwo extends Fragment implements View.OnClickListener {
 
+
 //    private Button btnKerja, btnPerusahaan;
 
 

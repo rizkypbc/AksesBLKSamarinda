@@ -11,7 +11,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -676,8 +678,21 @@ public class FormRegistrasiPerusahaan extends AppCompatActivity implements View.
                 runOnUiThread(new Runnable() {
                     public void run() {
 //                        textViewKeterangan.setText("Upload Berhasil");
-                        Toast.makeText(FormRegistrasiPerusahaan.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
-                                Toast.LENGTH_LONG).show();
+                        LayoutInflater inflater = getLayoutInflater();
+                        View toastLayout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_layout));
+
+                        Toast toast = new Toast(getApplicationContext());
+
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setView(toastLayout);
+                        toast.show();
+                        toast.show();
+                        toast.show();
+//                        Toast.makeText(FormRegistrasiPerusahaan.this, "Data Anda Telah dikirim ke Database BLK Samarinda",
+//                                Toast.LENGTH_LONG).show();
                     }
                 });
             }
