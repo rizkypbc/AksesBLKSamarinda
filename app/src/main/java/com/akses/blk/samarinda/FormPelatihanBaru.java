@@ -362,6 +362,9 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                 } else if (province.matches("Teknologi Informasi Komunikasi")) {
                     sp1 = 11;
                     populateDist();
+                } else if (province.matches("Aviation")) {
+                    sp1 = 12;
+                    populateDist();
                 }
             }
 
@@ -393,6 +396,9 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                     populateLocal();
                 } else if (spinDist.matches("Sekretaris") && sp1 == 2) {
                     sp2 = 5;
+                    populateLocal();
+                } else if (spinDist.matches("Junior Administrative") && sp1 == 2) {
+                    sp2 = 27;
                     populateLocal();
                 } else if (spinDist.matches("Menjahit (Knitting, Woven)") && sp1 == 3) {
                     sp2 = 6;
@@ -448,6 +454,15 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
                 } else if (spinDist.matches("Web Administrator") && sp1 == 11) {
                     sp2 = 22;
                     populateLocal();
+                } else if (spinDist.matches("Aviation Security") && sp1 == 12) {
+                    sp2 = 24;
+                    populateLocal();
+                } else if (spinDist.matches("Marshalling") && sp1 == 12) {
+                    sp2 = 25;
+                    populateLocal();
+                } else if (spinDist.matches("Passasi") && sp1 == 12) {
+                    sp2 = 26;
+                    populateLocal();
                 }
             }
 
@@ -473,7 +488,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         }
         //Free State
         else if (sp1 == 2) {
-            String[] fs = {"Administrasi Perkantoran", "Sekretaris"};
+            String[] fs = {"Administrasi Perkantoran", "Sekretaris", "Junior Administrative"};
 
             ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fs);
             spnSubKejuruan.setAdapter(adapter2);
@@ -521,6 +536,11 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
 
             ArrayAdapter<String> adapter11 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tik);
             spnSubKejuruan.setAdapter(adapter11);
+        } else if (sp1 == 12) {
+            String[] avi = {"Aviation Security", "Marshalling", "Passasi"};
+
+            ArrayAdapter<String> adapter12 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, avi);
+            spnSubKejuruan.setAdapter(adapter12);
         }
     }
 
@@ -625,6 +645,22 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
             String[] pbk8 = {"Body Repair & Painting"};
             ArrayAdapter<String> adapterL22 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk8);
             spnProgram.setAdapter(adapterL22);
+        } else if (sp2 == 24) {
+            String[] pbk9 = {"Aviation Security"};
+            ArrayAdapter<String> adapterL23 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
+            spnProgram.setAdapter(adapterL23);
+        } else if (sp2 == 25) {
+            String[] pbk9 = {"Marshalling"};
+            ArrayAdapter<String> adapterL23 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
+            spnProgram.setAdapter(adapterL23);
+        } else if (sp2 == 26) {
+            String[] pbk9 = {"Passasi"};
+            ArrayAdapter<String> adapterL23 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
+            spnProgram.setAdapter(adapterL23);
+        } else if (sp2 == 27) {
+            String[] pbk9 = {"Junior Administrative"};
+            ArrayAdapter<String> adapterL27 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
+            spnProgram.setAdapter(adapterL27);
         }
     }
 

@@ -455,6 +455,7 @@
         <item>Teknik Manufaktur</item>
         <item>Teknik Otomotif</item>
         <item>Teknologi Informasi Komunikasi</item>
+        <item>Aviation</item>
     </string-array>
 
     <string name="nama_kejuruan">Pilih Kejuruan</string>
