@@ -1115,4 +1115,12 @@
         <item>Kehutanan/Perkayuan</item>
     </string-array>
 
+    <string name="program_baru">Pilih Program</string>
+    <string-array name="program_baru">
+        <item>Pelatihan Berbasis Kompetensi</item>
+        <item>MTU</item>
+        <item>Swadana</item>
+        <item>Kerjasama</item>
+    </string-array>
+
 </resources>

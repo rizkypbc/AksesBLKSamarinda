@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -27,7 +28,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.akses.blk.samarinda.Api.AccessServiceAPI;
+import com.akses.blk.samarinda.Model.Kejuruan;
+import com.akses.blk.samarinda.Model.SubKejuruan;
+import com.akses.blk.samarinda.Util.Handler;
 import com.ipaulpro.afilechooser.utils.FileUtils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -35,6 +43,9 @@ import java.io.FileInputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ASUS on 29/06/2017.
@@ -67,11 +78,20 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
     private ProgressDialog m_ProgressDialog;
     private AccessServiceAPI m_AccessServiceAPI;
     private Spinner spnProgram, spnProvinsi, spnAgama,
-            spnKabupaten, spnPendidikan, spnJurusan, spnKejuruan, spnSubKejuruan;
+            spnKabupaten, spnPendidikan, spnIdKejuruan, spnKejuruan, spnSubKejuruan;
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
     private Button buttonPilihFile, buttonUpload;
     private TextView textViewPath;
+
+    private ArrayList<Kejuruan> kejuruanList;
+    private ArrayList<SubKejuruan> subKejuruanList;
+    private ArrayList<Kejuruan> idKejuruanList;
+    private String kejuruanNama, idKejuruan;
+
+    private String URL_ID_KEJURUAN = "http://aksesblk-samarinda.com/aksesblksamarinda/kejuruan/get_kejuruan_id.php?nama_kejuruan=";
+    private String URL_KEJURUAN = "http://aksesblk-samarinda.com/aksesblksamarinda/kejuruan/kejuruan.php";
+    private String URL_SUB_KEJURUAN = "http://aksesblk-samarinda.com/aksesblksamarinda/kejuruan/subKejuruan.php?id_kejuruan=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +100,7 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         //Requesting storage permission
         requestStoragePermission();
         init();
+
     }
 
     protected void init() {
@@ -96,19 +117,12 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         txtAlamat = (EditText) findViewById(R.id.txt_alamat);
         txtAlamat.setText("");
 
-        spnProvinsi = (Spinner) findViewById(R.id.spnProvinsi);
-
-        spnKabupaten = (Spinner) findViewById(R.id.spnKabupaten);
-
         txtNoTelp = (EditText) findViewById(R.id.txt_notelp);
         txtNoTelp.setText("");
 
         txtEmail = (EditText) findViewById(R.id.txt_email);
         txtEmail.setText("");
 
-        spnAgama = (Spinner) findViewById(R.id.spnAgama);
-
-        spnPendidikan = (Spinner) findViewById(R.id.spnPendidikan);
 
         txtJurusan = (EditText) findViewById(R.id.txt_jurusan);
         txtJurusan.setText("");
@@ -116,11 +130,16 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         txtAsal = (EditText) findViewById(R.id.txt_asal_sekolah);
         txtAsal.setText("");
 
+        spnProvinsi = (Spinner) findViewById(R.id.spnProvinsi);
+        spnKabupaten = (Spinner) findViewById(R.id.spnKabupaten);
+
+        spnAgama = (Spinner) findViewById(R.id.spnAgama);
+        spnPendidikan = (Spinner) findViewById(R.id.spnPendidikan);
+
         spnKejuruan = (Spinner) findViewById(R.id.spnKejuruan);
-
         spnSubKejuruan = (Spinner) findViewById(R.id.spnSubKejuruan);
-
         spnProgram = (Spinner) findViewById(R.id.spnProgram);
+        spnIdKejuruan = (Spinner) findViewById(R.id.spnIdKejuruan);
 
         radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
 
@@ -130,6 +149,10 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         buttonUpload = (Button) findViewById(R.id.buttonUpload);
         buttonUpload.setOnClickListener(this);
 
+        kejuruanList = new ArrayList<Kejuruan>();
+        idKejuruanList = new ArrayList<Kejuruan>();
+        subKejuruanList = new ArrayList<SubKejuruan>();
+
         ArrayAdapter dataAgama = ArrayAdapter.createFromResource(this, R.array.agama, android.R.layout.simple_spinner_item);
         dataAgama.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnAgama.setAdapter(dataAgama);
@@ -138,10 +161,11 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         dataPendidikan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnPendidikan.setAdapter(dataPendidikan);
 
-
+        new GetKejuruan().execute();
         spnProvinsi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
                 if (position == 0) {
                     ArrayAdapter<CharSequence> adapter = ArrayAdapter
                             .createFromResource(getBaseContext(), R.array.prov_aceh,
@@ -324,48 +348,9 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         spnKejuruan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String province = (String) parent.getItemAtPosition(position);
 
-                if (province.matches("Agribisnis")) {
-                    sp1 = 0;
-                    populateDist();
-                } else if (province.matches("Bangunan")) {
-                    sp1 = 1;
-                    populateDist();
-                } else if (province.matches("Bisnis dan Manajemen")) {
-                    sp1 = 2;
-                    populateDist();
-                } else if (province.matches("Garmen Apparel")) {
-                    sp1 = 3;
-                    populateDist();
-                } else if (province.matches("Processing")) {
-                    sp1 = 4;
-                    populateDist();
-                } else if (province.matches("Refrigeration")) {
-                    sp1 = 5;
-                    populateDist();
-                } else if (province.matches("Teknik Elektronika")) {
-                    sp1 = 6;
-                    populateDist();
-                } else if (province.matches("Teknik Las")) {
-                    sp1 = 7;
-                    populateDist();
-                } else if (province.matches("Teknik Listrik")) {
-                    sp1 = 8;
-                    populateDist();
-                } else if (province.matches("Teknik Manufaktur")) {
-                    sp1 = 9;
-                    populateDist();
-                } else if (province.matches("Teknik Otomotif")) {
-                    sp1 = 10;
-                    populateDist();
-                } else if (province.matches("Teknologi Informasi Komunikasi")) {
-                    sp1 = 11;
-                    populateDist();
-                } else if (province.matches("Aviation")) {
-                    sp1 = 12;
-                    populateDist();
-                }
+                idKejuruanList.clear();
+                new GetIdKejuruanFromServer().execute();
             }
 
             @Override
@@ -377,93 +362,8 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
         spnSubKejuruan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String spinDist = (String) parent.getItemAtPosition(position);
 
-                if (spinDist.matches("Agribisnis Produksi Peternakan") && sp1 == 0) {
-                    sp2 = 0;
-                    populateLocal();
-                } else if (spinDist.matches("Furniture") && sp1 == 1) {
-                    sp2 = 1;
-                    populateLocal();
-                } else if (spinDist.matches("Gambar Bangunan") && sp1 == 1) {
-                    sp2 = 2;
-                    populateLocal();
-                } else if (spinDist.matches("Surver dan Pemetaan") && sp1 == 1) {
-                    sp2 = 3;
-                    populateLocal();
-                } else if (spinDist.matches("Administrasi Perkantoran") && sp1 == 2) {
-                    sp2 = 4;
-                    populateLocal();
-                } else if (spinDist.matches("Sekretaris") && sp1 == 2) {
-                    sp2 = 5;
-                    populateLocal();
-                } else if (spinDist.matches("Junior Administrative") && sp1 == 2) {
-                    sp2 = 27;
-                    populateLocal();
-                } else if (spinDist.matches("Menjahit (Knitting, Woven)") && sp1 == 3) {
-                    sp2 = 6;
-                    populateLocal();
-                } else if (spinDist.matches("Teknik Bordir") && sp1 == 3) {
-                    sp2 = 7;
-                    populateLocal();
-                } else if (spinDist.matches("Pengolahan Hasil Perikanan") && sp1 == 4) {
-                    sp2 = 8;
-                    populateLocal();
-                } else if (spinDist.matches("Ac Ruangan") && sp1 == 5) {
-                    sp2 = 9;
-                    populateLocal();
-                } else if (spinDist.matches("Telekomunikasi") && sp1 == 6) {
-                    sp2 = 10;
-                    populateLocal();
-                } else if (spinDist.matches("Las Industri - Listrik") && sp1 == 7) {
-                    sp2 = 11;
-                    populateLocal();
-                } else if (spinDist.matches("Instalasi Penerangan") && sp1 == 8) {
-                    sp2 = 12;
-                    populateLocal();
-                } else if (spinDist.matches("Mesin Prosuksi") && sp1 == 9) {
-                    sp2 = 13;
-                    populateLocal();
-                } else if (spinDist.matches("AC Cold Storage") && sp1 == 10) {
-                    sp2 = 14;
-                    populateLocal();
-                } else if (spinDist.matches("Teknik Alat Berat") && sp1 == 10) {
-                    sp2 = 15;
-                    populateLocal();
-                } else if (spinDist.matches("Teknik Kendaraan Ringan - Bensin") && sp1 == 10) {
-                    sp2 = 16;
-                    populateLocal();
-                } else if (spinDist.matches("Teknik Sepeda Motor") && sp1 == 10) {
-                    sp2 = 17;
-                    populateLocal();
-                } else if (spinDist.matches("Teknik Kendaraan Ringan") && sp1 == 10) {
-                    sp2 = 23;
-                    populateLocal();
-                } else if (spinDist.matches("Database") && sp1 == 11) {
-                    sp2 = 18;
-                    populateLocal();
-                } else if (spinDist.matches("Graphic Design") && sp1 == 11) {
-                    sp2 = 19;
-                    populateLocal();
-                } else if (spinDist.matches("Operator komputer") && sp1 == 11) {
-                    sp2 = 20;
-                    populateLocal();
-                } else if (spinDist.matches("Technical Support") && sp1 == 11) {
-                    sp2 = 21;
-                    populateLocal();
-                } else if (spinDist.matches("Web Administrator") && sp1 == 11) {
-                    sp2 = 22;
-                    populateLocal();
-                } else if (spinDist.matches("Aviation Security") && sp1 == 12) {
-                    sp2 = 24;
-                    populateLocal();
-                } else if (spinDist.matches("Marshalling") && sp1 == 12) {
-                    sp2 = 25;
-                    populateLocal();
-                } else if (spinDist.matches("Passasi") && sp1 == 12) {
-                    sp2 = 26;
-                    populateLocal();
-                }
+
             }
 
             @Override
@@ -472,195 +372,212 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
             }
         });
 
+        spnIdKejuruan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                subKejuruanList.clear();
+                new GetSubKejuruanFromServer().execute();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
-    void populateDist() {
-        if (sp1 == 0) {
-            String[] ag = {"Agribisnis Produksi Peternakan",
-            };
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ag);
-            spnSubKejuruan.setAdapter(adapter);
-        } else if (sp1 == 1) {
-            String[] ec = {"Furniture", "Gambar Bangunan", "Surver dan Pemetaan",
-            };
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ec);
-            spnSubKejuruan.setAdapter(adapter);
+    private void populateSpinnerKejuruan() {
+
+        List<String> lableKejuruan = new ArrayList<>();
+        for (int i = 0; i < kejuruanList.size(); i++) {
+
+            lableKejuruan.add(kejuruanList.get(i).getNama_kejuruan());
         }
-        //Free State
-        else if (sp1 == 2) {
-            String[] fs = {"Administrasi Perkantoran", "Sekretaris", "Junior Administrative"};
 
-            ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fs);
-            spnSubKejuruan.setAdapter(adapter2);
-        } else if (sp1 == 3) {
-            String[] ga = {"Menjahit (Knitting, Woven)", "Teknik Bordir"};
-            ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ga);
-            spnSubKejuruan.setAdapter(adapter3);
-        } else if (sp1 == 4) {
-            String[] prs = {"Pengolahan Hasil Perikanan"};
+        // Creating adapter for spinner
+        ArrayAdapter<String> adapterKejuruan = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lableKejuruan);
+        adapterKejuruan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnKejuruan.setAdapter(adapterKejuruan);
+    }
 
-            ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, prs);
-            spnSubKejuruan.setAdapter(adapter4);
-        } else if (sp1 == 5) {
-            String[] rfg = {"Ac Ruangan"};
+    private void populateSpinnerIdKejuruan() {
 
-            ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, rfg);
-            spnSubKejuruan.setAdapter(adapter5);
-        } else if (sp1 == 6) {
-            String[] te = {"Telekomunikasi"};
+        List<String> idLable = new ArrayList<>();
+        for (int i = 0; i < idKejuruanList.size(); i++) {
+            idLable.add(idKejuruanList.get(i).getId_kejuruan());
+        }
 
-            ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, te);
-            spnSubKejuruan.setAdapter(adapter6);
-        } else if (sp1 == 7) {
-            String[] tl = {"Las Industri - Listrik"};
+        ArrayAdapter<String> idKejuruanAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, idLable);
+        idKejuruanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnIdKejuruan.setAdapter(idKejuruanAdapter);
+    }
 
-            ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tl);
-            spnSubKejuruan.setAdapter(adapter7);
-        } else if (sp1 == 8) {
-            String[] tlt = {"Instalasi Penerangan"};
+    private void populateSpinnerSubKejuruan() {
 
-            ArrayAdapter<String> adapter8 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tlt);
-            spnSubKejuruan.setAdapter(adapter8);
-        } else if (sp1 == 9) {
-            String[] tm = {"Mesin Prosuksi"};
+        List<String> subKejuruanLable = new ArrayList<>();
+        for (int i = 0; i < subKejuruanList.size(); i++) {
+            subKejuruanLable.add(subKejuruanList.get(i).getNama_sub());
+        }
 
-            ArrayAdapter<String> adapter9 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tm);
-            spnSubKejuruan.setAdapter(adapter9);
-        } else if (sp1 == 10) {
-            String[] to = {"AC Cold Storage", "Teknik Alat Berat", "Teknik Kendaraan Ringan - Bensin", "Teknik Sepeda Motor", "Teknik Kendaraan Ringan"};
+        ArrayAdapter<String> subKejuruanAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subKejuruanLable);
+        subKejuruanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnSubKejuruan.setAdapter(subKejuruanAdapter);
+    }
 
-            ArrayAdapter<String> adapter10 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, to);
-            spnSubKejuruan.setAdapter(adapter10);
-        } else if (sp1 == 11) {
-            String[] tik = {"Database", "Graphic Design", "Operator komputer", "Technical Support", "Web Administrator"};
+    private class GetKejuruan extends AsyncTask<Void, Void, Void> {
 
-            ArrayAdapter<String> adapter11 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tik);
-            spnSubKejuruan.setAdapter(adapter11);
-        } else if (sp1 == 12) {
-            String[] avi = {"Aviation Security", "Marshalling", "Passasi"};
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            m_ProgressDialog = new ProgressDialog(FormPelatihanBaru.this);
+            m_ProgressDialog.setMessage("Fetching Data");
+            m_ProgressDialog.show();
+        }
 
-            ArrayAdapter<String> adapter12 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, avi);
-            spnSubKejuruan.setAdapter(adapter12);
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            Handler jsonParserKejuruan = new Handler();
+            String jsonKejuruan = jsonParserKejuruan.makeServiceCall(URL_KEJURUAN, Handler.GET);
+            Log.e("Response: ", "> " + jsonKejuruan);
+
+            if (jsonKejuruan != null) {
+
+                try {
+
+                    JSONObject jsonObjectKejuruan = new JSONObject(jsonKejuruan);
+                    if (jsonObjectKejuruan != null) {
+
+                        JSONArray kejuruan = jsonObjectKejuruan.getJSONArray("kejuruan");
+                        for (int i = 0; i < kejuruan.length(); i++) {
+
+                            JSONObject kejObj = (JSONObject) kejuruan.get(i);
+                            Kejuruan keju = new Kejuruan(
+                                    kejObj.getString("id_kejuruan"),
+                                    kejObj.getString("nama_kejuruan"));
+                            kejuruanList.add(keju);
+                        }
+                    }
+                } catch (JSONException eKejuruan) {
+
+                    eKejuruan.printStackTrace();
+                }
+            } else {
+
+                Log.e("JSON Data", "Didn't receive any data from server!");
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            if (m_ProgressDialog.isShowing())
+                m_ProgressDialog.dismiss();
+            populateSpinnerKejuruan();
         }
     }
 
-    void populateLocal() {
-        //Baffalo City
-        if (sp2 == 0) {
-            String[] pbk = {"Pelatihan Berbasis Kompetensi"};
+    private class GetIdKejuruanFromServer extends AsyncTask<Void, Void, Void> {
 
-            ArrayAdapter<String> adapterL0 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk);
-            spnProgram.setAdapter(adapterL0);
-        } else if (sp2 == 1) {
-            String[] mf = {"Meubelair & Finishing"};
-
-            ArrayAdapter<String> adapterL1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mf);
-            spnProgram.setAdapter(adapterL1);
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
         }
-        //Nelson Mandela Bay
-        else if (sp2 == 2) {
-            String[] da = {"Drafter arsitektur"};
 
-            ArrayAdapter<String> adapterL2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, da);
-            spnProgram.setAdapter(adapterL2);
-        } else if (sp2 == 3) {
-            String[] ju = {"Juru Ukur (Surveyor)"};
+        @Override
+        protected Void doInBackground(Void... voids) {
 
-            ArrayAdapter<String> adapterL3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ju);
-            spnProgram.setAdapter(adapterL3);
-        } else if (sp2 == 4) {
-            String[] ap = {"Administrasi Perkantoran"};
+            idKejuruan = spnKejuruan.getSelectedItem().toString();
+            Handler jsonParserIdKejuruan = new Handler();
+            String jsonIdKejuruan = jsonParserIdKejuruan.makeServiceCall(URL_ID_KEJURUAN + URLEncoder.encode(idKejuruan), Handler.GET);
+            Log.e("Response: ", "> " + jsonIdKejuruan);
 
-            ArrayAdapter<String> adapterL4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ap);
-            spnProgram.setAdapter(adapterL4);
-        } else if (sp2 == 5) {
-            String[] sk = {"Sekretaris"};
-            ArrayAdapter<String> adapterL5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sk);
-            spnProgram.setAdapter(adapterL5);
-        } else if (sp2 == 6) {
-            String[] pkw = {"Penjahit Pakaian Wanita"};
-            ArrayAdapter<String> adapterL6 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pkw);
-            spnProgram.setAdapter(adapterL6);
-        } else if (sp2 == 7) {
-            String[] apw = {"Asisten Penjahit Wanita"};
-            ArrayAdapter<String> adapterL7 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, apw);
-            spnProgram.setAdapter(adapterL7);
-        } else if (sp2 == 8) {
-            String[] pbk1 = {"Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL8 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk1);
-            spnProgram.setAdapter(adapterL8);
-        } else if (sp2 == 9) {
-            String[] tpa = {"Teknisi Pendingin AC Split", "Teknisi Refrigerasi Komersial"};
-            ArrayAdapter<String> adapterL9 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tpa);
-            spnProgram.setAdapter(adapterL9);
-        } else if (sp2 == 10) {
-            String[] th = {"Teknisi Handphone"};
-            ArrayAdapter<String> adapterL10 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, th);
-            spnProgram.setAdapter(adapterL10);
-        } else if (sp2 == 11) {
-            String[] pbk2 = {"Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL11 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk2);
-            spnProgram.setAdapter(adapterL11);
-        } else if (sp2 == 12) {
-            String[] li = {"Listrik Industri", "Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL12 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, li);
-            spnProgram.setAdapter(adapterL12);
-        } else if (sp2 == 13) {
-            String[] pbk3 = {"Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL13 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk3);
-            spnProgram.setAdapter(adapterL13);
-        } else if (sp2 == 14) {
-            String[] pbk4 = {"Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL14 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk4);
-            spnProgram.setAdapter(adapterL14);
-        } else if (sp2 == 15) {
-            String[] mab = {"Mekanik Alat Berat", "Pelatihan Berbasis Kompetensi", "Swadana", "Teknik Alat Berat (Operator Excavator)"};
-            ArrayAdapter<String> adapterL15 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mab);
-            spnProgram.setAdapter(adapterL15);
-        } else if (sp2 == 16) {
-            String[] oht = {"Over Houl Tune Up Diesel", "Pelatihan Berbasis Kompetensi", "Tune Up Bensin dan Diesel"};
-            ArrayAdapter<String> adapterL16 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, oht);
-            spnProgram.setAdapter(adapterL16);
-        } else if (sp2 == 17) {
-            String[] mjsp = {"Mekanik Junior Sepeda Motor", "Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL17 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mjsp);
-            spnProgram.setAdapter(adapterL17);
-        } else if (sp2 == 19) {
-            String[] pbk5 = {"Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL18 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk5);
-            spnProgram.setAdapter(adapterL18);
-        } else if (sp2 == 20) {
-            String[] pbk6 = {"Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL19 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk6);
-            spnProgram.setAdapter(adapterL19);
-        } else if (sp2 == 21) {
-            String[] op = {"Operator Komputer", "Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL20 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, op);
-            spnProgram.setAdapter(adapterL20);
-        } else if (sp2 == 22) {
-            String[] pbk7 = {"Pelatihan Berbasis Kompetensi"};
-            ArrayAdapter<String> adapterL21 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk7);
-            spnProgram.setAdapter(adapterL21);
-        } else if (sp2 == 23) {
-            String[] pbk8 = {"Body Repair & Painting"};
-            ArrayAdapter<String> adapterL22 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk8);
-            spnProgram.setAdapter(adapterL22);
-        } else if (sp2 == 24) {
-            String[] pbk9 = {"Aviation Security"};
-            ArrayAdapter<String> adapterL23 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
-            spnProgram.setAdapter(adapterL23);
-        } else if (sp2 == 25) {
-            String[] pbk9 = {"Marshalling"};
-            ArrayAdapter<String> adapterL23 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
-            spnProgram.setAdapter(adapterL23);
-        } else if (sp2 == 26) {
-            String[] pbk9 = {"Passasi"};
-            ArrayAdapter<String> adapterL23 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
-            spnProgram.setAdapter(adapterL23);
-        } else if (sp2 == 27) {
-            String[] pbk9 = {"Junior Administrative"};
-            ArrayAdapter<String> adapterL27 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pbk9);
-            spnProgram.setAdapter(adapterL27);
+            if (jsonIdKejuruan != null) {
+
+                try {
+
+                    JSONObject jsonObjectIdKejuruan = new JSONObject(jsonIdKejuruan);
+                    if (jsonObjectIdKejuruan != null) {
+
+                        JSONArray idKejuruan = jsonObjectIdKejuruan.getJSONArray("id");
+                        for (int i = 0; i < idKejuruan.length(); i++) {
+
+                            JSONObject idObj = (JSONObject) idKejuruan.get(i);
+                            Kejuruan idKeju = new Kejuruan(
+                                    idObj.getString("id_kejuruan"),
+                                    idObj.getString("nama_kejuruan"));
+
+                            idKejuruanList.add(idKeju);
+                        }
+                    }
+                } catch (JSONException eIdKejuruan) {
+
+                    eIdKejuruan.printStackTrace();
+                }
+            } else {
+
+                Log.e("JSON Data", "Didn't receive any data from server!");
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            populateSpinnerIdKejuruan();
+        }
+    }
+
+    private class GetSubKejuruanFromServer extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            kejuruanNama = spnIdKejuruan.getSelectedItem().toString();
+            Handler jsonParserSubKejuruan = new Handler();
+            String jsonSubKejuruan = jsonParserSubKejuruan.makeServiceCall(URL_SUB_KEJURUAN + URLEncoder.encode(kejuruanNama), Handler.GET);
+            Log.e("Response: ", "> " + jsonSubKejuruan);
+
+            if (jsonSubKejuruan != null) {
+
+                try {
+
+                    JSONObject jsonObjectSubKejuruan = new JSONObject(jsonSubKejuruan);
+                    if (jsonObjectSubKejuruan != null) {
+
+                        JSONArray subKejuruan = jsonObjectSubKejuruan.getJSONArray("sub");
+                        for (int i = 0; i < subKejuruan.length(); i++) {
+
+                            JSONObject subObj = (JSONObject) subKejuruan.get(i);
+                            SubKejuruan subKeju = new SubKejuruan(subObj.getString("nama_sub"));
+                            subKejuruanList.add(subKeju);
+                        }
+                    }
+                } catch (JSONException eSubKejuruan) {
+
+                    eSubKejuruan.printStackTrace();
+                }
+            } else {
+
+                Log.e("JSON Data", "Didn't receive any data from server!");
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            populateSpinnerSubKejuruan();
         }
     }
 
@@ -793,7 +710,6 @@ public class FormPelatihanBaru extends AppCompatActivity implements View.OnClick
 
                 break;
         }
-
 
     }
 

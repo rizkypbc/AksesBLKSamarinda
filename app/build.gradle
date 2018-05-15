@@ -2,14 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
+    useLibrary 'org.apache.http.legacy'
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId 'com.akses.blk.samarinda'
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 26
         multiDexEnabled true
-        versionCode 25
-        versionName '2.7.6'
+        versionCode 26
+        versionName '2.8'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

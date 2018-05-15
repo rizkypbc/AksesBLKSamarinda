@@ -52,8 +52,8 @@
             style="@android:style/Widget.Holo.Light.Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:entries="@array/jurusan"/>
+            android:backgroundTint="@color/colorPrimary" />
+
 
         <!--<EditText-->
         <!--android:id="@+id/txt_kejuruan"-->
@@ -73,8 +73,7 @@
             style="@android:style/Widget.Holo.Light.Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_sub_kejuruan" />
+            android:backgroundTint="@color/colorPrimary" />
 
         <!--<EditText-->
         <!--android:id="@+id/txt_sub_kejuruan"-->
@@ -87,7 +86,6 @@
             android:layout_marginTop="12dp"
             android:paddingBottom="5dp"
             android:text="Program"
-
             android:textSize="12sp" />
 
         <Spinner
@@ -95,9 +93,11 @@
             style="@android:style/Widget.Holo.Light.Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary" />
+            android:backgroundTint="@color/colorPrimary"
+            android:entries="@array/program_baru" />
 
-       <!--<View-->
+
+        <!--<View-->
            <!--android:layout_marginTop="12dp"-->
            <!--android:layout_width="match_parent"-->
            <!--android:background="#000000"-->
@@ -334,7 +334,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:paddingBottom="5dp"
-            android:text="Jurusan"
+            android:text="Jurusan Pada Saat Sekolah"
             android:textSize="12sp" />
 
         <!--<Spinner-->
@@ -369,8 +369,12 @@
             android:ems="5"
             android:textSize="14sp" />
 
-
-
+        <Spinner
+            android:id="@+id/spnIdKejuruan"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:visibility="invisible" />
 
         <!--<EditText-->
         <!--android:id="@+id/txt_program"-->
@@ -420,6 +424,7 @@
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:text="Browse File Photo" />
 
+
         <!--<EditText-->
             <!--android:id="@+id/txt_url_photo"-->
             <!--android:layout_width="match_parent"-->
@@ -438,6 +443,7 @@
             android:onClick="btnRegister_Click"
             android:text="Kirim"
             android:textAllCaps="true" />
+
 
     </LinearLayout>
 </ScrollView>
